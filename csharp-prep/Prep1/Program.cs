@@ -12,16 +12,15 @@ class Program
     //Learning Activity - C# Prep 1
         //OBJ: Take input and print as output.
 
-        // Input: {first name}
+        // Input: first name
         Console.Write("What is your first name? ");
-        string first_name = Console.ReadLine();
+        string first = Console.ReadLine();
         
-        // Input: {last name}
+        // Input: last name
         Console.Write("What is your last name? ");
-        string last_name = Console.ReadLine();
+        string last = Console.ReadLine();
         
-        // Output: {first_name} & {last_name}
-        Console.WriteLine($"First name: {first_name}");
-        Console.WriteLine($"Last name: {last_name}");
+        // Output: last, first last
+        Console.WriteLine($"Hello {last}, {first} {last}");
     }
 }
