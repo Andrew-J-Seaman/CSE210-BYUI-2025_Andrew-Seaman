@@ -7,10 +7,7 @@ class Program
 //Default
         Console.WriteLine("Hello Prep1 World!");
 
-//W01
-
-    //Learning Activity - C# Prep 1
-        //OBJ: Take input and print as output.
+//OBJ: Take input and print as output.
 
         // Input: first name
         Console.Write("What is your first name? ");
