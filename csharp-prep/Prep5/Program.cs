@@ -4,6 +4,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep5 World!");
+        // Default greeting
+        Console.WriteLine(">Hello Prep5 World!");
+
+
+
+
+
+
+
+
     }
 }
+
+// NOTES:
+
+/* FUNCTIONS:
+
+*/
+
+
+
