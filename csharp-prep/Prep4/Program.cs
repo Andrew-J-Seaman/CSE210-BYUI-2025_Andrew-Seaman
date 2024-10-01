@@ -61,6 +61,7 @@ class Program
     }
 }
 
+// NOTES:
 
 /* DATA STRUCTURES:
     1. Lists
