@@ -6,12 +6,30 @@ class Program
     {
         // Default greeting
         Console.WriteLine("Hello Prep4 World!");
+
+        // New list
+        List<int> series = new List<int>();
+
+        bool notZero = true;
+        while (notZero)
+        {
+            // User input: number series
+            Console.Write("Enter a new number: ");
+            string inputString = Console.ReadLine();
+            int inputInt = int.Parse(inputString);
+            
+            if (inputInt == 0)
+            {
+                Console.WriteLine("Thank you for your entries.");
+                notZero = false;
+            }
+            else
+            {
+                series.Add(inputInt);
+            }
+        }
         
-
-
-
-
-
+        
 
     }
 }
