@@ -13,16 +13,18 @@ class MakeJournal
 
 }
 
-// FUNCTION REQUIREMENTS: 
+// DESIGN NOTES:
+
+// DESIGN PHILOSOPHY: develop the simplest yet best built out journal app.
+
+/* FUNCTION REQUIREMENTS:
     1. write new entry
     2. display journal
     3. save journal to file
     4. load journal
     5. provide menu
     6. provide prompts
-    
-
-//DESIGN PHILOSOPHY:develop the simplest yet best built out journal app.
+*/
 
 /* MENU
     1. Write
