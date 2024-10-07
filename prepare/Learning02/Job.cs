@@ -1,12 +1,17 @@
 public class Job
 {
     // Attributes
-    string _name;
-    public List<Job> _jobs = new List<Job>();
-    
+    public string _jobTitle;
+    public string _company;
+    public int _startYear;
+    public int _endYear;
+
     // Methods (Member functions)
-    public void Display()
+    public void Display() 
+    // Job Title (Company) StartYear-EndYear
+    // For example: "Software Engineer (Microsoft) 2019-2022"
     {
-        
+        string indent = "   ";
+        Console.WriteLine($"{indent}>{_jobTitle} ({_company}) {_startYear}—{_endYear}");
     }
 }
