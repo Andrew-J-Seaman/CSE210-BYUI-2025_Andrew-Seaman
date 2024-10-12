@@ -69,17 +69,5 @@ class MakeJournal
         1. Open app
         2. Load (read)
         3. Quit
-    F:
-        1. 
-        2. 
-        3.
-        4.
-        5.
-    G:
-        1.
-        2.
-        3.
-        4.
-        5.
-
 */
+
