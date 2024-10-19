@@ -1,6 +1,4 @@
-using System;
-
-class Entry
+public class Entry
 {
 
 }

@@ -1,6 +1,4 @@
-using System;
-
-class Prompt
+public class Prompt
 {
 
 }
