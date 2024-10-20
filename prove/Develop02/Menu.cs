@@ -7,18 +7,12 @@ using System.Xml.Serialization;
 
 public class Menu
 {
-    private string I = "   ";
-    private string INDENT;
-    private string C = ">";
-    private string CARROT;
-
-
     // Initialize methods
     public void MenuLoop()
     {   
         // String formating constants
-        INDENT = I;
-        CARROT = C;
+        string INDENT = "   ";
+        string CARROT = ">";
 
         // Create a list of actions
         List<Action> menu_dict_values = new List<Action>
@@ -71,7 +65,42 @@ public class Menu
     
     // Define functions for each menu option
 
-    static void Write() => .Write();
+    static void Write()
+    {
+        // Goal: return date, title, prompt, entry
+        // In order: date, prompt, entry, title
+
+
+        Entry newEntry = new Entry();
+        Entry.TodayDate();                // Order 1: date
+        = NewPrompt();                    // Order 2: prompt
+        _entryNew = Entry.WriteEntry();   // Order 3: entry
+        _entrytitle = Entry.GetTitle      // Order 4: title 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    
     static void Display() => .Display();
     static void Load() => Console.WriteLine("Load operation");
     static void Save() => Console.WriteLine("Save operation");

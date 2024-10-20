@@ -1,4 +1,4 @@
-class Journal
+public class Journal
 {
 
 }
