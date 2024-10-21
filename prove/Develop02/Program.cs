@@ -4,15 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Allows user to:
-        //      1. Write new journal entry
-        //      2. Display all journal entries
-        //      3. Load journal for viewing
-        //      4. Save journal to existing txt file
-        //      5. Quit the program
-        Menu.MenuLoop();
+        // New User object
+        User user = new User();
+        int currentUserID = user.Display();
+        user.NewUser(currentUserID);
 
-        //Journal _workingJournal = ...
+
+
+
+        // Initialize journal object
+        // Journal workingJournal = new Journal();
+        
+        // Display 'Menu_OpenUserJournal'
+        
+        
+
+
+
+
+
+
 
 
 

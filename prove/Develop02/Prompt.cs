@@ -8,10 +8,19 @@ public class Prompt
     public string _randomPrompt;
 
 
-    // Methods
-    public int RandomProducer(int random_int)
+    // List of all prompts
+    public List<string> all_prompts = new List<string>()
     {
-        _random_producer.int(1,100); //fix
+        
+    };
+
+
+    // Methods
+    public int RandomProducer()
+    {
+        Random randomInt = new Random(); //fix
+        int randomIndex = randomInt.Next(_)
+
         Prompt._randomIndex = random_producer;
         
         return _randomIndex
@@ -31,4 +40,10 @@ public class Prompt
     };
 
     int promptsAll_length = promptsAll.Count;
+
+
+
+
+
+
 }
