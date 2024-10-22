@@ -6,11 +6,10 @@ public class User
 {
     // Dictionary to store users with keys
     public Dictionary<int, string> _users { get; private set; }
-    private const string userfFilePath = "/prove/Develop02/DataFiles/Users/Users.csv"; // '/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/prove/Develop02/DataFiles/Users/Users.csv'
-    private const string incompleteUserFolderFilePath = "/prove/Develop02/DataFiles/Journals/User_"; // '/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/prove/Develop02/DataFiles/Journals/User_'
-    public string _currentUserJournalFilePath;
-    public string _currentUserPromptsFilePath;
-    public int _currentUserID;
+    private const string userfFilePath = "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/sandbox/sb_journal/DataFiles/Users/Users.csv"; 
+    private const string incompleteUserFolderFilePath = "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/sandbox/sb_journal/DataFiles/Journals/User_";
+    public string _userJournalFilePath;
+    public string _userPromptsFilePath;
 
     // Constructor to initialize the users dictionary
     public User()
@@ -57,12 +56,13 @@ public class User
     public int DisplayUsersAndSelectOne()
     {
         // Print list of users
-        Console.WriteLine("\nUsers:");
+        Console.WriteLine("Users:");
         foreach (var kvp in _users)
         {
             Console.WriteLine($"\t{kvp.Key}: {kvp.Value}");
         }
 
+        int currentUserID;
         bool validUserID = false;
 
         // Loop until a valid user ID is entered
@@ -72,13 +72,13 @@ public class User
             Console.Write("Enter a user ID: ");
             
             // Try to parse the input as an integer
-            if (int.TryParse(Console.ReadLine().Trim(), out _currentUserID))
+            if (int.TryParse(Console.ReadLine().Trim(), out currentUserID))
             {
                 // Check if the entered ID exists in the dictionary
-                if (_users.ContainsKey(_currentUserID))
+                if (_users.ContainsKey(currentUserID))
                 {
                     validUserID = true;
-                    UserFiles(_currentUserID); // Call UserFiles method with the selected ID
+                    UserFiles(currentUserID); // Call UserFiles method with the selected ID
                 }
                 else
                 {
@@ -92,7 +92,7 @@ public class User
 
         } while (!validUserID);
 
-        return _currentUserID;
+        return currentUserID;
     }
 
     public void GreetUserWhoIsNewOrExisting(int currentUserID)
@@ -118,11 +118,11 @@ public class User
                 // Write the updated user information back to the 'Users.csv'
                 UpdateUsersFile(userfFilePath);
 
-                Console.WriteLine($"\nWelcome {newUserName}, let's journal!\n");
+                Console.WriteLine($"Welcome {newUserName}, let's journal!");
             }
             else
             {
-                Console.WriteLine($"\nWelcome {currentUserName}, let's journal!\n");
+                Console.WriteLine($"Welcome {currentUserName}, let's journal!");
             }
         }
         else
@@ -155,7 +155,7 @@ public class User
     public void UserFiles(int currentUserID)
     {
         string completeUserFolderFilePath = incompleteUserFolderFilePath + currentUserID;
-        _currentUserJournalFilePath = $"{completeUserFolderFilePath}/Journal.csv";
-        _currentUserPromptsFilePath = $"{completeUserFolderFilePath}/Prompts.csv";
+        _userJournalFilePath = $"{completeUserFolderFilePath}/Journal.csv";
+        _userPromptsFilePath = $"{completeUserFolderFilePath}/Prompts.csv";
     }
 }

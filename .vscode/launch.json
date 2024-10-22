@@ -30,6 +30,19 @@
         },
 
         {
+            "name": "sb_journal Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-sb_journal",
+            "program": "${workspaceFolder}/sandbox/sb_journal/bin/Debug/net8.0/sb_journal.dll", 
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/sb_journal",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+        
+        {
             "name": "C# Prep 1",
             "type": "coreclr",
             "request": "launch",

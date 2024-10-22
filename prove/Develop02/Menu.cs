@@ -7,21 +7,17 @@ using System.Xml.Serialization;
 
 public class Menu
 {
-    // Initialize methods
-    public void MenuLoop()
-    {   
-        // String formating constants
-        string INDENT = "   ";
-        string CARROT = ">";
+    public int _selectedKeyMainMenuLoop;
 
-        // Create a list of actions
-        List<Action> menu_dict_values = new List<Action>
+    public void MainMenuLoop()
+    {   
+        // Create a list of actions; current length: 4 items
+        List<string> menu_dict_values = new List<string>
         {
-            Write, 
-            Display, 
-            Load, 
-            Save, 
-            ExitProgram
+            "Write",        // 1
+            "Display",      // 2
+            "Change User",  // 3
+            "ExitProgram"   // 4
         };
 
         int menu_length = menu_dict_values.Count;
@@ -30,81 +26,47 @@ public class Menu
         List<int> menu_dict_keys = Enumerable.Range(1, menu_length).ToList();
 
         // Combine keys and values into a dictionary using LINQ's Zip method
-        Dictionary<int, Action> menuOptions = menu_dict_keys
+        Dictionary<int, string> menuOptions = menu_dict_keys
             .Zip(menu_dict_values, (key, value) => new { key, value })
             .ToDictionary(x => x.key, x => x.value);
 
-        bool validSelectedKey = true;
+        // Redefine class attribute as shortened local variable name
+        int selectedKey = _selectedKeyMainMenuLoop;
+        bool validKeySelection = true;
         do
         {
             // Print menu title
             Console.WriteLine("Menu:");
 
             // Print menu: dictionary where each key maps to an Action.
-            foreach (KeyValuePair<int, Action> kvp in menuOptions) //replaced 'var' with 'KeyValuePair<int, Action>'
+            foreach (KeyValuePair<int, string> kvp in menuOptions) //replaced 'var' with 'KeyValuePair<int, Action>'
             {
-                Console.WriteLine($"{INDENT}{CARROT}{kvp.Key}. {kvp.Value.Method.Name}");
+                Console.WriteLine($"\t{kvp.Key}. {kvp.Value}");
             }
 
             // Gets user input for menu option selection
-            Console.Write($"\n{INDENT}{CARROT}Select a number: ");
-            int selectedKey = int.Parse(Console.ReadLine());
+            Console.Write($"\n\tSelect a number(1-{menu_length}): ");
+            selectedKey = int.Parse(Console.ReadLine());
 
             // Running an action from the dictionary using the selected key
             if (menuOptions.ContainsKey(selectedKey))
             {
-                menuOptions[selectedKey].Invoke();
+                validKeySelection = true;
             }
             else
             {
-                Console.WriteLine($"{CARROT}{selectedKey} is not a valid selection.");
-                validSelectedKey = false;
+                Console.WriteLine($"\t{selectedKey} is not a valid selection.");
+                validKeySelection = false;
             };
-        } while (!validSelectedKey);
+        } while (!validKeySelection);
+        
+        // Redefine class attribute with value of shortened local variable
+        _selectedKeyMainMenuLoop = selectedKey;
     }
-    
-    // Define functions for each menu option
 
-    static void Write()
+    public void SaveDeleteMenu()
     {
-        // Goal: return date, title, prompt, entry
-        // In order: date, prompt, entry, title
-
-
-        Entry newEntry = new Entry();
-        Entry.TodayDate();                // Order 1: date
-        = NewPrompt();                    // Order 2: prompt
-        _entryNew = Entry.WriteEntry();   // Order 3: entry
-        _entrytitle = Entry.GetTitle      // Order 4: title 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
-    
-    static void Display() => .Display();
-    static void Load() => Console.WriteLine("Load operation");
-    static void Save() => Console.WriteLine("Save operation");
-    static void ExitProgram() => Console.WriteLine("Exiting program");
-    
 }
 

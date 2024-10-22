@@ -1,11 +1,20 @@
 public class Prompt
 {
-    // Initialize attributes
-
+    public string _promptsFilePath;
+    
     public Random _randomProducer; //dead > moved to Entry class
     public int _randomIndex;
     public List<int> _promptIndexUsed = new List<int>();
     public string _randomPrompt;
+    
+
+    public void GetUserPromptsFilePathsFromUserClassObj(string _currentUserPromptsFilePath)
+    {
+        _promptsFilePath = _currentUserPromptsFilePath;
+    }
+
+
+
 
 
     // List of all prompts
@@ -15,7 +24,7 @@ public class Prompt
     };
 
 
-    // Methods
+
     public int RandomProducer()
     {
         Random randomInt = new Random(); //fix

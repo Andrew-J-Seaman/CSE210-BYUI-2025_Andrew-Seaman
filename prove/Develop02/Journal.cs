@@ -5,43 +5,34 @@ using Microsoft.VisualBasic;
 
 public class Journal
 {
-    // ATTRIBUTES //
-
-    // Dictionary to store users with keys
-    public Dictionary<int, string> _users { get; private set; }
-    
-    string _journalName;
-    string _journalUsedPromptsIndex;
-    string _journalPrompts;
-
-
-
+    public Dictionary<int, string> _entries { get; private set; }
+    public string _journalFilePath;
+    public List<string> _allPrompts;
+    public List<string> _unusedPrompts;
+    public string _randomPrompt;
 
 
     // METHODS //
 
-        
-
-
-
-    // Property to store users
-
-
-    // Constructor to initialize the users dictionary
-    public Journal()
+    public void GetUserJournalFilePathFromUserClassObj(string _currentUserJournalFilePath)
     {
-        _users = LoadUsersFromCsvFile("prove/Develop02/DataFiles/Users/Users.csv");
+        _journalFilePath = _currentUserJournalFilePath;
     }
 
-    // Method to read the 'Users.csv' file and load the users into a dictionary
-    private Dictionary<int, string> LoadUsersFromCsvFile(string filePath)
+    public Journal()
     {
-        var users = new Dictionary<int, string>();
+        _entries = LoadUsersFromCsvFile(_journalFilePath);
+    }
+
+     // Method to read the 'Users.csv' file and load the users into a dictionary
+    private Dictionary<int, string> LoadEntriesFromCsvFile(string filePath)
+    {
+        var entries = new Dictionary<int, string>();
 
         try
         {
-            // Read all lines from the file
-            var lines = File.ReadAllLines(filePath);
+            // Read all lines from the file and skip the first line if it contains headers
+            var lines = File.ReadAllLines(filePath).Skip(1);
 
             // Loop through each line and add it to the dictionary
             foreach (var line in lines)
@@ -53,7 +44,7 @@ public class Journal
                 if (parts.Length == 2 && int.TryParse(parts[0].Trim(), out int userId))
                 {
                     string userName = parts[1].Trim();
-                    users[userId] = userName; // Add to the dictionary
+                    entries[userId] = userName; // Add to the dictionary
                 }
                 else
                 {
@@ -66,10 +57,7 @@ public class Journal
             Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
         }
 
-        return users;
+        return entries;
     }
 
-    public display
-
-    
 }
