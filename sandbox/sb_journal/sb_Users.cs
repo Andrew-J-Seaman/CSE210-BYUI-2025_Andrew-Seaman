@@ -56,7 +56,7 @@ public class User
     public int DisplayUsersAndSelectOne()
     {
         // Print list of users
-        Console.WriteLine("Users:");
+        Console.WriteLine("\nUsers:");
         foreach (var kvp in _users)
         {
             Console.WriteLine($"\t{kvp.Key}: {kvp.Value}");
@@ -69,7 +69,7 @@ public class User
         do
         {
             // Ask user for their UserID
-            Console.Write("Enter a user ID: ");
+            Console.Write("\n\tEnter a user ID: ");
             
             // Try to parse the input as an integer
             if (int.TryParse(Console.ReadLine().Trim(), out currentUserID))
@@ -103,7 +103,7 @@ public class User
 
             if (currentUserName == "Empty")
             {
-                Console.WriteLine("Enter new user name.");
+                Console.WriteLine("\n\tEnter new user name.");
                 Console.Write($"\tFirst name: ");
                 string firstName = Console.ReadLine().Trim();
                 Console.Write($"\tLast name: ");

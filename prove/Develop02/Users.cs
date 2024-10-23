@@ -63,22 +63,23 @@ public class User
             Console.WriteLine($"\t{kvp.Key}: {kvp.Value}");
         }
 
+        int currentUserID;
         bool validUserID = false;
 
         // Loop until a valid user ID is entered
         do
         {
             // Ask user for their UserID
-            Console.Write("Enter a user ID: ");
+            Console.Write("\n\tEnter a user ID: ");
             
             // Try to parse the input as an integer
-            if (int.TryParse(Console.ReadLine().Trim(), out _currentUserID))
+            if (int.TryParse(Console.ReadLine().Trim(), out currentUserID))
             {
                 // Check if the entered ID exists in the dictionary
-                if (_users.ContainsKey(_currentUserID))
+                if (_users.ContainsKey(currentUserID))
                 {
                     validUserID = true;
-                    UserFiles(_currentUserID); // Call UserFiles method with the selected ID
+                    UserFiles(currentUserID); // Call UserFiles method with the selected ID
                 }
                 else
                 {
@@ -92,7 +93,7 @@ public class User
 
         } while (!validUserID);
 
-        return _currentUserID;
+        return currentUserID;
     }
 
     public void GreetUserWhoIsNewOrExisting(int currentUserID)
@@ -103,7 +104,7 @@ public class User
 
             if (currentUserName == "Empty")
             {
-                Console.WriteLine("Enter new user name.");
+                Console.WriteLine("\n\tEnter new user name.");
                 Console.Write($"\tFirst name: ");
                 string firstName = Console.ReadLine().Trim();
                 Console.Write($"\tLast name: ");
