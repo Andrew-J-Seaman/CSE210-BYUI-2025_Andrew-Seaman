@@ -1,3 +1,6 @@
+// AUTHOR: Andrew Seaman
+
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +17,7 @@ public class Journal
 
     // METHODS //
 
-    public void GetUserJournalFilePathFromUserClassObj(string _currentUserJournalFilePath)
+    public void GetUserJournalFilePath(string _currentUserJournalFilePath)
     {
         _journalFilePath = _currentUserJournalFilePath;
     }

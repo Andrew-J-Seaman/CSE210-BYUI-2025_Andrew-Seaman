@@ -1,3 +1,6 @@
+// AUTHOR: Andrew Seaman
+
+
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -96,7 +99,7 @@ public class User
         return currentUserID;
     }
 
-    public void GreetUserWhoIsNewOrExisting(int currentUserID)
+    public void GreetUserNewOrExisting(int currentUserID)
     {
         if (_users.TryGetValue(currentUserID, out string currentUserName))
         {

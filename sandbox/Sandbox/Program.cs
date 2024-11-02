@@ -1,7 +1,7 @@
+/* DOG: INHERITANCE Logic
 
 using System.Reflection;
 
-/*
 public class Program 
 {
     static void Main(string[] args)
@@ -64,7 +64,7 @@ public class Dog : Animal
 
 
 
-// MAIN CLASS Logic:
+/*// MAIN CLASS Logic:
 
 public class Activity
 {
@@ -109,12 +109,12 @@ public class Listing : Activity
     {
     }
 }
+*/
 
 
 
 
-
-/* SPINNER Logic:
+// SPINNER Logic:
 
 using System;
 using System.Threading;
@@ -156,9 +156,8 @@ class Program
         }
     }
 }
-*/
 
-/* FADE IN/OUT Logic:
+/* // FADE IN/OUT Logic:
 
 using System;
 using System.Threading;
@@ -196,5 +195,4 @@ class Program
         }
     }
 }
-
 */

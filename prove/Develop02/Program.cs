@@ -1,3 +1,9 @@
+// AUTHOR: Andrew Seaman
+// LAST UPDATE: 11/1/24
+
+// For more on this assignment see: "https://byui-cse.github.io/cse210-course-2023/unit02/develop.html"
+
+
 using System;
 using System.Linq;
 using System.CodeDom.Compiler;
@@ -22,7 +28,7 @@ class Program
         user.DisplayUsersAndSelectOne();
         // If needed, if userName is called "Empty" replace it with the user's first and last name.
         // Greet the new or returning user.
-        user.GreetUserWhoIsNewOrExisting(user._currentUserID);
+        user.GreetUserNewOrExisting(user._currentUserID);
         // Using the 'currentUserID' complete and define the files paths for the user's 'Journal.csv' and 'Prompts.csv'
 
 
@@ -30,7 +36,7 @@ class Program
 
         Journal workingJournal = new Journal();
         // Pass user data file paths from 'user' instance to 'workingJournal' instance for 'Journal.csv' and 'Prompts.csv'
-        workingJournal.GetUserJournalFilePathFromUserClassObj(user._currentUserJournalFilePath);
+        workingJournal.GetUserJournalFilePath(user._currentUserJournalFilePath);
 
 
         // MAIN MENU OBJECT
@@ -43,7 +49,7 @@ class Program
         {
             case 1:     // Write 
                 Prompt prompt = new Prompt();
-                prompt.GetUserPromptsFilePathsFromUserClassObj(user._currentUserPromptsFilePath);
+                prompt.GetUserPromptsFilePaths(user._currentUserPromptsFilePath);
 
 
 

@@ -1,3 +1,6 @@
+// AUTHOR: Andrew Seaman
+
+
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -14,10 +17,10 @@ public class Menu
         // Create a list of actions; current length: 4 items
         List<string> menu_dict_values = new List<string>
         {
-            "Write",        // 1
-            "Display",      // 2
-            "Change User",  // 3
-            "ExitProgram"   // 4
+            "Write a new entry",        // 1
+            "Display the journal",      // 2
+            "Change User",              // 3
+            "Exit Program"              // 4
         };
 
         int menu_length = menu_dict_values.Count;

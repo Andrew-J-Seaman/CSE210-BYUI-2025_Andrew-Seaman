@@ -1,3 +1,6 @@
+// AUTHOR: Andrew Seaman
+
+
 using System.Xml.Serialization;
 
 public class Entry
