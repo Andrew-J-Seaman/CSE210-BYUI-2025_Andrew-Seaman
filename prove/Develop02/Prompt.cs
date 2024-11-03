@@ -23,7 +23,7 @@ public class Prompt
     // Method to read the 'Prompts.csv' file and load the prompts into a dictionary
     private Dictionary<int, Tuple<int, string>> LoadPromptsFromCsvFile(string filePath)
     {
-        var _prompts = new Dictionary<int, Tuple<int, string>>();
+        _prompts = new Dictionary<int, Tuple<int, string>>();
 
         try
         {

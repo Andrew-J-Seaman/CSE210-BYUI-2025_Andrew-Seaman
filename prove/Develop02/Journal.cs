@@ -24,7 +24,7 @@ public class Journal
 
     public Journal()
     {
-        _entries = LoadUsersFromCsvFile(_journalFilePath);
+        _entries = LoadEntriesFromCsvFile(_journalFilePath);
     }
 
      // Method to read the 'Users.csv' file and load the users into a dictionary
