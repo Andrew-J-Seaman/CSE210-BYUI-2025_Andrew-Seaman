@@ -1,3 +1,107 @@
+public class Journal
+{
+    private List<Entry> _entries;
+
+
+    // Menu option: 1
+    public void LoadEntries()
+    {
+        //Read entries from a txt/csv file and add them to the entries list
+
+    }
+
+    // Menu option: 2
+    public void DisplayEntries()
+    {
+        foreach(Entry entry in _entries)
+        {
+            // Display all parts of each entry on a new line >>> Go into entry and finish writing this function.
+           entry.DisplayEntry();
+        }
+    }
+
+    // Menu option: 3
+    public void WriteEntry()
+    {
+        // Greeting
+        Console.WriteLine("Let's write!\n");
+
+        // Prompt
+
+           // string prompt = prompt.PromptGenerator();
+
+           // Console.WriteLine(prompt);
+
+       // Add entry to `_entries`
+        Console.WriteLine("Entry: ");
+    }
+
+    // Menu option: 4
+    public void SaveEntries()
+
+    {
+        //Save all entries to the txt/csv file.
+
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 // AUTHOR: Andrew Seaman
 
 
@@ -64,3 +168,6 @@ public class Journal
     }
 
 }
+
+
+*/

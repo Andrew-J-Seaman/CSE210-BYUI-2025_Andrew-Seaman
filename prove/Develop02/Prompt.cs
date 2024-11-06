@@ -1,3 +1,72 @@
+public class Prompt
+{
+    private List<string> _prompts;
+
+    // Populate prompts list (via file or hard coded)
+    public string PromptGenerator()
+    {
+        //List of prompts
+
+        //Random generator
+
+        //Return: prompt : string
+
+        return "";
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 // AUTHOR: Andrew Seaman
 
 
@@ -85,3 +154,6 @@ public string SelectPrompt()
 }
 
 }
+
+
+*/

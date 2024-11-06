@@ -1,3 +1,71 @@
+public class Entry
+{
+    private string _date;
+    private string _prompt;
+    private string _response;
+
+    public void DisplayEntry()
+    {
+        Console.WriteLine($"DATE: {_date}  -  PROMPT: {_prompt}\nRESPONSE: {_response}");
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 // AUTHOR: Andrew Seaman
 
 
@@ -16,19 +84,9 @@ public class Entry
     // GOAL: get: date, title, prompt, entry; then return Entry instance
 
     // Initialize methods
-    public string CurrentPrompt()
+    public void writePrompt(string prompt)
     {
-        // New prompt instance
-        Prompt newEntryPrompt = new Prompt();
-        // Get random int
-        Prompt.RandomProducer = newEntryPrompt._randomIndex; //fix
-
-        Prompt._generatePrompt
-
-
-
-        //Goal: get random prompt output (string)
-        return prompt;
+        Console.WriteLine($"Prompt: {prompt}");
     }
     
     public void TodayDate()
@@ -54,3 +112,6 @@ public class Entry
         _entryTitle = Console.ReadLine();
     }
 }
+
+
+*/

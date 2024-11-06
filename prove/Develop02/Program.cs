@@ -1,3 +1,133 @@
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+using System.Xml.Serialization;
+
+class Program{
+
+    static void Main(string[] args)
+    {
+
+        // Greeting message
+
+
+        // Menu (Load, display, write, save, quit)
+
+
+        Journal workingJournal = new Journal();
+
+            //menu selection goes here
+
+            //switch-case goes here
+            
+                //functions from journal go in each case
+
+        bool run = true;
+        do 
+        {
+
+            Console.Write("Select an option (1-5): ");
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:     // Load
+                    workingJournal.LoadEntries();
+                    break;
+
+                case 2:     // Display
+                    workingJournal.DisplayEntries();
+                    break;
+
+                case 3:     // Write
+                    workingJournal.WriteEntry();                
+                    break;
+
+                case 4:     // Save
+                    workingJournal.SaveEntries();
+                    break;
+
+                case 5:     // Quit
+                    Console.WriteLine("Exiting program.");
+                    run = false;
+                    break;
+                
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    break;
+            }
+        } while (run != false);
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+/* TO DO:
+
+    1. Build out menu
+    2. Build out methods in journal
+    3. Build out promptGenerator method in Prompt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 // AUTHOR: Andrew Seaman
 // LAST UPDATE: 11/1/24
 
@@ -34,9 +164,9 @@ class Program
 
         // JOURNAL OBJECT
 
-        Journal workingJournal = new Journal();
+        Journal currentJournal = new Journal();
         // Pass user data file paths from 'user' instance to 'workingJournal' instance for 'Journal.csv' and 'Prompts.csv'
-        workingJournal.GetUserJournalFilePath(user._currentUserJournalFilePath);
+        currentJournal.GetUserJournalFilePath(user._currentUserJournalFilePath);
 
 
         // MAIN MENU OBJECT
@@ -48,8 +178,12 @@ class Program
         switch (choice)
         {
             case 1:     // Write 
-                Prompt prompt = new Prompt();
-                prompt.GetUserPromptsFilePaths(user._currentUserPromptsFilePath);
+                Console.WriteLine("Let's write!\n");
+
+                Prompt currentPrompt = new Prompt();
+                currentPrompt.GetUserPromptsFilePaths(user._currentUserPromptsFilePath);
+
+                // Entry currentEntry = new Entry(Prompt._newPrompt);
 
 
 
@@ -73,23 +207,8 @@ class Program
 
                 break;
         }
-
-
-
-        
-
-            
-            
-            
-        
-
-
-
-
-
-
-
-
-
     }
 }
+
+
+*/
