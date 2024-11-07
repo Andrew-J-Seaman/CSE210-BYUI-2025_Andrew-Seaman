@@ -3,13 +3,13 @@ using System.Security.Cryptography;
 public class Prompt
 {
     private List<string> _prompts;
-    private string filePath = "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/prove/Develop02/Prompts.txt";
+    private string filePath = "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/prove/Develop02/DataFiles/Prompts/Prompts.txt";
 
     // Populate prompts list (via file or hard coded)
     public string PromptGenerator()
     {
         //List of prompts
-        _prompts = new List<string>();
+        _prompts = [];
 
         Array lines = File.ReadAllLines(filePath);
         foreach (string line in lines)
@@ -47,34 +47,7 @@ public class Prompt
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+/* ORIGINAL CODE: Prompt.cs
 
 
 // AUTHOR: Andrew Seaman

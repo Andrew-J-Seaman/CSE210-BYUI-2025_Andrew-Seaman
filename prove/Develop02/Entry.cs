@@ -6,7 +6,7 @@ public class Entry
 
     public void DisplayEntry()
     {
-        Console.WriteLine($"DATE: {_entryDate}  -  PROMPT: {_randomPrompt}\nRESPONSE: {_response}");
+        Console.WriteLine($"DATE: {_entryDate}  -  PROMPT: {_randomPrompt}\nRESPONSE: {_response}\n");
     }
 }
 
@@ -47,16 +47,7 @@ public class Entry
 
 
 
-
-
-
-
-
-
-
-
-
-/*
+/* ORIGINAL CODE: Entry.cs
 
 
 // AUTHOR: Andrew Seaman

@@ -6,6 +6,7 @@ using System;
 
 public class Journal{
     private List<Entry> _entries;
+    private List<Entry> _newEntries;
     private string _journalFilePath;
 
     Delay delay = new Delay();
@@ -16,6 +17,7 @@ public class Journal{
     //      2) Display
     //      3) Write
     //      4) Save
+    //      5) Quit
 //=========================================
 
 
@@ -47,7 +49,7 @@ public class Journal{
                 // Add the Entry object to the _entries list
                 if (_entries == null)
                 {
-                    _entries = new List<Entry>();
+                    _entries = [];
                 }
                 _entries.Add(entry);
             }
@@ -61,14 +63,15 @@ public class Journal{
     // 2) Display
     public void DisplayEntries(){
         if (_entries == null){
+            // Show error message with delay
             delay.DelayDisplayEntriesError();
         }
         else{
+            // Show progress message with delay
+            delay.DelayDisplayEntriesProgress();
+            // Print out entries
             foreach(Entry entry in _entries){
-                // Display all parts of each entry on a new line >>> Go into entry and finish writing this function.
-                delay.DelayDisplayEntriesProgress();
                 entry.DisplayEntry();
-                delay.DelayDisplayEntriesSuccess();
             }
         }
     }
@@ -91,43 +94,75 @@ public class Journal{
 
         // Display Prompt
         delay.DelayWriteEntryPromptProgressSuccess();
-        Console.WriteLine($"\nPrompt: {newEntry._randomPrompt}");
+        Console.WriteLine($"Prompt: {newEntry._randomPrompt}");
 
         // Get user response. Save property
         Console.Write("> Response: ");
         newEntry._response = Console.ReadLine();
 
-        // Add newEntry to `_entries`
-        if (_entries == null){
-            _entries = new List<Entry>();
+        // Add newEntry to `_unsavedEntries`
+        if (_newEntries == null){
+            _newEntries = new List<Entry> {newEntry};
         }
-        _entries.Add(newEntry); 
+        else{
+            _newEntries.Add(newEntry); 
+        }
+
+        // Show success message with delay
         delay.DelayWriteEntrySuccess();
     }
 
     // 4) Save
     public void SaveEntries(){
-        // Greeting message
-        
-
         // Create a list to store all lines
-        List<string> lines = new List<string>();
+        List<string> lines = [];
 
-        // Loop through each entry and format it as a line of text
-        foreach (Entry existingEntry in _entries){
-            string content = $"{existingEntry._entryDate} ~ {existingEntry._randomPrompt} ~ {existingEntry._response}";
-            lines.Add(content);
+        // Check if there are new entries to save
+        if (_newEntries != null){
+            // Get file name if undefined
+            if (_journalFilePath == null){
+                // Receive file name and define property
+                Console.Write($"> Enter file name: ");
+                string journalFileName = Console.ReadLine();
+                _journalFilePath = journalFileName;
+            }
+
+            // Check if list `entries` is empty
+            if  (_entries != null){
+                // Loop through each existing entry and format it as a line of text separated by '~'
+                foreach (Entry existingEntries in _entries){
+                    string content = $"{existingEntries._entryDate} ~ {existingEntries._randomPrompt} ~ {existingEntries._response}";
+                    lines.Add(content);
+                }
+            }
+            else{
+                string [] existingEntries = File.ReadAllLines(_journalFilePath);
+                foreach (string line in existingEntries){
+                    lines.Add(line);
+                }
+            }
+
+            // Loop through each new entry and format it as a line of text separated by '~'
+            foreach (Entry newEntries in _newEntries){
+                string content = $"{newEntries._entryDate} ~ {newEntries._randomPrompt} ~ {newEntries._response}";
+                lines.Add(content);
+            }
         }
 
-        // Get file name if undefined
-        if (_journalFilePath == null){
-            Console.Write($"> Enter file name: ");
-            string journalFileName = Console.ReadLine();
-            _journalFilePath = journalFileName;
+        // Check if there are any lines to save.
+        if (lines.Count == 0){
+            // Show error message with delay
+            delay.DelaySaveEntriesError();
         }
-        // Write all lines to the file at once
-        File.WriteAllLines(_journalFilePath, lines);
-        delay.DelaySaveEntriesProgessSuccess();
+        else{
+            // Write all lines to the file at once
+            File.WriteAllLines(_journalFilePath, lines);
+            delay.DelaySaveEntriesProgessSuccess();
+        }
+    }
+
+    public void QuitJournal(){
+        delay.DelayQuitJournalProgressSuccess();
     }
 }
 
@@ -162,23 +197,7 @@ public class Journal{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+/* ORIGINAL CODE: Journal.cs
 
 
 // AUTHOR: Andrew Seaman

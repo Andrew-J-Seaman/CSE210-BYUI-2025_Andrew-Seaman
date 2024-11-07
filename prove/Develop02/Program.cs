@@ -7,6 +7,7 @@ class Program{
     static void Main(string[] args)
     {
         // Program greeting
+        Console.Clear();
         Console.WriteLine("\nLet's journal!");
 
         // New journal object
@@ -16,30 +17,29 @@ class Program{
         do 
         {
             Menu mainMenu = new Menu();
-            mainMenu.DisplayMenu();
-            int choice = mainMenu._choice;
+            mainMenu.DisplayMenuSelection();
 
-            switch (choice)
+            switch (mainMenu._choice)
             {
-                case 1:     // Load journal
+                case 1:     // Load
                     workingJournal.LoadEntries();
                     break;
 
-                case 2:     // Display journal
+                case 2:     // Display
                     workingJournal.DisplayEntries();
                     break;
 
-                case 3:     // Write entry
+                case 3:     // Write
                     workingJournal.WriteEntry();                
                     break;
 
-                case 4:     // Save journal
+                case 4:     // Save
                     workingJournal.SaveEntries();
                     break;
 
                 case 5:     // Quit
-                    Console.WriteLine("Exiting program.");
                     run = false;
+                    workingJournal.QuitJournal();
                     break;
                 
                 default:
@@ -56,11 +56,6 @@ class Program{
 
 
 
-/* TO DO:
-
-    1. Build out menu
-    2. Build out methods in journal
-    3. Build out promptGenerator method in Prompt
 
 
 
@@ -102,11 +97,7 @@ class Program{
 
 
 
-
-
-
-
-/*
+/* ORIGINAL CODE: Program.cs
 
 
 // AUTHOR: Andrew Seaman

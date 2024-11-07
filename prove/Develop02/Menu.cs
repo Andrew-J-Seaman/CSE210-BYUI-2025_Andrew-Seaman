@@ -11,6 +11,9 @@ public class Menu
     public int    _choice;
 
 
+    Delay delay = new Delay();
+
+
     public Menu()
     {
         _option1 = "Load";
@@ -30,33 +33,37 @@ public class Menu
     }
 
     // Display menu
-    public void DisplayMenu()
+    public void DisplayMenuSelection()
     {
-        // Print menu options (1-5)
-        Console.WriteLine();
-        foreach (KeyValuePair<int,string> kvp in _mainMenu)
+        int choice;
+        bool isValidChoice = false;
+
+        do
         {
-            Console.WriteLine($"{kvp.Key}. {kvp.Value}");
-        }
-        // Request menu selection (1-5)
-        Console.Write("> Selection (1-5): ");
-        
-        bool isInt = true;
-        do {
-            if (int.TryParse(Console.ReadLine().Trim(), out int validType)){
-                _choice = validType;
-                isInt = true;
+            Console.WriteLine();
+
+            // Print menu options (1-5)
+            foreach (KeyValuePair<int, string> kvp in _mainMenu)
+            {
+                Console.WriteLine($"{kvp.Key}. {kvp.Value}");
             }
-            else{
-                isInt = false;
+
+            // Request menu selection (1-5)
+            Console.Write("> Selection (1-5): ");
+
+            // Try to parse the input and check if it’s within the valid range
+            if (int.TryParse(Console.ReadLine().Trim(), out choice) && choice >= 1 && choice <= 5)
+            {
+                _choice = choice; // Assign valid choice to the class variable
+                isValidChoice = true; // Exit loop
             }
-        } while (isInt != false);
+            else
+            {
+                delay.DelayDisplayMenuSelectionError();
+            }
+
+        } while (!isValidChoice);
     }
-
-    // Select menu option
-
-
-
 }
 
 
@@ -90,20 +97,7 @@ public class Menu
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+/* ORIGINAL CODE: Menu.cs
 
 
 // AUTHOR: Andrew Seaman
