@@ -1,7 +1,63 @@
+using System.Xml.Serialization;
+
+public class Menu
+{
+    private Dictionary<int, string> _mainMenu;
+    private string _option1;
+    private string _option2;
+    private string _option3;
+    private string _option4;
+    private string _option5;
+    public int    _choice;
+
+
+    public Menu()
+    {
+        _option1 = "Load";
+        _option2 = "Display";
+        _option3 = "Write";
+        _option4 = "Save";
+        _option5 = "Quit";
+
+        _mainMenu = new Dictionary<int, string>()
+        {
+            {1, _option1},
+            {2, _option2},
+            {3, _option3},
+            {4, _option4},
+            {5, _option5}
+        };
+    }
+
+    // Display menu
+    public void DisplayMenu()
+    {
+        // Print menu options (1-5)
+        Console.WriteLine();
+        foreach (KeyValuePair<int,string> kvp in _mainMenu)
+        {
+            Console.WriteLine($"{kvp.Key}. {kvp.Value}");
+        }
+        // Request menu selection (1-5)
+        Console.Write("> Selection (1-5): ");
+        
+        bool isInt = true;
+        do {
+            if (int.TryParse(Console.ReadLine().Trim(), out int validType)){
+                _choice = validType;
+                isInt = true;
+            }
+            else{
+                isInt = false;
+            }
+        } while (isInt != false);
+    }
+
+    // Select menu option
 
 
 
-
+}
 
 
 

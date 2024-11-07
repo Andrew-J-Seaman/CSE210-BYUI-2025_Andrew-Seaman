@@ -1,20 +1,13 @@
 public class Entry
 {
-    private string _date;
-    private string _prompt;
-    private string _response;
+    public string _entryDate;
+    public string _randomPrompt;
+    public string _response;
 
     public void DisplayEntry()
     {
-        Console.WriteLine($"DATE: {_date}  -  PROMPT: {_prompt}\nRESPONSE: {_response}");
+        Console.WriteLine($"DATE: {_entryDate}  -  PROMPT: {_randomPrompt}\nRESPONSE: {_response}");
     }
-
-
-
-
-
-
-
 }
 
 

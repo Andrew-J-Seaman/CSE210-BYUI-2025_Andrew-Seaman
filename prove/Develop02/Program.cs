@@ -6,43 +6,34 @@ class Program{
 
     static void Main(string[] args)
     {
+        // Program greeting
+        Console.WriteLine("\nLet's journal!");
 
-        // Greeting message
-
-
-        // Menu (Load, display, write, save, quit)
-
-
+        // New journal object
         Journal workingJournal = new Journal();
-
-            //menu selection goes here
-
-            //switch-case goes here
-            
-                //functions from journal go in each case
 
         bool run = true;
         do 
         {
-
-            Console.Write("Select an option (1-5): ");
-            int choice = int.Parse(Console.ReadLine());
+            Menu mainMenu = new Menu();
+            mainMenu.DisplayMenu();
+            int choice = mainMenu._choice;
 
             switch (choice)
             {
-                case 1:     // Load
+                case 1:     // Load journal
                     workingJournal.LoadEntries();
                     break;
 
-                case 2:     // Display
+                case 2:     // Display journal
                     workingJournal.DisplayEntries();
                     break;
 
-                case 3:     // Write
+                case 3:     // Write entry
                     workingJournal.WriteEntry();                
                     break;
 
-                case 4:     // Save
+                case 4:     // Save journal
                     workingJournal.SaveEntries();
                     break;
 
@@ -52,22 +43,12 @@ class Program{
                     break;
                 
                 default:
-                    Console.WriteLine("Invalid choice. Please try again.");
+                    Console.Clear();
+                    Console.WriteLine("\nInvalid choice. Please try again.");
+
                     break;
             }
         } while (run != false);
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
 
