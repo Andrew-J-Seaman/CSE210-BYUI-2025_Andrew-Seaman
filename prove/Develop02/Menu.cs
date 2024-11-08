@@ -30,7 +30,7 @@ public class Menu
             {4, _option4},
             {5, _option5}
         };
-    }
+    } 
 
     // Display menu
     public void DisplayMenuSelection()

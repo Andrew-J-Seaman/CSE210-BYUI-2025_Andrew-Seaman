@@ -131,7 +131,7 @@ public class Journal{
             if  (_entries != null){
                 // Loop through each existing entry and format it as a line of text separated by '~'
                 foreach (Entry existingEntries in _entries){
-                    string content = $"{existingEntries._entryDate} ~ {existingEntries._randomPrompt} ~ {existingEntries._response}";
+                    string content = $"{existingEntries._entryDate} ~ {existingEntries. _randomPrompt} ~ {existingEntries._response}";
                     lines.Add(content);
                 }
             }

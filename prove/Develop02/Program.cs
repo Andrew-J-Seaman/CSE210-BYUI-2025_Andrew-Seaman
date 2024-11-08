@@ -28,7 +28,7 @@ class Program{
                 case 2:     // Display
                     workingJournal.DisplayEntries();
                     break;
-
+ 
                 case 3:     // Write
                     workingJournal.WriteEntry();                
                     break;

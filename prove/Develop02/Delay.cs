@@ -19,22 +19,22 @@ public class Delay
 //==================================
     
     // Short or Long delay
-    public void Running(int length)
-    {
+    private void Running(int length)
+    { 
         // Run delay in milliseconds
         Thread.Sleep(length);
     }
 
     // Clear
-    public void Clear()
+    private void Clear()
     {
         Console.Clear();
     }
 
     // Short delay w/ clearing
-    public void ClearDelay(int length)
+    private void ClearDelay(int length)
     {
-        Thread.Sleep(length);
+        Running(length);
         Clear();
     }
 
