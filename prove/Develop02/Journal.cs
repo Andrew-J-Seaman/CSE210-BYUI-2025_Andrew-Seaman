@@ -11,6 +11,10 @@ public class Journal{
 
     Delay delay = new Delay();
 
+    private string _message1;
+    private string _message2;
+    private string _message3;
+
 //=========================================
     // MENU options (relevant to JOURNAL):
     //      1) Load
@@ -57,18 +61,29 @@ public class Journal{
                 Console.WriteLine($"Invalid line format: {line}");
             }
         }
-        delay.DelayLoadEntriesProgressSuccess();
+
+        _message1 = "Loading...";
+        _message2 = "Done!";
+        _message3 = "Select (2) to display the journal or (3) to write a new entry.";
+
+        delay.Display3(_message1, _message2, _message3);
     }
 
     // 2) Display
     public void DisplayEntries(){
         if (_entries == null){
             // Show error message with delay
-            delay.DelayDisplayEntriesError();
+            _message1 = "No entries found.";
+            _message2 = "Select (1) to load a journal.";
+            delay.DisplayError(_message1, _message2);
+            
         }
         else{
             // Show progress message with delay
-            delay.DelayDisplayEntriesProgress();
+            _message1 = "Displaying...";
+            _message2 ="Done!";
+            delay.Display2(_message1, _message2);
+
             // Print out entries
             foreach(Entry entry in _entries){
                 entry.DisplayEntry();
@@ -93,7 +108,10 @@ public class Journal{
         newEntry._randomPrompt = prompt.PromptGenerator();
 
         // Display Prompt
-        delay.DelayWriteEntryPromptProgressSuccess();
+        _message1 = "Generating prompt...";
+        _message2 ="Done!";
+        delay.Display2(_message1, _message2);
+        
         Console.WriteLine($"Prompt: {newEntry._randomPrompt}");
 
         // Get user response. Save property
@@ -109,7 +127,10 @@ public class Journal{
         }
 
         // Show success message with delay
-        delay.DelayWriteEntrySuccess();
+        _message1 = "Logging (unsaved)...";
+        _message2 = "Done!";
+        _message3 = "Select (4) to save new entries.";
+        delay.Display3(_message1, _message2, _message3);
     }
 
     // 4) Save
@@ -152,17 +173,19 @@ public class Journal{
         // Check if there are any lines to save.
         if (lines.Count == 0){
             // Show error message with delay
-            delay.DelaySaveEntriesError();
+            _message1 = "Error: There are no entries to save.";
+            _message2 = "Select (3) to write a new entry.";
+            delay.DisplayError(_message1, _message2);
         }
         else{
             // Write all lines to the file at once
             File.WriteAllLines(_journalFilePath, lines);
-            delay.DelaySaveEntriesProgessSuccess();
+            
+            // Print saving message
+            _message1 = "Saving...";
+            _message2 ="Done!";
+            delay.Display2(_message1, _message2);
         }
-    }
-
-    public void QuitJournal(){
-        delay.DelayQuitJournalProgressSuccess();
     }
 }
 

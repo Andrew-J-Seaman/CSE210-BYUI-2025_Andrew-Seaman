@@ -6,20 +6,22 @@ class Program{
 
     static void Main(string[] args)
     {
-        // Program greeting
-        Console.Clear();
-        Console.WriteLine("\nLet's journal!");
-
-        // New journal object
+        // New Journal object
         Journal workingJournal = new Journal();
+
+        // Mew Menu object
+        Menu menu = new Menu();
+
+        // Greeting message
+        menu.SetGreeting();
+        menu.DisplayGreeting();
 
         bool run = true;
         do 
         {
-            Menu mainMenu = new Menu();
-            mainMenu.DisplayMenuSelection();
+            menu.DisplayMenuSelection();
 
-            switch (mainMenu._choice)
+            switch (menu._choice)
             {
                 case 1:     // Load
                     workingJournal.LoadEntries();
@@ -39,7 +41,8 @@ class Program{
 
                 case 5:     // Quit
                     run = false;
-                    workingJournal.QuitJournal();
+                    menu.SetDeparting();
+                    menu.DisplayDeparting();
                     break;
                 
                 default:

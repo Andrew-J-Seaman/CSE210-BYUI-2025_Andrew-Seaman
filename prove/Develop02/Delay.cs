@@ -12,149 +12,76 @@ public class Delay
     }
 
 //==================================
-    // DELAY methods (reused): 
-    //      1) Running
-    //      2) ClearDelay
-    //      3) Clear
+    // Private methods: 
+    //      1) Wait
+    //      2) Clear
+    //      3) Write
+    //      4) Blank Line
 //==================================
     
-    // Short or Long delay
-    private void Running(int length)
+ // 1) Wait
+    private void Wait(int length)
     { 
-        // Run delay in milliseconds
+        // Wait delay in milliseconds
         Thread.Sleep(length);
     }
-
-    // Clear
+// 2) Clear
     private void Clear()
     {
         Console.Clear();
     }
-
-    // Short delay w/ clearing
-    private void ClearDelay(int length)
-    {
-        Running(length);
-        Clear();
+// 3) Write
+    private void Write(string text){
+        Console.WriteLine($"{text}");
     }
-
-
+// 4) Blank line
+    private void NewLine(){
+        Console.WriteLine("\n");
+    }
 
 
 //==================================
-    // MENU methods: 
-    //      1) DisplayMenuSelection
-    //      2) 
+    // Public methods: 
+    //      1) Display 1
+    //      2) Display 2
+    //      3) Display 3
+    //      4) Display Error
 //==================================
-
-    // 1) DisplayMenuSelection
-    public void DelayDisplayMenuSelectionError()
-    {
-        // Show error message with delay
+ 
+// 1) Display 1
+    public void Display1(string message1){
         Clear();
-        Console.WriteLine("Error: Please enter a number between 1 and 5.");
-        Running(_short);
-    } 
-
-//==================================
-    // JOURNAL methods: 
-    //      1) LoadEntries
-    //      2) DisplayEntries
-    //      3) WriteEntry
-    //      4) SaveEntries
-    //      5) QuitJournal
-//==================================
-
-    // 1) LoadEntries
-    public void DelayLoadEntriesProgressSuccess(){
-        // Show in progess message with delay
-        Clear();
-        Console.Write("Loading...");
-        Running(_long);
-
-        // Show success message with delay and console clearing
-        Console.WriteLine("Done!");
-        ClearDelay(_short);
-    } 
-
-
-    // 2) DisplayEntries
-    public void DelayDisplayEntriesError(){
-        // Show error message with delay
-        Clear();
-        Console.WriteLine("No entries found.");
-        Running(_long);
-        Clear();
-
-        // Prompt user to load a journal
-        Console.WriteLine("Select (1) to load a journal.");
-        Running(_short);
+        Write(message1);
+        NewLine();
+        Wait(_short);
     }
-    public void DelayDisplayEntriesProgress(){
-        // Show in progess message with delay
+// 2) Display 2
+    public void Display2(string message1, string message2){
         Clear();
-        Console.Write("Displaying...");
-        Running(_long);
-        // Show success message with delay and NO console clearing
-        Console.WriteLine("Done!");
-        Running(_short);
+        Console.Write($"{message1}");
+        Wait(_long);
+        Console.Write($"{message2}");
+        Wait(_short);
         Clear();
     }
-
-    // 3) WriteEntry
-    public void DelayWriteEntryPromptProgressSuccess(){
-        // Show in progess message with delay
+// 3) Display 3
+    public void Display3(string message1, string message2, string message3){
         Clear();
-        Console.Write("Generating prompt...");
-        Running(_long);
-
-        // Show success message with delay and console clearing
-        Console.WriteLine("Done!");
-        ClearDelay(_short);
+        Console.Write($"{message1}");
+        Wait(_long);
+        Console.WriteLine($"{message2}");
+        Wait(_short);
+        Clear();
+        Console.WriteLine($"{message3}");
+        Wait(_short);
+        Console.WriteLine("\n");
     }
-    public void DelayWriteEntrySuccess(){
-        // Show success message with delay and console clearing
+// 4) Display Error
+    public void DisplayError(string message1, string message2){
         Clear();
-        Console.WriteLine("Entry logged (unsaved).");
-        ClearDelay(_long);
-
-        Console.WriteLine("Select (4) to save new entries.");
-        Running(_short);
-    }
-    
-    // 4) Save Entries
-    public void DelaySaveEntriesError(){
-        // Show error message with delay
+        Console.Write($"{message1}");
+        Wait(_long);
         Clear();
-        Console.WriteLine("There are no entries to save.");
-        ClearDelay(_short);
-        
-        // Prompt user to write a new entry
-        Console.Write("Select (3) to write a new entry.\n");
-        Running(_short);
-    }
-    public void DelaySaveEntriesProgessSuccess(){
-        // Show in progess message with delay
-        Clear();
-        Console.Write("Saving...");
-        Running(_long);
-
-        // Show success message with delay and console clearing
-        Console.WriteLine("Done!");
-        ClearDelay(_short);
-    }
-
-    // 5) Quit Journal
-    public void DelayQuitJournalProgressSuccess(){
-        // Show in progess message with delay
-        Clear();
-        Console.Write("Quitting program...");
-        Running(_long);
-        Console.WriteLine("Done!");
-        Running(_short);
-        Clear();
-
-        // Show success message with delay
-        Console.WriteLine("See you tomorow!");
+        Display1(message2);
     }
 }

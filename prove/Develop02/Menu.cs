@@ -10,6 +10,10 @@ public class Menu
     private string _option5;
     public int    _choice;
 
+    private string _message1;
+    private string _message2;
+    private string _message3;
+
 
     Delay delay = new Delay();
 
@@ -40,8 +44,6 @@ public class Menu
 
         do
         {
-            Console.WriteLine();
-
             // Print menu options (1-5)
             foreach (KeyValuePair<int, string> kvp in _mainMenu)
             {
@@ -59,10 +61,36 @@ public class Menu
             }
             else
             {
-                delay.DelayDisplayMenuSelectionError();
+                // Error
+                _message1 = "Error: invalid entry";
+                _message2 = "Please enter a number (1-5).";
+                delay.DisplayError(_message1, _message2);
+                
             }
 
         } while (!isValidChoice);
+    }
+
+    // 2) Greeting message
+    // Set
+    public void SetGreeting(){
+        _message1 = "Welcome! Let's Journal!";
+    }
+    // Display
+    public void DisplayGreeting(){
+        delay.Display1(_message1);
+    }
+
+    // 3) Departing message
+    // Set
+    public void SetDeparting(){
+        _message1 = "Quitting...";
+        _message2 = "Done!";
+        _message3 = "See you tomorrow!";
+    }
+    // Display
+    public void DisplayDeparting(){
+        delay.Display3(_message1, _message2, _message3);
     }
 }
 
