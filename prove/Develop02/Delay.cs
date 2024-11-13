@@ -32,7 +32,7 @@ public class Delay
     }
 // 3) Write
     private void Write(string text){
-        Console.WriteLine($"{text}");
+        Console.Write($"{text}");
     }
 // 4) Blank line
     private void NewLine(){
@@ -49,39 +49,38 @@ public class Delay
 //==================================
  
 // 1) Display 1
-    public void Display1(string message1){
+    public void Display1xxxClxWr1xNlxWaS(string message1){
         Clear();
         Write(message1);
-        NewLine();
         Wait(_short);
+        NewLine();
     }
 // 2) Display 2
-    public void Display2(string message1, string message2){
+    public void Display2xxxClxWr1xWaLxWr2xWaSxCl(string message1, string message2){
         Clear();
-        Console.Write($"{message1}");
+        Write($"{message1}");
         Wait(_long);
-        Console.Write($"{message2}");
+        Write($"{message2}");
         Wait(_short);
         Clear();
     }
 // 3) Display 3
-    public void Display3(string message1, string message2, string message3){
+    public void Display3xxxClxWr1xWaLxWr2xWaSxClxWr3xWaSxNl(string message1, string message2, string message3){
         Clear();
-        Console.Write($"{message1}");
+        Write($"{message1}");
         Wait(_long);
-        Console.WriteLine($"{message2}");
+        Write($"{message2}");
         Wait(_short);
         Clear();
-        Console.WriteLine($"{message3}");
+        Write($"{message3}");
         Wait(_short);
-        Console.WriteLine("\n");
+        NewLine();
     }
 // 4) Display Error
-    public void DisplayError(string message1, string message2){
+    public void DisplayErr2xxxClxWrxWaLxD1xClxWr1xNlxWaS(string message1, string message2){
         Clear();
-        Console.Write($"{message1}");
+        Write($"{message1}");
         Wait(_long);
-        Clear();
-        Display1(message2);
+        Display1xxxClxWr1xNlxWaS(message2);
     }
 }

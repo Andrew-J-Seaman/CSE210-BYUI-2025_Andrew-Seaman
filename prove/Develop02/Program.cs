@@ -19,7 +19,7 @@ class Program{
         bool run = true;
         do 
         {
-            menu.DisplayMenuSelection();
+            menu.DisplayMenuxSelection();
 
             switch (menu._choice)
             {

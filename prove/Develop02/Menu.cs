@@ -14,9 +14,8 @@ public class Menu
     private string _message2;
     private string _message3;
 
-
+    // New Delay object
     Delay delay = new Delay();
-
 
     public Menu()
     {
@@ -37,7 +36,7 @@ public class Menu
     } 
 
     // Display menu
-    public void DisplayMenuSelection()
+    public void DisplayMenuxSelection()
     {
         int choice;
         bool isValidChoice = false;
@@ -61,10 +60,11 @@ public class Menu
             }
             else
             {
-                // Error
-                _message1 = "Error: invalid entry";
-                _message2 = "Please enter a number (1-5).";
-                delay.DisplayError(_message1, _message2);
+                // Error (invalid entry)
+                _message1 = "Error: invalid entry.";
+                // Suggest next action
+                _message2 = "Please select a number (1-5).";
+                delay.Display2xxxClxWr1xWaLxWr2xWaSxCl(_message1, _message2);
                 
             }
 
@@ -78,19 +78,21 @@ public class Menu
     }
     // Display
     public void DisplayGreeting(){
-        delay.Display1(_message1);
+        delay.Display1xxxClxWr1xNlxWaS(_message1);
     }
 
     // 3) Departing message
     // Set
     public void SetDeparting(){
+        // Success message
         _message1 = "Quitting...";
         _message2 = "Done!";
+        // Departing message
         _message3 = "See you tomorrow!";
     }
     // Display
     public void DisplayDeparting(){
-        delay.Display3(_message1, _message2, _message3);
+        delay.Display3xxxClxWr1xWaLxWr2xWaSxClxWr3xWaSxNl(_message1, _message2, _message3);
     }
 }
 
