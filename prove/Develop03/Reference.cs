@@ -3,6 +3,9 @@ using System.Collections.Concurrent;
 
 public class Reference
 {
+
+
+    
 //================================
 // ATTRIBUTES
 //      1) - _book : string
@@ -19,6 +22,8 @@ public class Reference
     private string _verse1;
 // 4)
     private string _verseEnd;
+
+
 
 //================================
 // CONSTRUCTOR
@@ -43,6 +48,8 @@ public class Reference
         _verse1 = verse1;
         _verseEnd = verseEnd;
     }
+
+
 
 //================================
 // METHODS

@@ -49,14 +49,14 @@ public class Delay
 //==================================
  
 // 1) Display 1
-    public void Display1xxxClxWr1xNlxWaS(string message1){
+    public void Display1(string message1){
         Clear();
         Write(message1);
         Wait(_short);
         NewLine();
     }
 // 2) Display 2
-    public void Display2xxxClxWr1xWaLxWr2xWaSxCl(string message1, string message2){
+    public void Display2(string message1, string message2){
         Clear();
         Write($"{message1}");
         Wait(_long);
@@ -65,7 +65,7 @@ public class Delay
         Clear();
     }
 // 3) Display 3
-    public void Display3xxxClxWr1xWaLxWr2xWaSxClxWr3xWaSxNl(string message1, string message2, string message3){
+    public void Display3(string message1, string message2, string message3){
         Clear();
         Write($"{message1}");
         Wait(_long);
@@ -77,10 +77,10 @@ public class Delay
         NewLine();
     }
 // 4) Display Error
-    public void DisplayErr2xxxClxWrxWaLxD1xClxWr1xNlxWaS(string message1, string message2){
+    public void DisplayErr2(string message1, string message2){
         Clear();
         Write($"{message1}");
         Wait(_long);
-        Display1xxxClxWr1xNlxWaS(message2);
+        Display1(message2);
     }
 }

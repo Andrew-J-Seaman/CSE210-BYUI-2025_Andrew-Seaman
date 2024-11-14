@@ -58,7 +58,7 @@ public class Journal{
                     _entries = [];
                 }
                 _entries.Add(entry);
-            }
+            } 
             else{
                 Console.WriteLine($"Invalid line format: {line}");
             }
@@ -76,7 +76,7 @@ public class Journal{
         // Suggest next action
         _message3 = "Select (2) to display the journal or (3) to write a new entry.";
 
-        delay.Display3xxxClxWr1xWaLxWr2xWaSxClxWr3xWaSxNl(_message1, _message2, _message3);
+        delay.Display3(_message1, _message2, _message3);
         // Set bool to False
         _reloading = false;
     }
@@ -88,14 +88,14 @@ public class Journal{
             _message1 = "No entries found.";
             // Suggest next action
             _message2 = "Select (1) to load a journal.";
-            delay.DisplayErr2xxxClxWrxWaLxD1xClxWr1xNlxWaS(_message1, _message2);
+            delay.DisplayErr2(_message1, _message2);
             
         }
         else{
             // Progress message (displaying)
             _message1 = "Displaying...";
             _message2 ="Done!";
-            delay.Display2xxxClxWr1xWaLxWr2xWaSxCl(_message1, _message2);
+            delay.Display2(_message1, _message2);
 
             // Print out entries
             foreach(Entry entry in _entries){
@@ -120,10 +120,10 @@ public class Journal{
         // Progress/Success message (generating prompt)
         _message1 = "Generating prompt...";
         _message2 ="Done!";
-        delay.Display2xxxClxWr1xWaLxWr2xWaSxCl(_message1, _message2);
+        delay.Display2(_message1, _message2);
         // Greeting message
         _message1 = "Let's write! Press (return/enter) key when finished.";
-        delay.Display1xxxClxWr1xNlxWaS(_message1);
+        delay.Display1(_message1);
         
         // Display random prompt
         Console.WriteLine($"Prompt: {newEntry._randomPrompt}");
@@ -145,7 +145,7 @@ public class Journal{
         _message2 = "Done!";
         // Suggest next action
         _message3 = "Select (4) to save logged entry.";
-        delay.Display3xxxClxWr1xWaLxWr2xWaSxClxWr3xWaSxNl(_message1, _message2, _message3);
+        delay.Display3(_message1, _message2, _message3);
     }
 
     // 4) Save
@@ -191,7 +191,7 @@ public class Journal{
             _message1 = "Error: There are no entries to save.";
             // Suggest next action
             _message2 = "Select (3) to write a new entry.";
-            delay.DisplayErr2xxxClxWrxWaLxD1xClxWr1xNlxWaS(_message1, _message2);
+            delay.DisplayErr2(_message1, _message2);
         }
         else{
             // Write all lines to the file at once (save funciton)
@@ -199,7 +199,7 @@ public class Journal{
             // Progress/Success message (saving)
             _message1 = "Saving...";
             _message2 ="Done!";
-            delay.Display2xxxClxWr1xWaLxWr2xWaSxCl(_message1, _message2);
+            delay.Display2(_message1, _message2);
 
             // Set bool to True
             _reloading = true;

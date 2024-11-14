@@ -64,7 +64,7 @@ public class Menu
                 _message1 = "Error: invalid entry.";
                 // Suggest next action
                 _message2 = "Please select a number (1-5).";
-                delay.Display2xxxClxWr1xWaLxWr2xWaSxCl(_message1, _message2);
+                delay.Display2(_message1, _message2);
                 
             }
 
@@ -78,7 +78,7 @@ public class Menu
     }
     // Display
     public void DisplayGreeting(){
-        delay.Display1xxxClxWr1xNlxWaS(_message1);
+        delay.Display1(_message1);
     }
 
     // 3) Departing message
@@ -92,7 +92,7 @@ public class Menu
     }
     // Display
     public void DisplayDeparting(){
-        delay.Display3xxxClxWr1xWaLxWr2xWaSxClxWr3xWaSxNl(_message1, _message2, _message3);
+        delay.Display3(_message1, _message2, _message3);
     }
 }
 
