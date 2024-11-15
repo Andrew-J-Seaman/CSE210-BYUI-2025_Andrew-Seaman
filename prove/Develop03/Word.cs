@@ -33,9 +33,9 @@ public class Word
     
 //==============================
 // METHODS
-//      1) + GetIsHidden : bool
-//      2) + Hide()
-//      3) + DisplayWord()
+//      1) + GetIsHidden : bool     Complete: YES
+//      2) + Hide()                 Complete: NO
+//      3) + DisplayWord()          Complete: NO
 //——————————————————————————————
 
 // 1)
@@ -45,12 +45,13 @@ public class Word
 
 // 2)
     public void Hide(){
-        
+        _text = "___";
+        _isHidden = true;
     }
 
 // 3)
-    public void DisplayWord(){
-        
+    public string GetText(){
+        return _text;
     }
 
 

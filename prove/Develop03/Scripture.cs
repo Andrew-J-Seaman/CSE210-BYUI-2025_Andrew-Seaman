@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 
 public class Scripture
@@ -7,15 +8,12 @@ public class Scripture
 // ATTRIBUTES
 //      1) - _reference : Reference
 //      2) - _words : List<Word>
-//      3) - _isAllHidden : bool
 //===========================================
 
 // 1)
     private Reference _reference;
 // 2)
-    private List<Word> _words;
-// 3)
-    private bool _isAllHidden;
+    private List<Word> _words = new List<Word>();
 
 //===========================================
 // CONSTRUCTOR                               
@@ -50,33 +48,39 @@ public class Scripture
     private int RandNumGen(){
         // Generate random number
         Random random = new Random();
-        int randomNum = random.Next();
+        int randomNum = random.Next(0, _words.Count());
         
         return randomNum;
     }
 
 // 3)
     public void HideWords(){
-
+        int i = 0;
+        while (i != 3) {
+            int randomNum = RandNumGen();
+            if(_words[randomNum].GetIsHidden() == false){
+                _words[randomNum].Hide();
+                ++i;
+            }
+        }
     }
 
 // 4)
     public void DisplayScripture(){
+        foreach (Word word in _words){
+            
+            Console.Write($"{word.GetText()} ");
+        }
         
     }
 
 // 5)
     public bool IsAllHidden(){
-        _isAllHidden = false;
-
         foreach (Word word in _words){
-            if (word.GetIsHidden() != true){
-                _isAllHidden = false;
+            if (word.GetIsHidden() == false){
+                return false;
             }
         }
-        
-        return _isAllHidden;
+        return true;
     }
-
-
 }

@@ -53,11 +53,11 @@ public class Reference
 
 //================================
 // METHODS
-//      1) + DisplayRef()
+//      1) + DisplayRef()           Complete: YES
 //————————————————————————————————
 
 // 1)
     public void DisplayRef(){
-
+        Console.WriteLine($"{_book} {_chapter}:{_verse1}-{_verseEnd}");
     }
 }
