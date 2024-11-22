@@ -19,7 +19,6 @@ public class Scripture
 // CONSTRUCTOR                               
 //      1) + Scripture(reference : Reference    Complete: YES
 //===========================================
-
 // 1)
     public Scripture(Reference reference)
     {
@@ -30,8 +29,8 @@ public class Scripture
 // METHODS
 //      1) + SetWords()                         Complete: YES
 //      2) - RandNumGen() : int                 Complete: YES
-//      3) + HideWords()                        Complete: NO
-//      4) + DisplayScripture()                 Complete: NO
+//      3) + HideWords()                        Complete: YES
+//      4) + DisplayScripture()                 Complete: YES
 //      5) + IsAllHidden() : bool               Complete: YES
 //===========================================
 

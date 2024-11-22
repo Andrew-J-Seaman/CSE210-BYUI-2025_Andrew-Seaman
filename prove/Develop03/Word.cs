@@ -1,4 +1,5 @@
 using System;
+using System.Security.AccessControl;
 
 public class Word
 {
@@ -34,8 +35,8 @@ public class Word
 //==============================
 // METHODS
 //      1) + GetIsHidden : bool     Complete: YES
-//      2) + Hide()                 Complete: NO
-//      3) + DisplayWord()          Complete: NO
+//      2) + Hide()                 Complete: YES
+//      3) + DisplayWord()          Complete: YES
 //——————————————————————————————
 
 // 1)
@@ -45,7 +46,14 @@ public class Word
 
 // 2)
     public void Hide(){
-        _text = "___";
+        int numOfCharacters = 1;
+        string isPeriod = _text.Substring(_text.Length - numOfCharacters);
+        if (isPeriod == "."){
+            _text = "___.";
+        }
+        else{
+            _text = "___";
+        }
         _isHidden = true;
     }
 

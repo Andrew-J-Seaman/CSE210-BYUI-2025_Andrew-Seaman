@@ -22,6 +22,7 @@ public class Reference
     private string _verse1;
 // 4)
     private string _verseEnd;
+    private string _refToPrint;
 
 
 
@@ -58,6 +59,12 @@ public class Reference
 
 // 1)
     public void DisplayRef(){
-        Console.WriteLine($"{_book} {_chapter}:{_verse1}-{_verseEnd}");
+        if (_verseEnd == null){
+            _refToPrint = $"{_book} {_chapter}:{_verse1}";
+        }
+        else {
+            _refToPrint = $"{_book} {_chapter}:{_verse1}-{_verseEnd}";
+        }
+        Console.WriteLine(_refToPrint);
     }
 }
