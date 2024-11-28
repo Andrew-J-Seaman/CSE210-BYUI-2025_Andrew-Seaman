@@ -1,6 +1,6 @@
 using System;
 
-public class Listing : Activity
+public class Reflecting : Activity
 {
 // ATTRIBUTES
 
@@ -9,7 +9,7 @@ public class Listing : Activity
 
 
 // METHODS
-    public void RunListing(){
+    public void RunReflecting(){
 
     }
 
