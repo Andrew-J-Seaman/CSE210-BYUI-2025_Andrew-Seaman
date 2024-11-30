@@ -2,15 +2,26 @@ using System;
 
 public class Listing : Activity
 {
-// ATTRIBUTES
+//  ******************
+//      * SUMMARY*
+//
+//      ATTRIBUTE:   1
+//      CONSTRUCTOR: 1
+//      METHOD:      1
+//  ******************
 
 
-// CONSTRUCTORS
+// ATTRIBUTE        (1)
+    // A1.
+    private List<string> _prompts;
 
+// CONSTRUCTOR      (1)
+    // C1.
+    public Listing(string name, string description) : base(name, description){}
 
-// METHODS
+// METHOD           (1)
+    // M1.
     public void RunListing(){
 
     }
-
 }
