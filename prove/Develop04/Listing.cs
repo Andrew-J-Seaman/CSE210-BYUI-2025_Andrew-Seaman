@@ -17,11 +17,18 @@ public class Listing : Activity
 
 // CONSTRUCTOR      (1)
     // C1.
-    public Listing(string name, string description) : base(name, description){}
+    public Listing(string name, string description, string durationRequest) : base(name, description, durationRequest){}
 
 // METHOD           (1)
     // M1.
     public void RunListing(){
+        // Introduce activity and set duration
+        SetDuration(DisplayStartMessage()); // Activity duration = user input (seconds)
 
+        // LISTING functionality:
+        
+
+        // End activity and display summary
+        DisplayEndMessage();
     }
 }

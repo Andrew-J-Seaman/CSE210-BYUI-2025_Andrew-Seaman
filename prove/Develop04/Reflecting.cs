@@ -19,12 +19,18 @@ public class Reflecting : Activity
 
 // CONSTRUCTOR      (1)
     // C1.
-    public Reflecting(string name, string description) : base(name, description){}
+    public Reflecting(string name, string description, string durationRequest) : base(name, description, durationRequest){}
 
 // METHOD           (1)
     // M1.
     public void RunReflecting(){
+        SetDuration(DisplayStartMessage() * 10); // Question duraiton: 10 sec
 
+        // REFLECTING functionality:
+        
+
+        // End activity and display summary
+        DisplayEndMessage();
     }
 
 }

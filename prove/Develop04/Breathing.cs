@@ -15,17 +15,17 @@ public class Breathing : Activity
 
 // CONSTRUCTOR      (1)
     // C1.
-    public Breathing(string name, string description) : base(name, description){}
+    public Breathing(string name, string description, string durationRequest) : base(name, description, durationRequest){}
     
 // METHOD           (1)
     // M1.
     public void RunBreathing(){
-        // Start message
-        //  - Activity name
-        //  - Description
+        SetDuration(DisplayStartMessage() * 10); // Breathing Interval (10 sec): Inhale: 5, Hold: 2, Exhale: 3
 
-        // Breathing functionality
+        // BREATHING functionality:
+        
 
-        // Display EndMessage
+        // End activity and display summary
+        DisplayEndMessage();
     }
 }

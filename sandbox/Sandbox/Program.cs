@@ -1,69 +1,3 @@
-/* DOG: INHERITANCE Logic
-
-using System.Reflection;
-
-public class Program 
-{
-    static void Main(string[] args)
-    {
-        Dog dog = new Dog();
-        dog.Describe();
-        dog.DisplaySpecies();
-    }
-}
-
-// Parent class
-public class Animal
-{
-    // Protected attribute accessible in derived classes
-    protected string species;
-
-    // Constructor initializes the species attribute
-    public Animal(string species)
-    {
-        this.species = species;
-    }
-
-    public void Describe()
-    {
-        Console.WriteLine($"This is a {species}.");
-    }
-}
-
-// Child class inheriting from Animal
-public class Dog : Animal
-{
-    // Constructor that calls the base (parent) constructor
-    public Dog() : base("Dog") // Passes "Dog" to the parent constructor
-    {
-    }
-
-    public void DisplaySpecies()
-    {
-        // Accessing the protected attribute directly
-        Console.WriteLine($"The species is: {species}");
-    }
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*// MAIN CLASS Logic:
 
 public class Activity
@@ -113,7 +47,7 @@ public class Listing : Activity
 
 
 
-
+/*
 // SPINNER Logic:
 
 using System;
@@ -156,8 +90,12 @@ class Program
         }
     }
 }
+*/
 
-/* // FADE IN/OUT Logic:
+
+
+
+ // FADE IN/OUT Logic:
 
 using System;
 using System.Threading;
@@ -195,4 +133,3 @@ class Program
         }
     }
 }
-*/

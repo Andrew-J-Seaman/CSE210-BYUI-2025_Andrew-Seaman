@@ -39,7 +39,7 @@ public class Menu
     public void DisplayMenuxSelection()
     {
         int choice;
-        bool isValidChoice = false;
+        bool isInt = false;
 
         do
         {
@@ -56,7 +56,7 @@ public class Menu
             if (int.TryParse(Console.ReadLine().Trim(), out choice) && choice >= 1 && choice <= 5)
             {
                 _choice = choice; // Assign valid choice to the class variable
-                isValidChoice = true; // Exit loop
+                isInt = true; // Exit loop
             }
             else
             {
@@ -65,10 +65,9 @@ public class Menu
                 // Suggest next action
                 _message2 = "Please select a number (1-5).";
                 delay.Display2(_message1, _message2);
-                
             }
 
-        } while (!isValidChoice);
+        } while (!isInt);
     }
 
     // 2) Greeting message
