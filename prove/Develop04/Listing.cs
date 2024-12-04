@@ -13,7 +13,7 @@ public class Listing : Activity
 
 // ATTRIBUTE        (1)
     // A1.
-    private List<string> _prompts;
+    private List<string> _promptsListing;
 
 // CONSTRUCTOR      (1)
     // C1.
