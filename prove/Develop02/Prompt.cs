@@ -3,7 +3,12 @@ using System.Security.Cryptography;
 public class Prompt
 {
     private List<string> _prompts;
-    private string filePath = "/Users/andrewseaman/Desktop/CLS_P/Repository/CSE210_2024_AJS/prove/Develop02/DataFiles/Prompts/Prompts.txt";
+    private const string _promptsFilePath = "DataFiles/Prompts/Prompts.txt";
+
+    public string GetPromptsFilePath(){
+        return _promptsFilePath;
+    }
+
 
     // Populate prompts list (via file or hard coded)
     public string PromptGenerator()
@@ -11,7 +16,7 @@ public class Prompt
         //List of prompts
         _prompts = new List<string>();
 
-        string[] lines = File.ReadAllLines(filePath);
+        string[] lines = File.ReadAllLines(_promptsFilePath);
         foreach (string line in lines)
         {
             _prompts.Add(line);

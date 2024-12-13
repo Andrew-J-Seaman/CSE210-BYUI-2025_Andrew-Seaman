@@ -109,43 +109,53 @@ public class Journal{
         // New Prompt object
         Prompt prompt = new Prompt();
 
-        // Create a new Entry object
-        Entry newEntry = new Entry();
+        // Verify prompts file path exists
+        string promptsFilePath = prompt.GetPromptsFilePath();
 
-        // Get date. Save property
-        newEntry._entryDate = DateTime.Today.ToString("d");
-        // Get random prompt. Save property
-        newEntry._randomPrompt = prompt.PromptGenerator();
-
-        // Progress/Success message (generating prompt)
-        _message1 = "Generating prompt...";
-        _message2 ="Done!";
-        delay.Display2(_message1, _message2);
-        // Greeting message
-        _message1 = "Let's write! Press (return/enter) key when finished.";
-        delay.Display1(_message1);
-        
-        // Display random prompt
-        Console.WriteLine($"Prompt: {newEntry._randomPrompt}");
-
-        // Get user response. Save property
-        Console.Write("> Response: ");
-        newEntry._response = Console.ReadLine();
-
-        // Add newEntry to `_unsavedEntries`
-        if (_newEntries == null){
-            _newEntries = new List<Entry> {newEntry};
+        if (!File.Exists(promptsFilePath)){
+            Console.WriteLine($"Error: Prompts file not found at {promptsFilePath}");
+            return;
         }
         else{
-            _newEntries.Add(newEntry); 
-        }
 
-        // Progress/Success message (logging)
-        _message1 = "Logging (unsaved)...";
-        _message2 = "Done!";
-        // Suggest next action
-        _message3 = "Select (4) to save logged entry.";
-        delay.Display3(_message1, _message2, _message3);
+            // Create a new Entry object
+            Entry newEntry = new Entry();
+
+            // Get date. Save property
+            newEntry._entryDate = DateTime.Today.ToString("d");
+            // Get random prompt. Save property
+            newEntry._randomPrompt = prompt.PromptGenerator();
+
+            // Progress/Success message (generating prompt)
+            _message1 = "Generating prompt...";
+            _message2 ="Done!";
+            delay.Display2(_message1, _message2);
+            // Greeting message
+            _message1 = "Let's write! Press (return/enter) key when finished.";
+            delay.Display1(_message1);
+            
+            // Display random prompt
+            Console.WriteLine($"Prompt: {newEntry._randomPrompt}");
+
+            // Get user response. Save property
+            Console.Write("> Response: ");
+            newEntry._response = Console.ReadLine();
+
+            // Add newEntry to `_unsavedEntries`
+            if (_newEntries == null){
+                _newEntries = new List<Entry> {newEntry};
+            }
+            else{
+                _newEntries.Add(newEntry); 
+            }
+
+            // Progress/Success message (logging)
+            _message1 = "Logging (unsaved)...";
+            _message2 = "Done!";
+            // Suggest next action
+            _message3 = "Select (4) to save logged entry.";
+            delay.Display3(_message1, _message2, _message3);
+        }
     }
 
     // 4) Save
