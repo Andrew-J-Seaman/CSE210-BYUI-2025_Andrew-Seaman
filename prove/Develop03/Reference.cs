@@ -18,7 +18,7 @@ public class Reference
     private string _book;
 // 2)
     private string _chapter;
-// 3)
+// 3)MakeDelay
     private string _verse1;
 // 4)
     private string _verseEnd;

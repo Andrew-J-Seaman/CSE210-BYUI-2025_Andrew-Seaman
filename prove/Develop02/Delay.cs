@@ -8,7 +8,7 @@ public class Delay
     {
         // Seconds to milliseconds
         _long  = 2 * 1000;
-        _short = (int)(1.5 * 1000);
+        _short = (int)(1.5 * 1000); 
     }
 
 //==================================

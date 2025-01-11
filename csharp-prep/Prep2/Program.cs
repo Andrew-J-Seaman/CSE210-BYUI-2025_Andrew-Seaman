@@ -1,4 +1,7 @@
 using System;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 // OBJECTIVE: create grading system
         /** Criteria:
@@ -16,67 +19,66 @@ class Program
     // Greeting
         Console.Clear();
         Console.WriteLine("> Hello student!");
-    
+
     // Initialize  variables
-        string  letter = "";
-        int     percent = 0;
-        string  passOrFail;
-        string  congratsOrSympathies;
-        string  letterSymbol;
-        string  properArticle;
-        bool    validPercent = false;
+        string  _letter = "";
+        int     _percent = 0;
+        string  _passOrFail;
+        string  _congratsOrSympathies;
+        string  _letterSymbol;
+        string  _properArticle;
+        bool    _validPercent = false;
         
     // Ask user for input
-        while (!validPercent)
+        while (!_validPercent)
         {
             Console.Write("> What is your grade percentage?\n   > ");
-            percent = int.Parse(Console.ReadLine());
+            _percent = int.Parse(Console.ReadLine());
 
-            if (percent > 0 && percent < 200) 
-                {validPercent = true;}
+            if (_percent > 0 && _percent < 200) 
+                {_validPercent = true;}
             else
                 {Console.WriteLine("> ERROR: Invalid grade percentage. Enter a value 0-200.\n");}
         }
 
     // Set variables based on verified user input
-        string percentString = percent.ToString();
+        string percentString = _percent.ToString();
         int lastChar = percentString[percentString.Length - 1];
         
-    // Letter grade
-        if (percent >= 90)
-            {letter = "A";}
-        else if (percent >= 80)
-            {letter = "B";}
-        else if (percent >= 70)
-            {letter = "C";}
-        else if (percent >= 60)
-            {letter = "D";}
-        else if (percent <= 59)
-            {letter = "F";}
+    // _letter grade
+        if (_percent >= 90)
+            {_letter = "A";}
+        else if (_percent >= 80)
+            {_letter = "B";}
+        else if (_percent >= 70)
+            {_letter = "C";}
+        else if (_percent >= 60)
+            {_letter = "D";}
+        else if (_percent <= 59)
+            {_letter = "F";}
 
     // Pass or fail
-        if (percent >= 60)
-            {passOrFail = "PASSED";
-            congratsOrSympathies = "Congrats! You";}
+        if (_percent >= 60)
+            {_passOrFail = "PASSED";
+            _congratsOrSympathies = "Congrats! You";}
         else 
-            {passOrFail = "FAILED";
-            congratsOrSympathies = "Our sympathies, you";}
+            {_passOrFail = "FAILED";
+            _congratsOrSympathies = "Our sympathies, you";}
 
     // + or –
-        if (lastChar >= 7 && letter != "A" && letter != "F")
-            {letterSymbol = "+";}
-        else if (lastChar < 3 && letter != "F")
-            {letterSymbol = "-";}
+        if (lastChar >= 7 && _letter != "A" && _letter != "F")
+            {_letterSymbol = "+";}
+        else if (lastChar < 3 && _letter != "F")
+            {_letterSymbol = "-";}
         else
-            {letterSymbol = "";}
+            {_letterSymbol = "";}
 
     // Proper article
-        if (letter == "A" || letter == "F")
-            {properArticle = "an";}
+        if (_letter == "A" || _letter == "F")
+            {_properArticle = "an";}
         else
-            {properArticle = "a";}
+            {_properArticle = "a";}
     // Final output
-        Console.WriteLine($"> {congratsOrSympathies} {passOrFail} with {properArticle} {letter}{letterSymbol}.");
+        Console.WriteLine($"> {_congratsOrSympathies} {_passOrFail} with {_properArticle} {_letter}{_letterSymbol}.");
     }
 }
-
