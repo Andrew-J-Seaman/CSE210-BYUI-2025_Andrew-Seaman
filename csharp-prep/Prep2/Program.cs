@@ -17,26 +17,28 @@ class Program
         Console.Clear();
         Console.WriteLine("> Hello student!");
     
-    // Initialize some variables
+    // Initialize  variables
         string  letter = "";
         int     percent = 0;
         string  passOrFail;
+        string  congratsOrSympathies;
         string  letterSymbol;
-        bool    validpercent = false;
+        string  properArticle;
+        bool    validPercent = false;
         
     // Ask user for input
-        while (!validpercent)
+        while (!validPercent)
         {
             Console.Write("> What is your grade percentage?\n   > ");
             percent = int.Parse(Console.ReadLine());
 
             if (percent > 0 && percent < 200) 
-                {validpercent = true;}
+                {validPercent = true;}
             else
-                {Console.WriteLine("\n> Invalid grade percentage. Enter a value 0-200.\n");}
+                {Console.WriteLine("> ERROR: Invalid grade percentage. Enter a value 0-200.\n");}
         }
 
-    // Set variables based on user input
+    // Set variables based on verified user input
         string percentString = percent.ToString();
         int lastChar = percentString[percentString.Length - 1];
         
@@ -54,21 +56,27 @@ class Program
 
     // Pass or fail
         if (percent >= 60)
-            {passOrFail = "PASSED";}
+            {passOrFail = "PASSED";
+            congratsOrSympathies = "Congrats! You";}
         else 
-            {passOrFail = "FAILED";}
+            {passOrFail = "FAILED";
+            congratsOrSympathies = "Our sympathies, you";}
 
     // + or –
-        if (lastChar >= 7)
+        if (lastChar >= 7 && letter != "A" && letter != "F")
             {letterSymbol = "+";}
-        else if (lastChar < 3)
+        else if (lastChar < 3 && letter != "F")
             {letterSymbol = "-";}
         else
             {letterSymbol = "";}
 
+    // Proper article
+        if (letter == "A" || letter == "F")
+            {properArticle = "an";}
+        else
+            {properArticle = "a";}
     // Final output
-        Console.WriteLine($"> You {passOrFail} with a {letter}{letterSymbol}.");
-
-        Console.Beep();
+        Console.WriteLine($"> {congratsOrSympathies} {passOrFail} with {properArticle} {letter}{letterSymbol}.");
     }
 }
+
