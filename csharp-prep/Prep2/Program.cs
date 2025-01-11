@@ -1,10 +1,4 @@
 using System;
-using System.Formats.Asn1;
-using System.Net.Sockets;
-using System.Reflection.Metadata;
-using System.Runtime.CompilerServices;
-using System.Security.AccessControl;
-using System.Security.Cryptography;
 
 // OBJECTIVE: create grading system
         /** Criteria:
