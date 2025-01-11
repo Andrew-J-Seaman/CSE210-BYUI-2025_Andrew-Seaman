@@ -53,7 +53,7 @@ class Program
             {letter = "F";}
 
     // Pass or fail
-        if (percent < 70)
+        if (percent >= 60)
             {passOrFail = "PASSED";}
         else 
             {passOrFail = "FAILED";}
@@ -68,5 +68,7 @@ class Program
 
     // Final output
         Console.WriteLine($"> You {passOrFail} with a {letter}{letterSymbol}.");
+
+        Console.Beep();
     }
 }
