@@ -5,7 +5,8 @@ class Program
     static void Main(string[] args)
     {
         // Default greeting
-        Console.WriteLine(">Hello Prep5 World!");
+        Console.Clear();
+        Console.WriteLine("> Hello Prep5 World!");
 
         // MY FUNCTIONS:
         //Display welcome message
@@ -22,13 +23,18 @@ class Program
     // DisplayWelcome - Displays the message, "Welcome to the Program!"
     static void DisplayWelcome()
     {
-        Console.WriteLine(">Welcome to the Program!");
+        Console.WriteLine("> Welcome to the Program! \n");
+
+        // Advance
+        Console.Write("   > PRESS [ENTER]");
+        Console.ReadLine();
+        Console.Clear();
     }
     
     // PromptUserName - Asks for and returns the user's name (as a string)
     static string PromptUserName()
     {
-        Console.Write(">Enter your name: ");
+        Console.Write("> Enter your name: ");
         string name = Console.ReadLine();
 
         return name;
@@ -37,7 +43,7 @@ class Program
     // PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
     static int PromptUserNumber()
     {
-        Console.Write(">Enter your favorite number (integer): ");
+        Console.Write("> Enter your favorite number (integer): ");
         int number = int.Parse(Console.ReadLine());
         
         return number;
@@ -53,7 +59,7 @@ class Program
     // DisplayResult - Accepts the user's name and the squared number and displays them.
     static void DisplayResult(string name, int square)
     {
-        Console.WriteLine($">{name}, the square of your number is {square}");
+        Console.WriteLine($"> {name}, the square of your favorite number is {square}");
     }
 }
 
