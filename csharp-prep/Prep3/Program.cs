@@ -5,87 +5,126 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Project greeting & instructions
-        Console.WriteLine(">Hello, welcome to Prep3 World!");
-        Console.WriteLine(">You will guess the result of a randomly rolled dice from 1-100.'");
+        // ATTRIBUTES:
+        int _bottomOfRange = 1;  // This value may NOT be lowered but MAY be increased.
+        int _topOfRange = 100;   // This value MAY be increased.
+        
 
-        string response = "y";
-        while (response == "y")
+        // Clear the console slate
+        Console.Clear();
+
+        // Project greeting & instructions
+        Console.WriteLine("> Hello, welcome to Prep3 World! \n");
+        Console.WriteLine("> You will guess the result of a randomly rolled dice (1-100).");
+
+        // Initialize variable
+        string response = "yes";
+
+        while (response == "yes")
         {
             // Start game message
-            Console.WriteLine(">The dice has been rolled. Good luck!");
+            Console.WriteLine("> The dice has been rolled. Good luck! \n");
+            Console.Write("> PRESS [ENTER] ");
+            Console.ReadLine();
+            Console.Clear();
 
             // Generate random numbers
             Random randomGenerator = new Random();
-            int number = randomGenerator.Next(1, 100+1);
+            int number = randomGenerator.Next(_bottomOfRange, _topOfRange + 1);
 
+            // Initialize variables
             int rounds = 0;
-            bool check = false;
-            int guess = -1;
+            bool check;
+            int guess;
+
+            // PLAY THE GAME:
             do
             {
-                // Guess made
+                // Guesses made
                 rounds++;
 
                 // Ask user for number
-                Console.Write(">What is the magic number (1-100)? ");
+                Console.WriteLine($"> What is the magic number ({_bottomOfRange}-{_topOfRange})?");
+                Console.Write("   > ");
                 string input = Console.ReadLine();
                 guess = int.Parse(input);
 
-                // Check answer
+                // Move the cursor back to the same line and append feedback
+                Console.SetCursorPosition(5 + input.Length, Console.CursorTop - 1);
+
+                // Check answer and display inline result
                 if (number == guess)
                 {
-                    Console.WriteLine(">You guessed it! ");
+                    Console.WriteLine($"  Correct! \n\n\n");
                     check = true;
                 }
                 else if (number > guess)
                 {
-                    Console.WriteLine(">Higher! ");
+                    Console.WriteLine($"  Higher! \n");
                     check = false;
                 }
                 else if (number < guess)
                 {
-                    Console.WriteLine(">Lower! ");
+                    Console.WriteLine($"  Lower! \n");
                     check = false;
                 }
                 else
                 {
-                    Console.WriteLine(">Invalid guess.");
+                    Console.WriteLine($"  Invalid guess. \n");
                     check = false;
                 }
             } while (check == false);
 
 
-            Console.Write(">Roll the dice again (y/n)? ");
-            response = Console.ReadLine();
+            // CONTINUE or QUIT
+            bool valid = false;  // Initialize boolean
 
-            bool valid = false;
-            do
+            do                   // Loop until valid response is provided by the user
             {
-                if (response != "y" && response != "n")
-                {
-                    Console.WriteLine($">Invalid option ('{response}'). Please enter 'y' or 'n'.");
-                    Console.Write(">Roll the dice again (y/n)? ");
-                    response = Console.ReadLine();  // Ask again for a valid response
+                // Continue or quit?
+                Console.Write("> Roll the dice again? \n");
+                Console.Write("   > ");
+                response = Console.ReadLine().ToLower();
+
+                // Invalid response
+                if (response != "yes" && response != "no"){
+                    Console.WriteLine($"> Invalid option ('{response}'). Please answer [yes/no]).");
                 }
+                // Valid response
                 else
                 {
-                    valid = true;  // Valid input found
-                    if (response == "n")
+                    valid = true;
+                    
+                    // Response for quit: "no"
+                    if (response == "no")  // Breaks parent while loop
                     {
-                        string guessPlural = "guesses";
+                        // Manage plurality of the conjugation of "guess" as needed
+                        string guessPluralize = "guesses";
                         if (rounds == 1)
                         {
-                            guessPlural = "guess";
+                            guessPluralize = "guess";
                         }
 
-                        Console.WriteLine($">Quitting game session... You made [{rounds}] {guessPlural}. Thank you for playing.");
+                        Console.Clear();
+                        Console.WriteLine($"\n> Quitting game session.");
+                        Console.WriteLine(
+                            $"> You made [{rounds}] {guessPluralize}. Thank you for playing."
+                        );
                     }
                 }
-            } while (!valid);  // Repeat until valid input is received
-        }
-    }
-}
+            } while (!valid); // Loop for valid response
+
+            // Upon exit of while loop: response is valid and is "yes".
+            Console.Write("\n");
+
+            // Response for continue: "yes"; runs parent while loop. To the top!
+
+        } // <<< while loop >>>
+    } // <<< `Main`function >>>
+} // <<< `Program` class >>>
+
+
+
 
 /* LOOP TYPES:
 
