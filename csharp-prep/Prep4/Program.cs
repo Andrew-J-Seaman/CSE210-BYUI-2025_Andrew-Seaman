@@ -4,8 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Clear the console
+         Console.Clear();
+
         // Default greeting
-        Console.WriteLine(">Hello Prep4 World!");
+        Console.WriteLine("> Hello Prep4 World! \n");
+
+        // Explanation
+        Console.WriteLine("> You'll be asked to build a list of numbers one at a time. Type \"0\" to end. \n");
+
+        // Advance?
+        Console.Write("   > PRESS [ENTER] ");
+        Console.ReadLine();
+        Console.Clear();
 
         // New list
         List<int> series = new List<int>();
@@ -14,13 +25,14 @@ class Program
         while (notZero)
         {
             // User input: number series
-            Console.Write(">Enter a new number (+/-): ");
+            Console.Write("> Enter a new number (+/-): ");
             string inputString = Console.ReadLine();
             int inputInt = int.Parse(inputString);
             
             if (inputInt == 0)
             {
-                Console.WriteLine(">Thank you for your entries.");
+                Console.Clear();
+                Console.WriteLine("> Thank you! Based on your entries:");
                 notZero = false;
             }
             else
@@ -45,19 +57,27 @@ class Program
         int max = series.Max();
         
         // Print summary stats
-        Console.WriteLine($"  >Sum: {sum}");
-        Console.WriteLine($"  >Average: {avg}");
-        Console.WriteLine($"  >Max: {max}");
-        Console.WriteLine($"  >Min Positive: {min}");
+        Console.WriteLine($"   > Sum: {sum}");
+        Console.WriteLine($"   > Average: {avg}");
+        Console.WriteLine($"   > Maximum: {max}");
+        Console.WriteLine($"   > Smallest Positive: {min}");
 
         // Sort the list in ascending order
         series.Sort();
 
-        // Print the sorted list
+        // Format the sorted list as a string
+        string sortedList = "";
         foreach (int num in series)
         {
-            Console.WriteLine(num);
+            sortedList = sortedList + " " + num + ",";
         }
+        // Remove the trailing comma
+        if (sortedList.Length > 0)
+        {
+            sortedList = sortedList.TrimEnd(',');
+        }
+        // Print the sorted list
+        Console.WriteLine($"   > Sorted List: {sortedList}");
     }
 }
 
