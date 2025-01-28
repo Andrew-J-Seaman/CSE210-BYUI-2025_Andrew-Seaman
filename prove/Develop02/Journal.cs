@@ -1,40 +1,173 @@
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.IO;
+// AUTHOR: Andrew Seaman
+// TITLE: Journal Class
+// DISCLOSURE: Development was aided by Chat GPT 4.0
+
 using System;
 
+public class Journal
+{
 
-public class Journal{
+
+
+
+
+/* >>> ATTRIBUTES (7) <<< ==================
+//
+//      1) _entries
+//      2) _newEntries
+//      3) _journalFilePath
+//      4) _fileDictionary
+//      5) _directoryPath
+//      6) _message1
+//      7) _message2
+//      8) _message3
+//      9) _reloading
+//
+//========================================*/
+    // 1)
     private List<Entry> _entries;
+    // 2)
     private List<Entry> _newEntries;
+    // 3)
     private string _journalFilePath;
-
-    Delay delay = new Delay();
-
+    // 4) Dictionary to store file names and paths
+    private Dictionary<int, string> _fileDictionary;
+    // 5) Directory to scan for journal files
+    private readonly string _directoryPath = "Data/Journal/Journals";
+    // 6)
     private string _message1;
+    // 7)
     private string _message2;
+    // 8)
     private string _message3;
-
+    // 9)
     private bool _reloading;
 
-//=========================================
-    // MENU options (relevant to JOURNAL):
-    //      1) Load
-    //      2) Display
-    //      3) Write
-    //      4) Save
-    //      5) Quit
-//=========================================
 
 
-    // 1) Load
-    public void LoadEntries(){
-        // Get file name if undefined
-        if (_journalFilePath == null){
-            Console.Write($"> Enter file name: ");
-            string journalFileName = Console.ReadLine();
-            _journalFilePath = journalFileName;
+
+
+/* >>> CONSTRUCTOR (1) <<< =================
+//
+//      1) Jounral
+//          -   _fileDictionary
+//
+==========================================*/
+    public Journal()
+    {
+        // Initialize the dictionary by calling the private method
+        _fileDictionary = InitializeFileDictionary();
+
+    }
+
+
+
+
+
+/* >>> INSTANCES (1) <<< ===================
+//
+//      1) Delay
+//
+//========================================*/
+    Delay delay = new Delay();
+
+
+
+
+
+/* >>> PRIVATE METHODS (2) <<< =============
+//
+//      1) InitializeFileDictionary
+//      2) DisplayFilesAndSelect
+//
+==========================================*/
+    // 1) Create the dictionary of files
+    private Dictionary<int, string> InitializeFileDictionary()
+    {
+        Dictionary<int, string> fileDictionary = new Dictionary<int, string>();
+
+        // Check if the directory exists
+        if (!Directory.Exists(_directoryPath))
+        {
+            Console.WriteLine($"The directory '{_directoryPath}' does not exists.");
+            return fileDictionary; // Return an empty dictionary
         }
+
+        // Get all files in the directory
+        string[] files = Directory.GetFiles(_directoryPath);
+
+        // Populate the dictionary with file names and paths
+        fileDictionary[0] = "New journal"; // Add the "New journal" entry as the first option
+        for (int i = 0; i < files.Length; i++) // Iterate through all files
+        {
+            fileDictionary[i + 1] = files[i]; // Add each file to the dictionary with a 1-based index
+        }
+
+        return fileDictionary;
+    }
+
+    // 2) Display files and allow user selection
+    private void DisplayFilesAndSelect()
+    {
+        // Display files with indices
+        Console.Clear();
+        Console.WriteLine("Available files:");
+        Console.WriteLine("==================");
+        foreach (KeyValuePair<int, string> kvp in _fileDictionary)
+        {
+            Console.WriteLine($"{kvp.Key}. {Path.GetFileName(kvp.Value)}");
+        }
+
+        // Prompt the user to select a file
+        Console.Write("\n> Select a number: ");
+        if (int.TryParse(Console.ReadLine(), out int selectedIndex) &&
+        _fileDictionary.ContainsKey(selectedIndex))
+        {
+            if(_fileDictionary.Count == 0 | selectedIndex == 0)
+            {
+                Console.Write("> New journal name:"); // Ask for new file name
+                string fileName = Console.ReadLine().Trim();
+                CreateNewJournalFile(fileName); // Create new journal file
+
+                Console.WriteLine($"> You selected: {fileName}");
+                // Construct the full file path
+                _journalFilePath = Path.Combine(_directoryPath, fileName);
+            }
+            else
+            {
+                Console.WriteLine($"> You selected: {_fileDictionary[selectedIndex]}");
+                _journalFilePath = _fileDictionary[selectedIndex];
+            }
+        }
+        else
+        {
+            Console.WriteLine("> Invalid selection.");
+        }
+    }
+
+
+
+
+
+/* >>> PUBLIC METHODS (4) <<< ==============
+//
+//  > MENU Options:
+//
+//      1) Load:        LoadEntries
+//      2) Display:     DisplayEntries
+//      3) Write:       WriteEntry
+//      4) Save:        SaveEntries    
+//
+//  > Additional:
+//
+//      5) CreateNewJournalFile
+==========================================*/
+
+    // 1) Load journal entries
+    public void LoadEntries()
+    {
+        // Get file name if undefined
+        DisplayFilesAndSelect();
 
         // Read all lines from journal file
         string[] lines = File.ReadAllLines(_journalFilePath);
@@ -45,9 +178,9 @@ public class Journal{
             string[] parts = line.Split('~');
 
             // Ensure there are exactly three parts (for entryDate, randomPrompt, response)
-            if (parts.Length == 3){
-                // Create a new Entry object and set its properties
-                Entry entry = new Entry();
+            if (parts.Length == 3)
+            {
+                Entry entry = new Entry(); // Create a new Entry object and set its properties
                 entry._entryDate = parts[0].Trim();
                 entry._randomPrompt = parts[1].Trim();
                 entry._response = parts[2].Trim();
@@ -58,8 +191,9 @@ public class Journal{
                     _entries = [];
                 }
                 _entries.Add(entry);
-            } 
-            else{
+            }
+            else
+            {
                 Console.WriteLine($"Invalid line format: {line}");
             }
         }
@@ -68,10 +202,11 @@ public class Journal{
         if (_reloading == true){
             _message1 = "Reloading...";
         }
-        else {
+        else
+        {
             _message1 = "Loading...";
         }
-        
+
         _message2 = "Done!";
         // Suggest next action
         _message3 = "Select (2) to display the journal or (3) to write a new entry.";
@@ -81,17 +216,19 @@ public class Journal{
         _reloading = false;
     }
 
-    // 2) Display
-    public void DisplayEntries(){
-        if (_entries == null){
+    // 1) Display all entries (saved and unsaved)
+    public void DisplayEntries()
+    {
+        if (_entries == null)
+        {
             // Error message (no entries found)
             _message1 = "No entries found.";
             // Suggest next action
             _message2 = "Select (1) to load a journal.";
             delay.DisplayErr2(_message1, _message2);
-            
         }
-        else{
+        else
+        {
             // Progress message (displaying)
             _message1 = "Displaying...";
             _message2 ="Done!";
@@ -104,8 +241,9 @@ public class Journal{
         }
     }
 
-    // 3) Write
-    public void WriteEntry(){
+    // 3) Write new entry
+    public void WriteEntry()
+    {
         // New Prompt object
         Prompt prompt = new Prompt();
 
@@ -131,7 +269,7 @@ public class Journal{
             _message2 ="Done!";
             delay.Display2(_message1, _message2);
             // Greeting message
-            _message1 = "Let's write! Press (return/enter) key when finished.";
+            _message1 = "Let's write! Press (RETURN/ENTER) when finished.";
             delay.Display1(_message1);
             
             // Display random prompt
@@ -158,8 +296,9 @@ public class Journal{
         }
     }
 
-    // 4) Save
-    public void SaveEntries(){
+    // 4) Save new entries
+    public void SaveEntries()
+    {
         // Create a list to store all lines
         List<string> lines = [];
 
@@ -167,10 +306,7 @@ public class Journal{
         if (_newEntries != null){
             // Get file name if undefined
             if (_journalFilePath == null){
-                // Receive file name and define property
-                Console.Write($"> Enter file name: ");
-                string journalFileName = Console.ReadLine();
-                _journalFilePath = journalFileName;
+                DisplayFilesAndSelect();
             }
 
             // Check if list `entries` is empty
@@ -203,7 +339,8 @@ public class Journal{
             _message2 = "Select (3) to write a new entry.";
             delay.DisplayErr2(_message1, _message2);
         }
-        else{
+        else
+        {
             // Write all lines to the file at once (save funciton)
             File.WriteAllLines(_journalFilePath, lines);
             // Progress/Success message (saving)
@@ -217,7 +354,50 @@ public class Journal{
             LoadEntries();
         }
     }
-}
+
+    // 5) Create a new journal file
+    public void CreateNewJournalFile(string fileName)
+    {
+        string fileNameFull = fileName + ".txt";
+        // Ensure the directory exists
+        if (!Directory.Exists(_directoryPath))
+        {
+            Console.WriteLine($"The directory '{_directoryPath}' does not exist. Creating it...");
+            Directory.CreateDirectory(_directoryPath); // Create the directory if it doesn't exist
+        }
+
+        // Construct the full file path
+        string filePath = Path.Combine(_directoryPath, fileNameFull);
+        _journalFilePath = filePath;
+
+        // Check if the file already exists
+        if (File.Exists(filePath))
+        {
+            Console.WriteLine($"A file named '{fileNameFull}' already exists in the directory.");
+        }
+        else
+        {
+            // Create the file and write an initial message or leave it empty
+            File.WriteAllText(filePath, ""); // Creates an empty file
+            Console.WriteLine($"New journal file '{fileNameFull}' created at {_directoryPath}");
+        }
+    }
+
+} // The End!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

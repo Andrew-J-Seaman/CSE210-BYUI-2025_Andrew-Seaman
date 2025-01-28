@@ -3,12 +3,12 @@ using System.Security.Cryptography;
 public class Prompt
 {
     private List<string> _prompts;
-    private const string _promptsFilePath = "DataFiles/Prompts/Prompts.txt";
+    private const string _promptsFilePath = "Data/Prompts/prompts.txt";
 
-    public string GetPromptsFilePath(){
+    public string GetPromptsFilePath()
+    {
         return _promptsFilePath;
     }
-
 
     // Populate prompts list (via file or hard coded)
     public string PromptGenerator()
@@ -25,7 +25,7 @@ public class Prompt
         //Random generator
         Random random = new Random();
         int randomListItem = random.Next(_prompts.Count);
-        
+
         //Return prompt (string)
         string randomPrompt = _prompts[randomListItem];
         return randomPrompt;

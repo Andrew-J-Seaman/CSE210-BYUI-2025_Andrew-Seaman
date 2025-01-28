@@ -1,11 +1,22 @@
+// AUTHOR: Andrew Seaman
+// TITLE: Program Class
+// DISCLOSURE: Development was aided by Chat GPT 4.0
+
+
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
 
-class Program{
-
+class Program
+{
     static void Main(string[] args)
     {
+    /* >>> INSTANCES (2) <<< ===============
+    //
+    //      1) Journal: `workingJournal`
+    //      1) Menu:    `menu`
+    //      
+    ======================================*/
         // New Journal object
         Journal workingJournal = new Journal();
 
@@ -17,34 +28,34 @@ class Program{
         menu.DisplayGreeting();
 
         bool run = true;
-        do 
+        do
         {
             menu.DisplayMenuxSelection();
 
             switch (menu._choice)
             {
-                case 1:     // Load
+                case 1: // Load
                     workingJournal.LoadEntries();
                     break;
 
-                case 2:     // Display
+                case 2: // Display
                     workingJournal.DisplayEntries();
                     break;
- 
-                case 3:     // Write
-                    workingJournal.WriteEntry();                
+
+                case 3: // Write
+                    workingJournal.WriteEntry();
                     break;
 
-                case 4:     // Save
+                case 4: // Save
                     workingJournal.SaveEntries();
                     break;
 
-                case 5:     // Quit
+                case 5: // Quit
                     run = false;
                     menu.SetDeparting();
                     menu.DisplayDeparting();
                     break;
-                
+
                 default:
                     Console.Clear();
                     Console.WriteLine("\nInvalid choice. Please try again.");

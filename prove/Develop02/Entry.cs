@@ -1,25 +1,37 @@
+// AUTHOR: Andrew Seaman
+// TITLE: Entry Class
+// DISCLOSURE: Development was aided by Chat GPT 4.0
+
 public class Entry
 {
+/* >>> ATTRIBUTES <<< =============
+//  Total: 3
+//
+//      1) _entryDate
+//      2) _randomPrompt
+//      3) _response
+//===============================*/
+    // 1)
     public string _entryDate;
+    // 2)
     public string _randomPrompt;
+    // 3)
     public string _response;
 
+/* >>> PUBLIC METHODS <<< =========
+//  Total: 1
+//
+//      1) DisplayEntry
+//===============================*/
+
+    // 1)
     public void DisplayEntry()
     {
-        Console.WriteLine($"DATE: {_entryDate}  -  PROMPT: {_randomPrompt}\nRESPONSE: {_response}\n");
+        Console.WriteLine(
+            $"DATE: {_entryDate}  -  PROMPT: {_randomPrompt}\nRESPONSE: {_response}\n"
+        );
     }
 }
-
-
-
-
-
-
-
-
-
-
- 
 
 
 

@@ -1,3 +1,7 @@
+// AUTHOR: Andrew Seaman
+// TITLE: Menu Class
+// DISCLOSURE: Development was aided by Chat GPT 4.0
+
 using System.Xml.Serialization;
 
 public class Menu
@@ -8,7 +12,7 @@ public class Menu
     private string _option3;
     private string _option4;
     private string _option5;
-    public int    _choice;
+    public int _choice;
 
     private string _message1;
     private string _message2;
@@ -27,13 +31,13 @@ public class Menu
 
         _mainMenu = new Dictionary<int, string>()
         {
-            {1, _option1},
-            {2, _option2},
-            {3, _option3},
-            {4, _option4},
-            {5, _option5}
+            { 1, _option1 },
+            { 2, _option2 },
+            { 3, _option3 },
+            { 4, _option4 },
+            { 5, _option5 }
         };
-    } 
+    }
 
     // Display menu
     public void DisplayMenuxSelection()
@@ -50,7 +54,7 @@ public class Menu
             }
 
             // Request menu selection (1-5)
-            Console.Write("> Selection (1-5): ");
+            Console.Write("\n> Select a number: ");
 
             // Try to parse the input and check if it’s within the valid range
             if (int.TryParse(Console.ReadLine().Trim(), out choice) && choice >= 1 && choice <= 5)

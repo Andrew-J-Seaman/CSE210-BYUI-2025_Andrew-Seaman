@@ -1,3 +1,4 @@
+/* ORIGINAL CODE: Users.cs
 
 
 
@@ -6,56 +7,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*// AUTHOR: Andrew Seaman
-
+// AUTHOR: Andrew Seaman
+// TITLE: User Class
+// DISCLOSURE: Development was aided by Chat GPT 4.0
 
 using System;
-using System.IO;
-using System.Collections.Generic;
 
 public class User
 {
@@ -126,7 +82,7 @@ public class User
         {
             // Ask user for their UserID
             Console.Write("\n\tEnter a user ID: ");
-            
+
             // Try to parse the input as an integer
             if (int.TryParse(Console.ReadLine().Trim(), out currentUserID))
             {
@@ -170,7 +126,7 @@ public class User
 
                 // Update the _users dictionary with the new user name
                 _users[currentUserID] = newUserName;
-                
+
                 // Write the updated user information back to the 'Users.csv'
                 UpdateUsersFile(userfFilePath);
 

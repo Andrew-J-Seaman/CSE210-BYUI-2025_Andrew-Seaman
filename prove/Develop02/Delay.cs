@@ -1,23 +1,43 @@
+// AUTHOR: Andrew Seaman
+// TITLE: Delay Class
+// DISCLOSURE: Development was aided by Chat GPT 4.0
+
 public class Delay
 {
+/* >>> PRIVATE ATTRIBUTES (2) <<< ==========
+//
+//      1) _long
+//      2) _short
+//
+==========================================*/
+    // 1)
     private int _long;
+    // 2)
     private int _short;
 
-    // Constructor for delay variable values
+/* >>> CONSTRUCTOR (2) <<< =================
+//
+//      1) Delay: 
+//          -   _long
+//          -   _short
+//
+==========================================*/
+    // 1)
     public Delay()
     {
         // Seconds to milliseconds
-        _long  = 2 * 1000;
-        _short = (int)(1.5 * 1000); 
+        _long  = 1 * 1000;
+        _short = (int)(.5 * _long); 
     }
 
-//==================================
-    // Private methods: 
-    //      1) Wait
-    //      2) Clear
-    //      3) Write
-    //      4) Blank Line
-//==================================
+/* >>> PRIVATE METHODS <<< =================
+//  Toal: 4
+
+//      1) Wait
+//      2) Clear
+//      3) Write
+//      4) Blank Line
+//========================================*/
     
  // 1) Wait
     private void Wait(int length)
@@ -39,23 +59,23 @@ public class Delay
         Console.WriteLine("\n");
     }
 
-
-//==================================
-    // Public methods: 
-    //      1) Display 1
-    //      2) Display 2
-    //      3) Display 3
-    //      4) Display Error
-//==================================
+/* >>> PUBLIC METHODS (4) <<< ==============
+//
+//      1) Display1
+//      2) Display2
+//      3) Display3
+//      4) DisplayError
+//
+//========================================*/
  
-// 1) Display 1
+// 1)
     public void Display1(string message1){
         Clear();
         Write(message1);
         Wait(_short);
         NewLine();
     }
-// 2) Display 2
+// 2)
     public void Display2(string message1, string message2){
         Clear();
         Write($"{message1}");
@@ -64,7 +84,7 @@ public class Delay
         Wait(_short);
         Clear();
     }
-// 3) Display 3
+// 3)
     public void Display3(string message1, string message2, string message3){
         Clear();
         Write($"{message1}");
@@ -76,7 +96,7 @@ public class Delay
         Wait(_short);
         NewLine();
     }
-// 4) Display Error
+// 4)
     public void DisplayErr2(string message1, string message2){
         Clear();
         Write($"{message1}");
