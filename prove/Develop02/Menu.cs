@@ -6,41 +6,66 @@ using System.Xml.Serialization;
 
 public class Menu
 {
+    /* >>> ATTRIBUTES <<< =========================================================================
+    //
+    //      1) _mainMenu
+    //      2) _choice
+    //      3) _message1
+    //      4) _message2
+    //      5) _message3
+    //
+    //===========================================================================================*/
+    // 1)
     private Dictionary<int, string> _mainMenu;
-    private string _option1;
-    private string _option2;
-    private string _option3;
-    private string _option4;
-    private string _option5;
+
+    // 2)
     public int _choice;
 
+    // 3)
     private string _message1;
+
+    // 4)
     private string _message2;
+
+    // 5)
     private string _message3;
 
-    // New Delay object
+    /* >>> INSTANCES (1) <<< ======================================================================
+    //
+    //      1) Delay > delay
+    //
+    //===========================================================================================*/
+    // 1)
     Delay delay = new Delay();
 
+    /* >>> CONSTRUCTORS (1) <<< ===================================================================
+    //
+    //      1) _mainMenu
+    //
+    //===========================================================================================*/
     public Menu()
     {
-        _option1 = "Load";
-        _option2 = "Display";
-        _option3 = "Write";
-        _option4 = "Save";
-        _option5 = "Quit";
-
         _mainMenu = new Dictionary<int, string>()
         {
-            { 1, _option1 },
-            { 2, _option2 },
-            { 3, _option3 },
-            { 4, _option4 },
-            { 5, _option5 }
+            { 1, "Load" },
+            { 2, "Display" },
+            { 3, "Write" },
+            { 4, "Save" },
+            { 5, "Quit" },
         };
     }
 
-    // Display menu
-    public void DisplayMenuxSelection()
+    /* >>> METHODS - PUBLIC (5) <<< ===============================================================
+    //
+    //      1) DisplayMenuSelection
+    //      2) SetGreeting
+    //      3) DisplayGreeting
+    //      4) SetDeparting
+    //      5) DisplayDeparting
+    //
+    //===========================================================================================*/
+    // 1) Display menu
+    public void DisplayMenuSelection()
     {
         int choice;
         bool isInt = false;
@@ -70,31 +95,34 @@ public class Menu
                 _message2 = "Please select a number (1-5).";
                 delay.Display2(_message1, _message2);
             }
-
         } while (!isInt);
     }
 
-    // 2) Greeting message
-    // Set
-    public void SetGreeting(){
+    // 2) Set greeting message
+    public void SetGreeting()
+    {
         _message1 = "Welcome! Let's Journal!";
     }
-    // Display
-    public void DisplayGreeting(){
+
+    // Display greeting message
+    public void DisplayGreeting()
+    {
         delay.Display1(_message1);
     }
 
-    // 3) Departing message
-    // Set
-    public void SetDeparting(){
+    // 3) Set departing message
+    public void SetDeparting()
+    {
         // Success message
         _message1 = "Quitting...";
         _message2 = "Done!";
         // Departing message
         _message3 = "See you tomorrow!";
     }
-    // Display
-    public void DisplayDeparting(){
+
+    // Display departing message
+    public void DisplayDeparting()
+    {
         delay.Display3(_message1, _message2, _message3);
     }
 }
@@ -148,7 +176,7 @@ public class Menu
     public int _selectedKeyMainMenuLoop;
 
     public void MainMenuLoop()
-    {   
+    {
         // Create a list of actions; current length: 4 items
         List<string> menu_dict_values = new List<string>
         {

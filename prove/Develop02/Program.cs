@@ -11,58 +11,81 @@ class Program
 {
     static void Main(string[] args)
     {
-    /* >>> INSTANCES (2) <<< ===============
-    //
-    //      1) Journal: `workingJournal`
-    //      1) Menu:    `menu`
-    //      
-    ======================================*/
-        // New Journal object
+        /* >>> INSTANCES (2) <<< ==================================================================
+        //
+        //      1) Journal: `workingJournal`
+        //      1) Menu:    `menu`
+        //
+        //=======================================================================================*/
+        // 1) New Journal object
         Journal workingJournal = new Journal();
-
-        // Mew Menu object
+        // 2) Mew Menu object
         Menu menu = new Menu();
 
-        // Greeting message
+        /* >>> METHODS - Greeting message (2) <<< =================================================
+        //
+        //      1) SetGreeting
+        //      2) DisplayGreeting
+        //
+        //=======================================================================================*/
+        // 1)
         menu.SetGreeting();
+        // 2)
         menu.DisplayGreeting();
 
-        bool run = true;
-        do
+        /* >>> METHODS - SWITCH CASE () <<< ================================================
+        //
+        //  > Display menu:
+        //      1) DisplayMenuSelection()
+        //
+        //  > Menu options (5):
+        //      2) LOAD:        LoadEntries()
+        //      3) DISPLAY:     DisplayEntries()
+        //      4) WRITE:       WriteEntry()
+        //      5) SAVE:        SaveEntries()
+        //      6) QUIT:        6a. SetDeparting()
+        //                      6b. DisplayDeparting()
+        //
+        //=======================================================================================*/
+        bool runJournal = true;
+        do // Loop menu until the User quits the journal app
         {
-            menu.DisplayMenuxSelection();
+            // 1)
+            menu.DisplayMenuSelection();
 
             switch (menu._choice)
             {
-                case 1: // Load
+                // 2) Load
+                case 1:
                     workingJournal.LoadEntries();
                     break;
-
-                case 2: // Display
+                // 3) Display
+                case 2:
                     workingJournal.DisplayEntries();
                     break;
-
-                case 3: // Write
+                // 4) Write
+                case 3:
                     workingJournal.WriteEntry();
                     break;
-
-                case 4: // Save
+                // 5) Save
+                case 4:
                     workingJournal.SaveEntries();
                     break;
-
-                case 5: // Quit
-                    run = false;
+                // 6) Quit
+                case 5:
+                    runJournal = false;
+                    // 6a)
                     menu.SetDeparting();
+                    // 6b)
                     menu.DisplayDeparting();
                     break;
 
                 default:
                     Console.Clear();
                     Console.WriteLine("\nInvalid choice. Please try again.");
-
                     break;
             }
-        } while (run != false);
+        } while (runJournal != false);
     }
 }
 
@@ -163,7 +186,7 @@ class Program
 
         switch (choice)
         {
-            case 1:     // Write 
+            case 1:     // Write
                 Console.WriteLine("Let's write!\n");
 
                 Prompt currentPrompt = new Prompt();

@@ -2,15 +2,35 @@ using System.Security.Cryptography;
 
 public class Prompt
 {
+    /* >>> ATTRIBUTES - Private (3)<<< ============================================================
+    //      1) _prompts
+    //      2) _promptsFilePath
+    //      3) _noPromptsFound
+    //
+    //===========================================================================================*/
+    // 1)
     private List<string> _prompts;
+
+    // 2)
     private const string _promptsFilePath = "Data/Prompts/prompts.txt";
 
+    // 3)
+    private bool _noPromptsFound = false;
+
+    /* >>> METHODS - PUBLIC <<< ===================================================================
+    //
+    //      1) GetPromptsFilePath
+    //      2) PromptGenerator
+    //      3) GetNoPromptsFound
+    //
+    //===========================================================================================*/
+    // 1) Return prompts file path
     public string GetPromptsFilePath()
     {
         return _promptsFilePath;
     }
 
-    // Populate prompts list (via file or hard coded)
+    // 2) Populate prompts list from `prompts.txt`
     public string PromptGenerator()
     {
         //List of prompts
@@ -22,26 +42,30 @@ public class Prompt
             _prompts.Add(line);
         }
 
-        //Random generator
-        Random random = new Random();
-        int randomListItem = random.Next(_prompts.Count);
+        // Error handling
+        if (_prompts == null)
+        {
+            _noPromptsFound = true;
+            return null;
+        }
+        else
+        {
+            //Random generator
+            Random random = new Random();
+            int randomListItem = random.Next(_prompts.Count);
 
-        //Return prompt (string)
-        string randomPrompt = _prompts[randomListItem];
-        return randomPrompt;
+            //Return prompt (string)
+            string randomPrompt = _prompts[randomListItem];
+            return randomPrompt;
+        }
+    }
+
+    // 3) No prompts found
+    public bool GetNoPromptsFound()
+    {
+        return _noPromptsFound;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -65,7 +89,7 @@ public class Prompt
     public string _givenPrompt;
     
 
-    // Receive file path in main from User class    
+    // Receive file path in main from User class
     public void GetUserPromptsFilePaths(string _currentUserPromptsFilePath)
     {
         _promptsFilePath = _currentUserPromptsFilePath;
@@ -122,7 +146,7 @@ public string SelectPrompt()
     {
         // Check if the 'used' value (Item1) is 0
         if (kvp.Value.Item1 == 0)
-        {    
+        {
             // Add the unused prompt to the unusedPrompts dictionary
             unusedPrompts.Add(kvp.Key, kvp.Value);
         }

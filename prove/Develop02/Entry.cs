@@ -4,25 +4,27 @@
 
 public class Entry
 {
-/* >>> ATTRIBUTES <<< =============
-//  Total: 3
-//
-//      1) _entryDate
-//      2) _randomPrompt
-//      3) _response
-//===============================*/
+    /* >>> ATTRIBUTES - PUBLIC (3) <<< ============================================================
+    //  Total: 3
+    //
+    //      1) _entryDate
+    //      2) _randomPrompt
+    //      3) _response
+    //===========================================================================================*/
     // 1)
     public string _entryDate;
+
     // 2)
     public string _randomPrompt;
+
     // 3)
     public string _response;
 
-/* >>> PUBLIC METHODS <<< =========
-//  Total: 1
-//
-//      1) DisplayEntry
-//===============================*/
+    /* >>> METHODS - PUBLIC (1) <<< ===============================================================
+    //  Total: 1
+    //
+    //      1) DisplayEntry
+    //===========================================================================================*/
 
     // 1)
     public void DisplayEntry()
