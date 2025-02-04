@@ -108,7 +108,7 @@ public class Journal
             while (validResponse == false)
             {
                 Console.Clear();
-                Console.Write($"> Use loaded journal `{Path.GetFileName(_journalFilePath)}` (Y/N)? ");
+                Console.Write($"> Use loaded journal `{Path.GetFileName(_journalFilePath)}` (Y/N)? "); 
                 response = Console.ReadLine().Trim().ToUpper();
 
                 if (response == "Y" || response == "N") // Error handling
@@ -255,6 +255,7 @@ public class Journal
         _message3 = "Select (2) to display a journal or (3) to write a new entry.";
         delay.Display3(_message1, _message2, _message3);
     }
+
     // 2) Display all entries (saved and unsaved)
     public void DisplayEntries()
     {

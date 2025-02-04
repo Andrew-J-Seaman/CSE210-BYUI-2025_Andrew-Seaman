@@ -17,6 +17,19 @@
         },
 
         {
+            "label": "build-sandbox-Till",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/Till/Till.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        {
             "label": "build-sandbox-one_to_ten",
             "command": "dotnet",
             "type": "process",
