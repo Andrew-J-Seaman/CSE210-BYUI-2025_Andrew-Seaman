@@ -1,13 +1,15 @@
 using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 
 public class User
 {
     // Dictionary to store users with keys
     public Dictionary<int, string> _users { get; private set; }
-    private const string userfFilePath = "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/sandbox/sb_journal/DataFiles/Users/Users.csv"; 
-    private const string incompleteUserFolderFilePath = "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/sandbox/sb_journal/DataFiles/Journals/User_";
+    private const string userfFilePath =
+        "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/sandbox/Journal_Practice/DataFiles/Users/Users.csv";
+    private const string incompleteUserFolderFilePath =
+        "/Users/andrewseaman/Desktop/Fall '24_Desktop/CLS_P/Repository/CSE210_2024_AJS/sandbox/Journal_Practice/DataFiles/Journals/User_";
     public string _userJournalFilePath;
     public string _userPromptsFilePath;
 
@@ -70,7 +72,7 @@ public class User
         {
             // Ask user for their UserID
             Console.Write("\n\tEnter a user ID: ");
-            
+
             // Try to parse the input as an integer
             if (int.TryParse(Console.ReadLine().Trim(), out currentUserID))
             {
@@ -89,7 +91,6 @@ public class User
             {
                 Console.WriteLine("Error: Invalid input. Please enter a valid numeric ID.");
             }
-
         } while (!validUserID);
 
         return currentUserID;
@@ -114,7 +115,7 @@ public class User
 
                 // Update the _users dictionary with the new user name
                 _users[currentUserID] = newUserName;
-                
+
                 // Write the updated user information back to the 'Users.csv'
                 UpdateUsersFile(userfFilePath);
 

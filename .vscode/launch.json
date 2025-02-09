@@ -30,26 +30,26 @@
         },
 
         {
-            "name": "one_to_ten Project",
+            "name": "One_to_Ten Project",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-one_to_ten",
-            "program": "${workspaceFolder}/sandbox/one_to_ten/bin/Debug/net9.0/one_to_ten.dll",
+            "preLaunchTask": "build-sandbox-One_to_Ten",
+            "program": "${workspaceFolder}/sandbox/One_to_Ten/bin/Debug/net9.0/One_to_Ten.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/one_to_ten",
+            "cwd": "${workspaceFolder}/sandbox/One_to_Ten",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
 
         {
-            "name": "sb_journal Project",
+            "name": "Journal_Practice Project",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-sb_journal",
-            "program": "${workspaceFolder}/sandbox/sb_journal/bin/Debug/net9.0/sb_journal.dll", 
+            "preLaunchTask": "build-sandbox-Journal_Practice",
+            "program": "${workspaceFolder}/sandbox/Journal_Practice/bin/Debug/net9.0/Journal_Practice.dll", 
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/sb_journal",
+            "cwd": "${workspaceFolder}/sandbox/Journal_Practice",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false

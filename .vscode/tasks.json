@@ -30,12 +30,12 @@
         },
 
         {
-            "label": "build-sandbox-one_to_ten",
+            "label": "build-sandbox-One_to_Ten",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/one_to_ten/one_to_ten.csproj",
+                "${workspaceFolder}/sandbox/One_to_Ten/One_to_Ten.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -43,12 +43,12 @@
         },
 
         {
-            "label": "build-sandbox-sb_journal",
+            "label": "build-sandbox-Journal_Practice",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/sb_journal/sb_journal.csproj",
+                "${workspaceFolder}/sandbox/Journal_Practice/Journal_Practice.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
