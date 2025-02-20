@@ -6,9 +6,8 @@ class Program
     static void Main(string[] args)
     {
         // ATTRIBUTES:
-        int _bottomOfRange = 1;  // This value may NOT be lowered but MAY be increased.
-        int _topOfRange = 100;   // This value MAY be increased.
-        
+        int _bottomOfRange = 1; // This value may NOT be lowered but MAY be increased.
+        int _topOfRange = 100; // This value MAY be increased.
 
         // Clear the console slate
         Console.Clear();
@@ -75,11 +74,10 @@ class Program
                 }
             } while (check == false);
 
-
             // CONTINUE or QUIT
-            bool valid = false;  // Initialize boolean
+            bool valid = false; // Initialize boolean
 
-            do                   // Loop until valid response is provided by the user
+            do // Loop until valid response is provided by the user
             {
                 // Continue or quit?
                 Console.Write("> Roll the dice again? \n");
@@ -87,16 +85,17 @@ class Program
                 response = Console.ReadLine().ToLower();
 
                 // Invalid response
-                if (response != "yes" && response != "no"){
+                if (response != "yes" && response != "no")
+                {
                     Console.WriteLine($"> Invalid option ('{response}'). Please answer [yes/no]).");
                 }
                 // Valid response
                 else
                 {
                     valid = true;
-                    
+
                     // Response for quit: "no"
-                    if (response == "no")  // Breaks parent while loop
+                    if (response == "no") // Breaks parent while loop
                     {
                         // Manage plurality of the conjugation of "guess" as needed
                         string guessPluralize = "guesses";
@@ -118,7 +117,6 @@ class Program
             Console.Write("\n");
 
             // Response for continue: "yes"; runs parent while loop. To the top!
-
         } // <<< while loop >>>
     } // <<< `Main`function >>>
 } // <<< `Program` class >>>

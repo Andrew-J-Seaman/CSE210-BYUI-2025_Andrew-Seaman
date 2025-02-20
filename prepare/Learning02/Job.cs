@@ -7,7 +7,7 @@ public class Job
     public int _endYear;
 
     // Methods (Member functions)
-    public void Display() 
+    public void Display()
     // Job Title (Company) StartYear-EndYear
     // For example: "Software Engineer (Microsoft) 2019-2022"
     {

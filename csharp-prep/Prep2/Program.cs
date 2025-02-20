@@ -20,8 +20,6 @@ class Program
         Console.Clear();
         Console.WriteLine("> Hello student!");
 
-
-
         // Initialize  variables
         string _letter = "";
         int _percent = 0;
@@ -33,7 +31,6 @@ class Program
         // Set variables based on verified user input
         string percentString = _percent.ToString();
         int lastChar = percentString[percentString.Length - 1];
-
 
         // Ask user for input
         while (!_validPercent)
@@ -110,8 +107,6 @@ class Program
         {
             _properArticle = "a";
         }
-
-
 
         // Final output
         Console.WriteLine(

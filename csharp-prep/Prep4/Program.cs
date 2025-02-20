@@ -5,13 +5,15 @@ class Program
     static void Main(string[] args)
     {
         // Clear the console
-         Console.Clear();
+        Console.Clear();
 
         // Default greeting
         Console.WriteLine("> Hello Prep4 World! \n");
 
         // Explanation
-        Console.WriteLine("> You'll be asked to build a list of numbers one at a time. Type \"0\" to end. \n");
+        Console.WriteLine(
+            "> You'll be asked to build a list of numbers one at a time. Type \"0\" to end. \n"
+        );
 
         // Advance?
         Console.Write("   > PRESS [ENTER] ");
@@ -28,7 +30,7 @@ class Program
             Console.Write("> Enter a new number (+/-): ");
             string inputString = Console.ReadLine();
             int inputInt = int.Parse(inputString);
-            
+
             if (inputInt == 0)
             {
                 Console.Clear();
@@ -55,7 +57,7 @@ class Program
         int sum = series.Sum();
         double avg = series.Average();
         int max = series.Max();
-        
+
         // Print summary stats
         Console.WriteLine($"   > Sum: {sum}");
         Console.WriteLine($"   > Average: {avg}");
@@ -98,10 +100,10 @@ class Program
 // Get size of list: Console.WriteLine(variableName.Count);  // .Count is a property not a function
 // Iterating through a list: foreach loop
 
-***Examples: 
+***Examples:
 
 1. Integers
-    List<int> numbers = new List<int>(); 
+    List<int> numbers = new List<int>();
 
     numbers.Add("phone");
     numbers.Add("keyboard");
@@ -111,7 +113,7 @@ class Program
 
 2. Strings
 // Declare data type of list items. New list instance:
-    List<string> words = new List<string>();  
+    List<string> words = new List<string>();
 
 // Add items to list:
     words.Add("phone");
@@ -134,7 +136,7 @@ class Program
         Console.WriteLine(words[i]);
     }
 
-3. Template (data type specified later) 
+3. Template (data type specified later)
 // Special case. Data type specified later.
     List<T> template = new List<T>();
 

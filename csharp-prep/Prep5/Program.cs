@@ -30,7 +30,7 @@ class Program
         Console.ReadLine();
         Console.Clear();
     }
-    
+
     // PromptUserName - Asks for and returns the user's name (as a string)
     static string PromptUserName()
     {
@@ -39,13 +39,13 @@ class Program
 
         return name;
     }
-    
+
     // PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
     static int PromptUserNumber()
     {
         Console.Write("> Enter your favorite number (integer): ");
         int number = int.Parse(Console.ReadLine());
-        
+
         return number;
     }
 
@@ -95,7 +95,7 @@ Examples:
 
 *** Standalone functions VS Member functions (a.k.a 'Methods'):
 Examples: Standalone Functions:
-    1. 
+    1.
         static void DisplayMessage()
         {
             Console.WriteLine("Hello world!");
