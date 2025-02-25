@@ -48,8 +48,6 @@ class Program
             }
         }
 
-
-
         // _letter grade
         if (_percent >= 90)
         {
