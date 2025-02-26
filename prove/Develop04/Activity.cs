@@ -49,7 +49,7 @@ public class Activity
 
         // Name: So the user knows which activity they're doing
         Console.Clear();
-        Console.Write("The "); 
+        Console.Write("The ");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write("Breathing"); // This part will be blue
         Console.ResetColor();

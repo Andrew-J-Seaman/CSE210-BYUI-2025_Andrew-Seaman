@@ -45,26 +45,27 @@ public class Spinner
     // M2.
     public void CountUpDown(string msg1, string msg2)
     {
-        List<string> count = ["1", "2", "3", "4", "5"];
+        int repeat = 5;
 
+        Console.Write("     ");
         Console.Write(msg1);
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.BackgroundColor = ConsoleColor.Yellow;
-        foreach (string number in count)
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.BackgroundColor = ConsoleColor.Green;
+        for (int i = 0; i < repeat; i++)
         {
-            Console.Write(number);
+            Console.Write("___");
             Thread.Sleep(1000);
         }
 
         Console.ResetColor();
-        Console.WriteLine("");
+        Console.Write("  ");
 
         Console.Write(msg2);
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.BackgroundColor = ConsoleColor.Yellow;
-        foreach (string number in count)
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.BackgroundColor = ConsoleColor.Green;
+        for (int i = 0; i < repeat; i++)
         {
-            Console.Write(number);
+            Console.Write("___");
             Thread.Sleep(1000);
         }
         Console.ResetColor();

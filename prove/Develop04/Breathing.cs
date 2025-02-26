@@ -31,16 +31,17 @@ public class Breathing : Activity
     public void RunBreathing()
     {
         SetDuration(DisplayPrologue()); // Breathing Intervals (10 sec): Inhale: 5, Exhale: 5.
+        Console.Clear();
 
-        string msg1 = "   > Breathe in ";
-        string msg2 = "   > Breathe out ";
+        string msg1 = "Breathe in ";
+        string msg2 = "Breathe out ";
+
         // BREATHING functionality:
         for (int i = 0; i < _duration; i++)
         {
-            Console.Clear();
-            Console.WriteLine($"Interval {i + 1}:");
+            Console.Write($"Interval {i + 1}:");
             spinner.CountUpDown(msg1, msg2);
-            Console.Clear();
+            Console.WriteLine("");
         }
 
         // End activity and display summary
