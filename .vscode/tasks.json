@@ -17,6 +17,19 @@
         },
 
         {
+            "label": "build-sandbox-Cursor",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/Cursor/Cursor.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        {
             "label": "build-sandbox-Till",
             "command": "dotnet",
             "type": "process",

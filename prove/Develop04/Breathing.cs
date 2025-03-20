@@ -39,10 +39,13 @@ public class Breathing : Activity
         // BREATHING functionality:
         for (int i = 0; i < _duration; i++)
         {
-            Console.Write($"Interval {i + 1}:");
+            Console.Write($"Question {i + 1}.");
             spinner.CountUpDown(msg1, msg2);
             Console.WriteLine("");
         }
+
+        // Correct duration (intervals = 10 sec each)
+        _duration = _duration * 10;
 
         // End activity and display summary
         DisplayEpilogue();

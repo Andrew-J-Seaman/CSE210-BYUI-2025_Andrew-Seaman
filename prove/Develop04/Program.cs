@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         // Loop main menu until user quits (option "4")
         bool quit = false;
@@ -28,7 +28,7 @@ class Program
             }
 
             Thread.Sleep(300);
-            Console.Write("\n  > Choose number: ");
+            Console.Write("\n  > Choose a number: ");
             string menu_selection = Console.ReadLine().Trim();
 
             // Apply valid menu selection. Loop if invalid.
@@ -40,18 +40,18 @@ class Program
                     Breathing activity1 = new Breathing( // Name, Description, Duration Request Message
                         "Breathing",
                         "This activity will help you relax by walking your through breathing in and out slowly.\n   > Clear your mind and focus on your breathing.\n   > Per interval, you'll inhale for five seconds then exhale for five.",
-                        "How many intervals (10 sec each) would you like to do?"
+                        "How many intervals (10 sec each) would you like to answer (max of 9)?"
                     );
                     activity1.RunBreathing();
                     break;
 
                 case "2": // REFLECTING
                     Reflection activity2 = new Reflection( // Name, Description, Duration Request Message
-                        "Reflecting",
-                        "This activity will help you reflect on times in your life when you have shown strength and resilience.\n   > This will help you recognize the power you have and how you can use it in other aspects of your life. \n   > After considering the prompt you'll have 10 seconds to answer a series of questions to help you articulate your thoughts.",
-                        "How many questions (10 sec each) would you like to answer?"
+                        "Reflection",
+                        "This activity will help you reflect on times in your life when you have shown strength and resilience.\n   > This will help you recognize the power you have and how you can use it in other aspects of your life. \n   > After considering the prompt you'll have 10 seconds per questionto answer a series of questions to help you articulate your thoughts.",
+                        "How many questions (10 sec each) would you like to answer (max of 10)?"
                     );
-                    activity2.RunReflection();
+                    await activity2.RunReflectionAsync();
                     break;
 
                 case "3": // LISTING

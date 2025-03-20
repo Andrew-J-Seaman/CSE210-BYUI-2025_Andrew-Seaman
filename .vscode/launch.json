@@ -30,6 +30,19 @@
         },
 
         {
+            "name": "Cursor",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Cursor",
+            "program": "${workspaceFolder}/sandbox/Cursor/bin/Debug/net9.0/Cursor.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Cursor",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
             "name": "One_to_Ten Project",
             "type": "coreclr",
             "request": "launch",

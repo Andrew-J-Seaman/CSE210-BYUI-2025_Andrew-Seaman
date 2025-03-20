@@ -51,9 +51,9 @@ public class Activity
         Console.Clear();
         Console.Write("The ");
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.Write("Breathing"); // This part will be blue
+        Console.Write(_name); // This part will be blue
         Console.ResetColor();
-        Console.WriteLine(", activity will begin shortly.");
+        Console.WriteLine(" activity will begin shortly.");
         spinner.SetSpinDuration(2); // Spin for 2 seconds
         spinner.Spin(); // 2 second
 

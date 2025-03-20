@@ -1,9 +1,38 @@
-﻿namespace Sandbox2;
+﻿using System;
+using System.Threading.Tasks;
 
-class Program
+namespace Sandbox2
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello, World!");
+        static async Task Main(string[] args)
+        {
+            await PerformOperationAsync();
+        }
+
+        private static async Task PerformOperationAsync()
+        {
+            ShowSpinner();
+            await LongRunningOperationAsync();
+            HideSpinner();
+        }
+
+        private static void ShowSpinner()
+        {
+            // Implement your spinner display logic here
+            Console.CursorVisible = false;
+        }
+
+        private static void HideSpinner()
+        {
+            // Implement your spinner hide logic here
+            Console.CursorVisible = true;
+        }
+
+        private static async Task LongRunningOperationAsync()
+        {
+            // Simulate a long-running task
+            await Task.Delay(5000);
+        }
     }
 }
