@@ -40,7 +40,7 @@ class Program
                     Breathing activity1 = new Breathing( // Name, Description, Duration Request Message
                         "Breathing",
                         "This activity will help you relax by walking your through breathing in and out slowly.\n   > Clear your mind and focus on your breathing.\n   > Per interval, you'll inhale for five seconds then exhale for five.",
-                        "How many intervals (10 sec each) would you like to answer (max of 9)?"
+                        "How many breathing intervals would you like (10 sec each)?"
                     );
                     activity1.RunBreathing();
                     break;
