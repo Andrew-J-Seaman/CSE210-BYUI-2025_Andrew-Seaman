@@ -34,6 +34,13 @@ public class Journal
 
     // 5) Directory to scan for journal files
     private readonly string _directoryPath = "Data/Journals/";
+    // Issue:
+    //      - 'Data' directory is not findable on Windows.
+    // Temporary Solution:
+    //      - The TA had to move that directory into the bin folder and then it ran.
+    // Possible fixes:
+    //      1) Use this more detailed path '/prove/Develop02/Data/Journals/'
+    //      2) Create a manifest file to set the working directory to the project folder.
 
     // 6)
     private string _message1;
