@@ -22,7 +22,7 @@ public class Activity
 public class Reflect : Activity // "Something to that effect." - Ammon
 {
     // Passes "Reflect" to the parent constructor
-    public Reflect() : base("Reflect") 
+    public Reflect() : base("Reflect")
     {
     }
 
@@ -31,7 +31,7 @@ public class Reflect : Activity // "Something to that effect." - Ammon
 public class Breathe : Activity
 {
     // Passes "Reflect" to the parent constructor
-    public Breathe() : base("Breathe") 
+    public Breathe() : base("Breathe")
     {
     }
 }
@@ -39,7 +39,7 @@ public class Breathe : Activity
 public class Listing : Activity
 {
     // Passes "Reflect" to the parent constructor
-    public Listing() : base("Listing") 
+    public Listing() : base("Listing")
     {
     }
 }

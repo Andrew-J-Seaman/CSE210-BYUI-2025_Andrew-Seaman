@@ -3,21 +3,44 @@
     "version": "0.2.0",
     "configurations": [
 
+        // TEMPLATE:
+        // {
+        //     "name": ".NET: Launch [DIRECTORY]",
+        //     "type": "coreclr",
+        //     "request": "launch",
+        //     "preLaunchTask": "build [DIRECTORY]",
+        //     "program": "${workspaceFolder}/[SUB_DIRECTORY_FILE_PATH]/bin/Debug/net9.0/[SUB_DIRECTORY].dll",
+        //     "cwd": "${workspaceFolder}/[SUB_DIRECTORY_FILE_PATH]",
+        //     "stopAtEntry": false,
+        //     "console": "integratedTerminal"
+        // },
+
         {
-            "name": "Sandbox Project",
+            "name": "Circle (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Sandbox",
-            "program": "${workspaceFolder}/sandbox/Sandbox/bin/Debug/net9.0/Sandbox.dll",
+            "preLaunchTask": "build-sandbox-Circle",
+            "program": "${workspaceFolder}/sandbox/Circle/bin/Debug/net9.0/Circle.dll",
+            "cwd": "${workspaceFolder}/sandbox/Circle",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        },
+        
+        {
+            "name": "Spinner (Sandbox)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Spinner",
+            "program": "${workspaceFolder}/sandbox/Spinner/bin/Debug/net9.0/Spinner.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Sandbox",
+            "cwd": "${workspaceFolder}/sandbox/Spinner",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
 
         {
-            "name": "Till Project",
+            "name": "Till (Sandbox)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-sandbox-Till",
@@ -30,7 +53,7 @@
         },
 
         {
-            "name": "Cursor",
+            "name": "Cursor (Sandbox)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-sandbox-Cursor",
@@ -43,7 +66,7 @@
         },
 
         {
-            "name": "One_to_Ten Project",
+            "name": "One_to_Ten (Sandbox)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-sandbox-One_to_Ten",
@@ -56,7 +79,7 @@
         },
 
         {
-            "name": "Journal_Practice Project",
+            "name": "Journal_Practice (Sandbox)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-sandbox-Journal_Practice",

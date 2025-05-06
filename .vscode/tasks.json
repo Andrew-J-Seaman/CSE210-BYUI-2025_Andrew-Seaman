@@ -3,15 +3,40 @@
     "version": "2.0.0",
     "tasks": [
 
+        // TEMPLATE:
+        // {
+        //     "label": "build-[folder]-[project]",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "build",
+        //         "${workspaceFolder}/[folder]/[project]/[project].csproj",
+        //         "/property:GenerateFullPaths=true",
+        //         "/consoleloggerparameters:NoSummary"
+        //     ],
+        //     "problemMatcher": "$msCompile"
+        // },
+
         {
-            "label": "build-sandbox-Sandbox",
+            "label": "build-sandbox-Spinner",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Sandbox/Sandbox.csproj",
+                "${workspaceFolder}/sandbox/Spinner/Spinner.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        {
+            "label": "build-sandbox-Circle",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+              "build",
+              "${workspaceFolder}/sandbox/Circle"
             ],
             "problemMatcher": "$msCompile"
         },
