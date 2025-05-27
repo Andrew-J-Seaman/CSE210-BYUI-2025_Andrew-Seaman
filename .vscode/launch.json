@@ -3,7 +3,50 @@
     "version": "0.2.0",
     "configurations": [
 
-        // TEMPLATE:
+    //*************************************
+    // BLOCK ORDER:
+    //*************************************
+        // Section: sandbox
+            // 1. Async
+            // 2. Circle
+            // 3. Cursor
+            // 4. Journal_Practice
+            // 5. One_to_Ten
+            // 6. Spinner
+            // 7. Till
+            // 8. WordCounter
+
+        // Section: csharp-prep
+            // 9. C# Prep 1
+            // 10. C# Prep 2
+            // 11. C# Prep 3
+            // 12. C# Prep 4
+            // 13. C# Prep 5
+
+        // Section: prepare
+            // 14. Learning 02
+            // 15. Learning 03
+            // 16. Learning 04
+            // 17. Learning 05
+
+        // Section: prove
+            // 18. Develop 02
+            // 19. Develop 03
+            // 20. Develop 04
+            // 21. Develop 05
+        
+        // Section: final
+            // 22. Final Project
+            // 23. Foundation 1
+            // 24. Foundation 2
+            // 25. Foundation 3
+            // 26. Foundation 4
+
+
+            
+    //*************************************
+    // TEMPLATE:
+    //*************************************
         // {
         //     "name": ".NET: Launch [DIRECTORY]",
         //     "type": "coreclr",
@@ -15,6 +58,29 @@
         //     "console": "integratedTerminal"
         // },
 
+
+
+    //*************************************
+    // JSON BLOCKS (launch):
+    //*************************************
+    
+    // SECTION: Sandbox
+
+        // 1. Async
+        {
+            "name": "Async (Sandbox)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Async",
+            "program": "${workspaceFolder}/sandbox/Async/bin/Debug/net9.0/Async.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Async",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        // 2. Circle
         {
             "name": "Circle (Sandbox)",
             "type": "coreclr",
@@ -26,32 +92,7 @@
             "console": "integratedTerminal"
         },
         
-        {
-            "name": "Spinner (Sandbox)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build-sandbox-Spinner",
-            "program": "${workspaceFolder}/sandbox/Spinner/bin/Debug/net9.0/Spinner.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Spinner",
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "stopAtEntry": false
-        },
-
-        {
-            "name": "Till (Sandbox)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build-sandbox-Till",
-            "program": "${workspaceFolder}/sandbox/Till/bin/Debug/net9.0/Till.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Till",
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "stopAtEntry": false
-        },
-
+        // 3. Cursor
         {
             "name": "Cursor (Sandbox)",
             "type": "coreclr",
@@ -65,6 +106,21 @@
             "stopAtEntry": false
         },
 
+        // 4. Journal_Practice
+        {
+            "name": "Journal_Practice (Sandbox)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Journal_Practice",
+            "program": "${workspaceFolder}/sandbox/Journal_Practice/bin/Debug/net9.0/Journal_Practice.dll", 
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Journal_Practice",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        // 5. One_to_Ten
         {
             "name": "One_to_Ten (Sandbox)",
             "type": "coreclr",
@@ -78,19 +134,52 @@
             "stopAtEntry": false
         },
 
+        // 6. Spinner
         {
-            "name": "Journal_Practice (Sandbox)",
+            "name": "Spinner (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Journal_Practice",
-            "program": "${workspaceFolder}/sandbox/Journal_Practice/bin/Debug/net9.0/Journal_Practice.dll", 
+            "preLaunchTask": "build-sandbox-Spinner",
+            "program": "${workspaceFolder}/sandbox/Spinner/bin/Debug/net9.0/Spinner.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Journal_Practice",
+            "cwd": "${workspaceFolder}/sandbox/Spinner",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        // 7. Till
+        {
+            "name": "Till (Sandbox)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Till",
+            "program": "${workspaceFolder}/sandbox/Till/bin/Debug/net9.0/Till.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Till",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        // 8. WordCounter
+        {
+            "name": "WordCounter (Sandbox)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-WordCounter",
+            "program": "${workspaceFolder}/sandbox/WordCounter/bin/Debug/net9.0/WordCounter.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/WordCounter",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
         
+
+    // SECTION: csharp-prep
+
+        // 9. C# Prep 1
         {
             "name": "C# Prep 1",
             "type": "coreclr",
@@ -104,6 +193,7 @@
             "stopAtEntry": false
         },
 
+        // 10. C# Prep 2
         {
             "name": "C# Prep 2",
             "type": "coreclr",
@@ -117,6 +207,7 @@
             "stopAtEntry": false
         },
 
+        // 11. C# Prep 3
         {
             "name": "C# Prep 3",
             "type": "coreclr",
@@ -130,6 +221,7 @@
             "stopAtEntry": false
         },
 
+        // 12. C# Prep 4
         {
             "name": "C# Prep 4",
             "type": "coreclr",
@@ -143,6 +235,7 @@
             "stopAtEntry": false
         },
 
+        // 13. C# Prep 5
         {
             "name": "C# Prep 5",
             "type": "coreclr",
@@ -156,6 +249,9 @@
             "stopAtEntry": false
         },
 
+    // SECTION: Learning
+
+        // 14. Learning 02
         {
             "name": "Learning 02 (Resume)",
             "type": "coreclr",
@@ -169,6 +265,7 @@
             "stopAtEntry": false
         },
 
+        // 15. Learning 03
         {
             "name": "Learning 03 (Fraction)",
             "type": "coreclr",
@@ -182,6 +279,7 @@
             "stopAtEntry": false
         },
 
+        // 16. Learning 04
         {
             "name": "Learning 04 (Homework)",
             "type": "coreclr",
@@ -195,6 +293,7 @@
             "stopAtEntry": false
         },
 
+        // 17. Learning 05
         {
             "name": "Learning 05 (Shapes)",
             "type": "coreclr",
@@ -208,6 +307,9 @@
             "stopAtEntry": false
         },
 
+    // SECTION: prove
+    
+        // 18. Develop 02
         {
             "name": "Develop 02 (Journal)",
             "type": "coreclr",
@@ -221,6 +323,7 @@
             "stopAtEntry": false
         },
 
+        // 19. Develop 03
         {
             "name": "Develop 03 (Scripture Memorizer)",
             "type": "coreclr",
@@ -234,6 +337,7 @@
             "stopAtEntry": false
         },
 
+        // 20. Develop 04
         {
             "name": "Develop 04 (Mindfulness)",
             "type": "coreclr",
@@ -247,6 +351,7 @@
             "stopAtEntry": false
         },
 
+        // 21. Develop 05
         {
             "name": "Develop 05 (Goal Tracker)",
             "type": "coreclr",
@@ -260,6 +365,9 @@
             "stopAtEntry": false
         },
 
+    // SECTION: final
+    
+        // 22. Final Project
         {
             "name": "Final Project (Open ended)",
             "type": "coreclr",
@@ -273,6 +381,7 @@
             "stopAtEntry": false
         },
 
+        // 23. Foundation 1
         {
             "name": "Foundation 1 (YouTube)",
             "type": "coreclr",
@@ -286,6 +395,7 @@
             "stopAtEntry": false
         },
 
+        // 24. Foundation 2
         {
             "name": "Foundation 2 (Products)",
             "type": "coreclr",
@@ -299,6 +409,7 @@
             "stopAtEntry": false
         },
 
+        // 25. Foundation 3
         {
             "name": "Foundation 3 (Events)",
             "type": "coreclr",
@@ -312,6 +423,7 @@
             "stopAtEntry": false
         },
 
+        // 26. Foundation 4
         {
             "name": "Foundation 4 (Exercise)",
             "type": "coreclr",

@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circle", "sandbox\Circle\Ci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinner", "sandbox\Spinner\Spinner.csproj", "{31F9B029-F49D-4C6A-8FFB-FB1034C78FB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter", "WordCounter\WordCounter.csproj", "{35B94A16-18FF-4EDE-840B-AF36D3FD73C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{31F9B029-F49D-4C6A-8FFB-FB1034C78FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31F9B029-F49D-4C6A-8FFB-FB1034C78FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F9B029-F49D-4C6A-8FFB-FB1034C78FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B94A16-18FF-4EDE-840B-AF36D3FD73C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B94A16-18FF-4EDE-840B-AF36D3FD73C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B94A16-18FF-4EDE-840B-AF36D3FD73C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B94A16-18FF-4EDE-840B-AF36D3FD73C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,51 @@
     "version": "2.0.0",
     "tasks": [
 
-        // TEMPLATE:
+    //*************************************
+    // BLOCK ORDER:
+    //*************************************
+        // Section: sandbox
+            // 1. Async
+            // 2. Circle
+            // 3. Cursor
+            // 4. Journal_Practice
+            // 5. One_to_Ten
+            // 6. Spinner
+            // 7. Till
+            // 8. WordCounter
+
+        // Section: csharp-prep
+            // 9. C# Prep 1
+            // 10. C# Prep 2
+            // 11. C# Prep 3
+            // 12. C# Prep 4
+            // 13. C# Prep 5
+
+        // Section: prepare
+            // 14. Learning 02
+            // 15. Learning 03
+            // 16. Learning 04
+            // 17. Learning 05
+
+        // Section: prove
+            // 18. Develop 02
+            // 19. Develop 03
+            // 20. Develop 04
+            // 21. Develop 05
+        
+        // Section: final
+            // 22. Final Project
+            // 23. Foundation 1
+            // 24. Foundation 2
+            // 25. Foundation 3
+            // 26. Foundation 4
+
+
+
+
+    //*************************************
+    // TEMPLATE:
+    //*************************************
         // {
         //     "label": "build-[folder]-[project]",
         //     "command": "dotnet",
@@ -17,19 +61,27 @@
         //     "problemMatcher": "$msCompile"
         // },
 
+    //*************************************
+    // JSON BLOCKS (tasks):
+    //*************************************
+
+    // Section: sandbox
+
+        // 1. Async
         {
-            "label": "build-sandbox-Spinner",
+            "label": "build-sandbox-Async",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Spinner/Spinner.csproj",
+                "${workspaceFolder}/sandbox/Async/Async.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
 
+        // 2. Circle
         {
             "label": "build-sandbox-Circle",
             "command": "dotnet",
@@ -41,6 +93,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 3. Cursor
         {
             "label": "build-sandbox-Cursor",
             "command": "dotnet",
@@ -54,32 +107,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        {
-            "label": "build-sandbox-Till",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/sandbox/Till/Till.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-
-        {
-            "label": "build-sandbox-One_to_Ten",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/sandbox/One_to_Ten/One_to_Ten.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-
+        // 4. Journal_Practice
         {
             "label": "build-sandbox-Journal_Practice",
             "command": "dotnet",
@@ -93,6 +121,66 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 5. One_to_Ten
+        {
+            "label": "build-sandbox-One_to_Ten",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/One_to_Ten/One_to_Ten.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        // 6. Spinner
+        {
+            "label": "build-sandbox-Spinner",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/Spinner/Spinner.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        // 7. Till
+        {
+            "label": "build-sandbox-Till",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/Till/Till.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+        // 8. WordCounter
+        {
+            "label": "build-sandbox-WordCounter",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/WordCounter/WordCounter.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+
+    // Section: csharp-prep
+
+        // 9. C# Prep1
         {
             "label": "build-csharp-prep-Prep1",
             "command": "dotnet",
@@ -106,6 +194,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 10. C# Prep2
         {
             "label": "build-csharp-prep-Prep2",
             "command": "dotnet",
@@ -119,6 +208,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 11. C# Prep3
         {
             "label": "build-csharp-prep-Prep3",
             "command": "dotnet",
@@ -132,6 +222,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 12. C# Prep4
         {
             "label": "build-csharp-prep-Prep4",
             "command": "dotnet",
@@ -145,6 +236,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 13. C# Prep5
         {
             "label": "build-csharp-prep-Prep5",
             "command": "dotnet",
@@ -158,6 +250,10 @@
             "problemMatcher": "$msCompile"
         },
 
+
+    // Section: prepare
+
+        // 14. Learning 02
         {
             "label": "build-prepare-Learning02",
             "command": "dotnet",
@@ -171,6 +267,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 15. Learning 03
         {
             "label": "build-prepare-Learning03",
             "command": "dotnet",
@@ -184,6 +281,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 16. Learning 04
         {
             "label": "build-prepare-Learning04",
             "command": "dotnet",
@@ -197,6 +295,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 17. Learning 05
         {
             "label": "build-prepare-Learning05",
             "command": "dotnet",
@@ -210,6 +309,9 @@
             "problemMatcher": "$msCompile"
         },
 
+    // Section: prove
+        
+        // 18. Develop 02
         {
             "label": "build-prove-Develop02",
             "command": "dotnet",
@@ -223,6 +325,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 19. Develop 03
         {
             "label": "build-prove-Develop03",
             "command": "dotnet",
@@ -236,6 +339,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 20. Develop 04
         {
             "label": "build-prove-Develop04",
             "command": "dotnet",
@@ -249,6 +353,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 21. Develop 05
         {
             "label": "build-prove-Develop05",
             "command": "dotnet",
@@ -262,6 +367,9 @@
             "problemMatcher": "$msCompile"
         },
 
+    // Section: final
+
+        // 22. Final Project
         {
             "label": "build-final-FinalProject",
             "command": "dotnet",
@@ -275,6 +383,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 23. Foundation 1
         {
             "label": "build-final-Foundation1",
             "command": "dotnet",
@@ -288,6 +397,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 24. Foundation 2
         {
             "label": "build-final-Foundation2",
             "command": "dotnet",
@@ -301,6 +411,7 @@
             "problemMatcher": "$msCompile"
         },
 
+        // 25. Foundation 3
         {
             "label": "build-final-Foundation3",
             "command": "dotnet",
@@ -313,7 +424,8 @@
             ],
             "problemMatcher": "$msCompile"
         },
-
+        
+        // 26. Foundation 4
         {
             "label": "build-final-Foundation4",
             "command": "dotnet",
