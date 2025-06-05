@@ -101,7 +101,7 @@ public class Activity
         // PURPOSE: Each activity should end with a common ending message that tells the user they have done a good job, and pause and then tell them the activity they have completed and the length of time and then pause for several seconds before finishing.
 
         // Tell user good job
-        Console.WriteLine($"Good job!");
+        Console.WriteLine($"\nGood job!");
         spinner.SetSpinDuration(3);
         spinner.Spin(); // 3 seconds
         Console.WriteLine($"You've completed a {_name} activity which lasted {_duration} seconds.");
