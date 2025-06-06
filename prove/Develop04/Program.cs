@@ -51,7 +51,7 @@ class Program
                         "This activity will help you reflect on times in your life when you have shown strength and resilience.\n   > This will help you recognize the power you have and how you can use it in other aspects of your life. \n   > After considering the prompt you'll have 10 seconds per questionto answer a series of questions to help you articulate your thoughts.",
                         "How many questions (10 sec each) would you like to answer (max of 10)?"
                     );
-                    await activity2.RunReflectionAsync();
+                    activity2.RunReflection();
                     break;
 
                 case "3": // LISTING

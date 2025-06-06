@@ -65,63 +65,78 @@ public class Reflection : Activity
 
     // METHOD...........(1)
 
-    // M1.
-    // public void RunReflection()
-    // {
-    //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
-    //     Console.Clear();
+    M1.
+    public void RunReflection()
+    {
+        SetDuration(DisplayPrologue()); // Question duration: 10 sec
+        Console.Clear();
 
-    //     // REFLECTION functionality:
+        // REFLECTION functionality:
 
-    //     // Random integers (prompts and questions)
-    //     int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
-    //     int[] randNumsQuestions = new int[_duration]; // Random questions index
-    //     for (int j = 0; j < _duration - 1; j++) // Build array of random question indices
-    //     {
-    //         int randNum;
-    //         do
-    //         {
-    //             randNum = new Random().Next(0, _questions.Count); // Random question
-    //         } while (randNum == randNumsQuestions[randNumPrompt]);
+        // Note: 
+        // ——————————————————————————————————————————————————————————————————————————————————————
+        // I believe I may have misinterpreted the instruction for this whole section and need to do a comprehensive review of the 'Reflection Functionality' (below). 
+        // 
+        // If I've got it correct, I could allow the user 5-10 seconds for reflection per question and leave '_duration' equal to the number of questions the user will answer in one way or another. I'll have to give that some thought as to how exactly that works.
 
-    //         randNumsQuestions[j] = randNum;
-    //     }
 
-    //     Console.WriteLine("Instructions:\n   > Read the prompt then press enter to answer the first questions.\n");
-    //     spinner.SetSpinDuration(1);
-    //     spinner.Spin(); // 1 second
-    //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
-    //     PressEnterToContinue();
-    //     spinner.SetSpinDuration(3);
-    //     spinner.Spin(); // 3 second
-    //     Console.Clear();
+        // Random integers (prompts and questions)
+        int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
+        int[] randNumsQuestions = new int[_duration]; // Random questions index
+        
+        // Build array of random question indices
+        for (int j = 0; j < _duration - 1; j++) // Note: each question lasts 10 seconds
+        {
+            int randNum;
+            do
+            {
+                randNum = new Random().Next(0, _questions.Count); // Random question
+            } while (randNum == randNumsQuestions[randNumPrompt]);
 
-    //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}");
+            randNumsQuestions[j] = randNum;
+        }
 
-    //     int i = 0;
-    //     foreach (int q in randNumsQuestions)
-    //     {
-    //         i++;
+        // Output intro:
+        Console.WriteLine("Instructions:\n   > Read the prompt then press enter to answer the first questions.\n");
+        spinner.SetSpinDuration(1);
+        spinner.Spin(); // 1 second
+        Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
+        PressEnterToContinue();
+        spinner.SetSpinDuration(3);
+        spinner.Spin(); // 3 second
+        Console.Clear();
 
-    //         DateTime start = DateTime.Now;
-    //         DateTime end = start.AddSeconds(10);
+        Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}");
 
-    //         Console.WriteLine($"\nQuestion {i}.\n   > {_questions[randNumsQuestions[q]]}");
-    //         Console.Write("   > Response: ");
-    //         Console.ReadLine();
+        int i = 0;
+        foreach (int q in randNumsQuestions)
+        {
+            i++;
 
-    //         while (DateTime.Now < end)
-    //         {
-    //             spinner.SetSpinDuration(10);
-    //             spinner.Spin();
+            DateTime start = DateTime.Now;
+            DateTime end = start.AddSeconds(10);
 
-    //         }
-    //     }
-    //     // End activity and display summary
-    //     DisplayEpilogue();
-    // }
+            Console.WriteLine($"\nQuestion {i}.\n   > {_questions[randNumsQuestions[q]]}");
+            // Removed: 
+            // 
+            // Here I was having the user write a response which is unneccessary. Instead the user is intended to simply reflect hence the activity name "Reflection". This misunderstanding further complicated the code because I thought I had to both take in user input in response to the prompt as well as display a spinner. The conflict that arose was in how the spinner is designed. It clears the line as part of its functionality which was interfering with the user providing input.
+            //
+            // This is no longer an issue as I now correctly understand the instructions. 
+            //
+            // With ChatGPT I was trying to perform a multi-threaded operation using 'async' and 'await' which I have not studied yet and are unneccessary here.
 
-    // M2.
+            while (DateTime.Now < end)
+            {
+                spinner.SetSpinDuration(10);
+                spinner.Spin();
+
+            }
+        }
+        // End activity and display summary
+        DisplayEpilogue();
+    }
+
+    // M2. 
     // public async Task RunReflectionAsync()
     // {
     //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
@@ -189,90 +204,92 @@ public class Reflection : Activity
     // }
 
     // M3.
-    public async Task RunReflectionAsync()
-    {
-        SetDuration(DisplayPrologue()); // Question duration: 10 sec
-        Console.Clear();
+    // public async Task RunReflectionAsync()
+    // {
+    //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
+    //     Console.Clear();
 
-        // Random integers (prompts and questions)
-        int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
-        int[] randNumsQuestions = new int[_duration]; // Random questions index
+    //     // Random integers (prompts and questions)
+    //     int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
+    //     int[] randNumsQuestions = new int[_duration]; // Random questions index
 
-        for (int j = 0; j < _duration; j++) // Build array of random question indices
-        {
-            int randNum;
-            bool valid = false;
-            do
-            {
-                randNum = new Random().Next(0, _questions.Count); // Random question
+    //     for (int j = 0; j < _duration; j++) // Build array of random question indices
+    //     {
+    //         int randNum;
+    //         bool valid = false;
+    //         do
+    //         {
+    //             randNum = new Random().Next(0, _questions.Count); // Random question
 
-                // Ensure randNum isn't already in randNumsQuestions and isn't equal to randNumPrompt
-                if (!randNumsQuestions.Contains(randNum) && randNum != randNumPrompt)
-                {
-                    valid = true;
-                }
-            } while (!valid);
+    //             // Ensure randNum isn't already in randNumsQuestions and isn't equal to randNumPrompt
+    //             if (!randNumsQuestions.Contains(randNum) && randNum != randNumPrompt)
+    //             {
+    //                 valid = true;
+    //             }
+    //         } while (!valid);
 
-            randNumsQuestions[j] = randNum;
-        }
+    //         randNumsQuestions[j] = randNum;
+    //     }
 
-        // Show instructions
-        Console.WriteLine(
-            "Instructions:\n   > Read the prompt then press enter to answer the first question.\n"
-        );
-        PressEnterToContinue();
-        Console.Clear();
-        Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
-        PressEnterToContinue();
+    //     // Show instructions
+    //     Console.WriteLine(
+    //         "Instructions:\n   > Read the prompt then press enter to answer the first question.\n"
+    //     );
+    //     PressEnterToContinue();
+    //     Console.Clear();
+    //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
+    //     PressEnterToContinue();
 
-        for (int i = 0; i < _duration; i++)
-        {
-            DateTime start = DateTime.Now;
-            DateTime end = start.AddSeconds(10);
+    //     for (int i = 0; i < _duration; i++)
+    //     {
+    //         DateTime start = DateTime.Now;
+    //         DateTime end = start.AddSeconds(10);
 
-            // Create a cancellation token for controlling the spinner task
-            var cts = new CancellationTokenSource();
-            var token = cts.Token;
+    //         // Create a cancellation token for controlling the spinner task
+    //         var cts = new CancellationTokenSource();
+    //         var token = cts.Token;
 
-            // Run spinner in the background while waiting for user input
-            Task spinnerTask = Task.Run(() =>
-            {
-                while (DateTime.Now < end && !token.IsCancellationRequested)
-                {
-                    Console.Write($"\r{spinner.GetNextFrame()}");
-                    Thread.Sleep(200); // Sleep to allow time for other actions
-                }
-            });
+    //         // Run spinner in the background while waiting for user input
+    //         Task spinnerTask = Task.Run(() =>
+    //         {
+    //             while (DateTime.Now < end && !token.IsCancellationRequested)
+    //             {
+    //                 Console.Write($"\r{spinner.GetNextFrame()}");
+    //                 Thread.Sleep(200); // Sleep to allow time for other actions
+    //             }
+    //         });
 
-            // Print the question and wait for the user to respond
-            Console.WriteLine($"\nQuestion {i + 1}.\n   > {_questions[randNumsQuestions[i]]}");
-            Console.Write("   > Response: ");
+    //         // Print the question and wait for the user to respond
+    //         Console.WriteLine($"\nQuestion {i + 1}.\n   > {_questions[randNumsQuestions[i]]}");
+    //         Console.Write("   > Response: ");
 
-            // Wait for the user input asynchronously
-            var inputTask = Task.Run(() => Console.ReadLine());
+    //         // Wait for the user input asynchronously
+    //         var inputTask = Task.Run(() => Console.ReadLine());
 
-            // Wait for either the spinner to finish or the user to provide input
-            await Task.WhenAny(spinnerTask, inputTask);
+    //         // Wait for either the spinner to finish or the user to provide input
+    //         await Task.WhenAny(spinnerTask, inputTask);
 
-            // Cancel the spinner task once the user has finished input
-            cts.Cancel();
+    //         // Cancel the spinner task once the user has finished input
+    //         cts.Cancel();
 
-            // Ensure the spinner task is completed
-            await spinnerTask;
+    //         // Ensure the spinner task is completed
+    //         await spinnerTask;
 
-            // You can use the input from inputTask if needed
-            string userInput = await inputTask;
+    //         // You can use the input from inputTask if needed
+    //         string userInput = await inputTask;
 
-            // Process userInput if necessary
-        }
+    //         // Process userInput if necessary
+    //     }
 
-        // Correct duration (intervals = 10 sec each)
-        _duration = _duration * 10;
+    //     // Correct duration (intervals = 10 sec each)
+    //     _duration = _duration * 10;
 
-        // End activity and display summary
-        DisplayEpilogue();
-    }
+    //     // End activity and display summary
+    //     DisplayEpilogue();
+    // }
+
 }
+
 // REQUIREMENTS
 //  •   The activity should begin with the standard starting message and prompt for the duration that is used by all activities.
 //  •   The description of this activity should be something like: "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
