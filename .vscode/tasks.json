@@ -12,35 +12,36 @@
             // 3. Cursor
             // 4. Journal_Practice
             // 5. One_to_Ten
-            // 6. Spinner
-            // 7. Till
-            // 8. WordCounter
+            // 6. PrettyText
+            // 7. Spinner
+            // 8. Till
+            // 9. WordCounter
 
         // Section: csharp-prep
-            // 9. C# Prep 1
-            // 10. C# Prep 2
-            // 11. C# Prep 3
-            // 12. C# Prep 4
-            // 13. C# Prep 5
+            // 1. C# Prep 1
+            // 2. C# Prep 2
+            // 3. C# Prep 3
+            // 4. C# Prep 4
+            // 5. C# Prep 5
 
         // Section: prepare
-            // 14. Learning 02
-            // 15. Learning 03
-            // 16. Learning 04
-            // 17. Learning 05
+            // 1. Learning 02
+            // 2. Learning 03
+            // 3. Learning 04
+            // 4. Learning 05
 
         // Section: prove
-            // 18. Develop 02
-            // 19. Develop 03
-            // 20. Develop 04
-            // 21. Develop 05
+            // 1. Develop 02
+            // 2. Develop 03
+            // 3. Develop 04
+            // 4. Develop 05
         
         // Section: final
-            // 22. Final Project
-            // 23. Foundation 1
-            // 24. Foundation 2
-            // 25. Foundation 3
-            // 26. Foundation 4
+            // 1. Final Project
+            // 2. Foundation 1
+            // 3. Foundation 2
+            // 4. Foundation 3
+            // 5. Foundation 4
 
 
 
@@ -135,7 +136,21 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 6. Spinner
+        // 6. PrettyText
+        {
+            "label": "build-sandbox-PrettyText",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/PrettyText/PrettyText.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        
+        // 7. Spinner
         {
             "label": "build-sandbox-Spinner",
             "command": "dotnet",
@@ -149,7 +164,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 7. Till
+        // 8. Till
         {
             "label": "build-sandbox-Till",
             "command": "dotnet",
@@ -163,7 +178,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 8. WordCounter
+        // 9. WordCounter
         {
             "label": "build-sandbox-WordCounter",
             "command": "dotnet",
@@ -180,7 +195,7 @@
 
     // Section: csharp-prep
 
-        // 9. C# Prep1
+        // 1. C# Prep1
         {
             "label": "build-csharp-prep-Prep1",
             "command": "dotnet",
@@ -194,7 +209,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 10. C# Prep2
+        // 2. C# Prep2
         {
             "label": "build-csharp-prep-Prep2",
             "command": "dotnet",
@@ -208,7 +223,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 11. C# Prep3
+        // 3. C# Prep3
         {
             "label": "build-csharp-prep-Prep3",
             "command": "dotnet",
@@ -222,7 +237,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 12. C# Prep4
+        // 4. C# Prep4
         {
             "label": "build-csharp-prep-Prep4",
             "command": "dotnet",
@@ -236,7 +251,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 13. C# Prep5
+        // 5. C# Prep5
         {
             "label": "build-csharp-prep-Prep5",
             "command": "dotnet",
@@ -253,7 +268,7 @@
 
     // Section: prepare
 
-        // 14. Learning 02
+        // 1. Learning 02
         {
             "label": "build-prepare-Learning02",
             "command": "dotnet",
@@ -267,7 +282,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 15. Learning 03
+        // 2. Learning 03
         {
             "label": "build-prepare-Learning03",
             "command": "dotnet",
@@ -281,7 +296,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 16. Learning 04
+        // 3. Learning 04
         {
             "label": "build-prepare-Learning04",
             "command": "dotnet",
@@ -295,7 +310,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 17. Learning 05
+        // 4. Learning 05
         {
             "label": "build-prepare-Learning05",
             "command": "dotnet",
@@ -311,7 +326,7 @@
 
     // Section: prove
         
-        // 18. Develop 02
+        // 1. Develop 02
         {
             "label": "build-prove-Develop02",
             "command": "dotnet",
@@ -325,7 +340,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 19. Develop 03
+        // 2. Develop 03
         {
             "label": "build-prove-Develop03",
             "command": "dotnet",
@@ -339,7 +354,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 20. Develop 04
+        // 3. Develop 04
         {
             "label": "build-prove-Develop04",
             "command": "dotnet",
@@ -353,7 +368,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 21. Develop 05
+        // 4. Develop 05
         {
             "label": "build-prove-Develop05",
             "command": "dotnet",
@@ -369,7 +384,7 @@
 
     // Section: final
 
-        // 22. Final Project
+        // 1. Final Project
         {
             "label": "build-final-FinalProject",
             "command": "dotnet",
@@ -383,7 +398,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 23. Foundation 1
+        // 2. Foundation 1
         {
             "label": "build-final-Foundation1",
             "command": "dotnet",
@@ -397,7 +412,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 24. Foundation 2
+        // 3. Foundation 2
         {
             "label": "build-final-Foundation2",
             "command": "dotnet",
@@ -411,7 +426,7 @@
             "problemMatcher": "$msCompile"
         },
 
-        // 25. Foundation 3
+        // 4. Foundation 3
         {
             "label": "build-final-Foundation3",
             "command": "dotnet",
@@ -425,7 +440,7 @@
             "problemMatcher": "$msCompile"
         },
         
-        // 26. Foundation 4
+        // 5. Foundation 4
         {
             "label": "build-final-Foundation4",
             "command": "dotnet",

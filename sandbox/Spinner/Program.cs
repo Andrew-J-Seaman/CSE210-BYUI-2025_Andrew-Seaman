@@ -1,4 +1,14 @@
-/*// MAIN CLASS Logic:
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+// DISCLAIMER: frankly this program.cs file is a couple of things that belong in either separate classes (files) or projects as they do different things. However they both releate to the same project, so I am leaving them here for now. The first part is the Activity class and its children, which are used in a journal application. The second part is a spinner that can be used to indicate loading or processing states in a console application.
+
+
+// ——————————————————————————————————————————————————————————————————————————————————————————
+
+
+// MAIN CLASS Logic (Journal-Develop2):
 
 public class Activity
 {
@@ -9,7 +19,7 @@ public class Activity
     // Constructor initializes the _activityName attribute
     public Activity(string _activityName)
     {
-        this._activityName=_activityName;
+        this._activityName = _activityName;
     }
     public void DefaultPrompt(string _activityName)
     {
@@ -43,17 +53,12 @@ public class Listing : Activity
     {
     }
 }
-*/
 
 
+// ——————————————————————————————————————————————————————————————————————————————————————————
 
-/*
+
 // SPINNER Logic:
-
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
 class Program
 {
     static async Task Main(string[] args)
@@ -90,46 +95,6 @@ class Program
         }
     }
 }
-*/
 
 
-
-
- // FADE IN/OUT Logic:
-
-using System;
-using System.Threading;
-
-class Program
-{
-    static void Main()
-    {
-        string message = "Hello, this is a fade-in and fade-out message!";
-        
-        FadeIn(message);
-        Thread.Sleep(1000); // Pause before fading out
-        FadeOut(message);
-    }
-
-    static void FadeIn(string message)
-    {
-        Console.Clear();
-        for (int i = 1; i <= message.Length; i++)
-        {
-            Console.Write("\r" + message.Substring(0, i));
-            Thread.Sleep(50); // Adjust speed for a slower or faster effect
-        }
-    }
-
-    static void FadeOut(string message)
-    {
-        Console.Write("\r" + message);
-        Thread.Sleep(500); // Pause briefly before starting fade-out
-        
-        for (int i = message.Length; i >= 0; i--)
-        {
-            Console.Write("\r" + message.Substring(0, i) + new string(' ', message.Length - i));
-            Thread.Sleep(50); // Adjust speed for a slower or faster effect
-        }
-    }
-}
+// ——————————————————————————————————————————————————————————————————————————————————————————
