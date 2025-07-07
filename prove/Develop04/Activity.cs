@@ -60,7 +60,7 @@ public class Activity
         // Description: So the user understands the activity before they begin
         Console.Clear();
         Thread.Sleep(300);
-        string star_bar = new string('*', _name.Length + 4);
+        string star_bar = new string('*', _name.Length + 4); // Used for title bar display format
         Console.Write($"{star_bar}\n> ");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write($"{_name.ToUpper()}");

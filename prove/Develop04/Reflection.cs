@@ -65,7 +65,7 @@ public class Reflection : Activity
 
     // METHOD...........(1)
 
-    M1.
+    // M1.
     public void RunReflection()
     {
         SetDuration(DisplayPrologue()); // Question duration: 10 sec
@@ -73,31 +73,37 @@ public class Reflection : Activity
 
         // REFLECTION functionality:
 
-        // Note: 
+        // Note:
         // ——————————————————————————————————————————————————————————————————————————————————————
-        // I believe I may have misinterpreted the instruction for this whole section and need to do a comprehensive review of the 'Reflection Functionality' (below). 
-        // 
+        // I believe I may have misinterpreted the instruction for this whole section and need to do a comprehensive review of the 'Reflection Functionality' (below).
+        //
         // If I've got it correct, I could allow the user 5-10 seconds for reflection per question and leave '_duration' equal to the number of questions the user will answer in one way or another. I'll have to give that some thought as to how exactly that works.
 
+        // Ensure unique random numbers for questions
+        // Using a HashSet to track used indices
+        // This ensures that each question is unique and avoids duplicates
+        HashSet<int> usedIndices = new HashSet<int>();
 
-        // Random integers (prompts and questions)
+         // Random integers (prompts and questions)
         int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
         int[] randNumsQuestions = new int[_duration]; // Random questions index
-        
-        // Build array of random question indices
-        for (int j = 0; j < _duration - 1; j++) // Note: each question lasts 10 seconds
+
+        // Build array of random question indices (adjust to a 0-start index)
+        for (int j = 0; j < _duration - 1; j++) // Note: each question lasts 10 seconds for reflection
         {
-            int randNum;
+            int randNum; // Local variable for random number
             do
             {
-                randNum = new Random().Next(0, _questions.Count); // Random question
-            } while (randNum == randNumsQuestions[randNumPrompt]);
+                randNum = new Random().Next(0, _questions.Count);
+            } while (!usedIndices.Add(randNum)); // Add returns false if duplicate is passed.
 
             randNumsQuestions[j] = randNum;
         }
 
         // Output intro:
-        Console.WriteLine("Instructions:\n   > Read the prompt then press enter to answer the first questions.\n");
+        Console.WriteLine(
+            "Instructions:\n   > Read the prompt then press enter to answer the first questions.\n"
+        );
         spinner.SetSpinDuration(1);
         spinner.Spin(); // 1 second
         Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
@@ -117,11 +123,11 @@ public class Reflection : Activity
             DateTime end = start.AddSeconds(10);
 
             Console.WriteLine($"\nQuestion {i}.\n   > {_questions[randNumsQuestions[q]]}");
-            // Removed: 
-            // 
+            // Removed:
+            //
             // Here I was having the user write a response which is unneccessary. Instead the user is intended to simply reflect hence the activity name "Reflection". This misunderstanding further complicated the code because I thought I had to both take in user input in response to the prompt as well as display a spinner. The conflict that arose was in how the spinner is designed. It clears the line as part of its functionality which was interfering with the user providing input.
             //
-            // This is no longer an issue as I now correctly understand the instructions. 
+            // This is no longer an issue as I now correctly understand the instructions.
             //
             // With ChatGPT I was trying to perform a multi-threaded operation using 'async' and 'await' which I have not studied yet and are unneccessary here.
 
@@ -129,165 +135,166 @@ public class Reflection : Activity
             {
                 spinner.SetSpinDuration(10);
                 spinner.Spin();
-
             }
         }
         // End activity and display summary
         DisplayEpilogue();
     }
 
-    // M2. 
-    // public async Task RunReflectionAsync()
-    // {
-    //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
-    //     Console.Clear();
-
-    //     // Random integers (prompts and questions)
-    //     int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
-    //     int[] randNumsQuestions = new int[_duration]; // Random questions index
-
-    //     for (int j = 0; j < _duration; j++) // Build array of random question indices
-    //     {
-    //         int randNum;
-    //         bool valid = false;
-    //         do
-    //         {
-    //             randNum = new Random().Next(0, _questions.Count); // Random question
-
-    //             // Ensure randNum isn't already in randNumsQuestions and isn't equal to randNumPrompt
-    //             if (!randNumsQuestions.Contains(randNum))
-    //             {
-    //                 valid = true;
-    //             }
-    //         } while (!valid);
-
-    //         randNumsQuestions[j] = randNum;
-    //     }
-
-    //     // Show instructions
-    //     Console.WriteLine("Instructions:\n   > Read the prompt then press enter to answer the first question.\n");
-    //     PressEnterToContinue();
-    //     Console.Clear();
-    //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
-    //     PressEnterToContinue();
-
-    //     for (int i = 0; i < _duration; i++)
-    //     {
-    //         DateTime start = DateTime.Now;
-    //         DateTime end = start.AddSeconds(10);
-
-    //         // Run spinner in the background while waiting for user input
-    //         Task spinnerTask = Task.Run(() =>
-    //         {
-    //             while (DateTime.Now < end)
-    //             {
-    //                 Console.WriteLine();
-    //                 spinner.SetSpinDuration(10);
-    //                 spinner.Spin();
-    //             }
-    //         });
-
-    //         Console.WriteLine($"\nQuestion {i + 1}.\n   > {_questions[randNumsQuestions[i]]}");
-    //         Console.Write("   > Response: ");
-    //         // Wait for the user to provide their response
-    //         Console.ReadLine();
-
-    //         // Wait for the spinner to finish before moving to the next question
-    //         await spinnerTask;
-    //     }
-
-    //     // Correct duration (intervals = 10 sec each)
-    //     _duration = _duration * 10;
-
-    //     // End activity and display summary
-    //     DisplayEpilogue();
-    // }
-
-    // M3.
-    // public async Task RunReflectionAsync()
-    // {
-    //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
-    //     Console.Clear();
-
-    //     // Random integers (prompts and questions)
-    //     int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
-    //     int[] randNumsQuestions = new int[_duration]; // Random questions index
-
-    //     for (int j = 0; j < _duration; j++) // Build array of random question indices
-    //     {
-    //         int randNum;
-    //         bool valid = false;
-    //         do
-    //         {
-    //             randNum = new Random().Next(0, _questions.Count); // Random question
-
-    //             // Ensure randNum isn't already in randNumsQuestions and isn't equal to randNumPrompt
-    //             if (!randNumsQuestions.Contains(randNum) && randNum != randNumPrompt)
-    //             {
-    //                 valid = true;
-    //             }
-    //         } while (!valid);
-
-    //         randNumsQuestions[j] = randNum;
-    //     }
-
-    //     // Show instructions
-    //     Console.WriteLine(
-    //         "Instructions:\n   > Read the prompt then press enter to answer the first question.\n"
-    //     );
-    //     PressEnterToContinue();
-    //     Console.Clear();
-    //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
-    //     PressEnterToContinue();
-
-    //     for (int i = 0; i < _duration; i++)
-    //     {
-    //         DateTime start = DateTime.Now;
-    //         DateTime end = start.AddSeconds(10);
-
-    //         // Create a cancellation token for controlling the spinner task
-    //         var cts = new CancellationTokenSource();
-    //         var token = cts.Token;
-
-    //         // Run spinner in the background while waiting for user input
-    //         Task spinnerTask = Task.Run(() =>
-    //         {
-    //             while (DateTime.Now < end && !token.IsCancellationRequested)
-    //             {
-    //                 Console.Write($"\r{spinner.GetNextFrame()}");
-    //                 Thread.Sleep(200); // Sleep to allow time for other actions
-    //             }
-    //         });
-
-    //         // Print the question and wait for the user to respond
-    //         Console.WriteLine($"\nQuestion {i + 1}.\n   > {_questions[randNumsQuestions[i]]}");
-    //         Console.Write("   > Response: ");
-
-    //         // Wait for the user input asynchronously
-    //         var inputTask = Task.Run(() => Console.ReadLine());
-
-    //         // Wait for either the spinner to finish or the user to provide input
-    //         await Task.WhenAny(spinnerTask, inputTask);
-
-    //         // Cancel the spinner task once the user has finished input
-    //         cts.Cancel();
-
-    //         // Ensure the spinner task is completed
-    //         await spinnerTask;
-
-    //         // You can use the input from inputTask if needed
-    //         string userInput = await inputTask;
-
-    //         // Process userInput if necessary
-    //     }
-
-    //     // Correct duration (intervals = 10 sec each)
-    //     _duration = _duration * 10;
-
-    //     // End activity and display summary
-    //     DisplayEpilogue();
-    // }
-
+    /* Commented out code (async related)
+    
+        // M2.
+        // public async Task RunReflectionAsync()
+        // {
+        //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
+        //     Console.Clear();
+    
+        //     // Random integers (prompts and questions)
+        //     int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
+        //     int[] randNumsQuestions = new int[_duration]; // Random questions index
+    
+        //     for (int j = 0; j < _duration; j++) // Build array of random question indices
+        //     {
+        //         int randNum;
+        //         bool valid = false;
+        //         do
+        //         {
+        //             randNum = new Random().Next(0, _questions.Count); // Random question
+    
+        //             // Ensure randNum isn't already in randNumsQuestions and isn't equal to randNumPrompt
+        //             if (!randNumsQuestions.Contains(randNum))
+        //             {
+        //                 valid = true;
+        //             }
+        //         } while (!valid);
+    
+        //         randNumsQuestions[j] = randNum;
+        //     }
+    
+        //     // Show instructions
+        //     Console.WriteLine("Instructions:\n   > Read the prompt then press enter to answer the first question.\n");
+        //     PressEnterToContinue();
+        //     Console.Clear();
+        //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
+        //     PressEnterToContinue();
+    
+        //     for (int i = 0; i < _duration; i++)
+        //     {
+        //         DateTime start = DateTime.Now;
+        //         DateTime end = start.AddSeconds(10);
+    
+        //         // Run spinner in the background while waiting for user input
+        //         Task spinnerTask = Task.Run(() =>
+        //         {
+        //             while (DateTime.Now < end)
+        //             {
+        //                 Console.WriteLine();
+        //                 spinner.SetSpinDuration(10);
+        //                 spinner.Spin();
+        //             }
+        //         });
+    
+        //         Console.WriteLine($"\nQuestion {i + 1}.\n   > {_questions[randNumsQuestions[i]]}");
+        //         Console.Write("   > Response: ");
+        //         // Wait for the user to provide their response
+        //         Console.ReadLine();
+    
+        //         // Wait for the spinner to finish before moving to the next question
+        //         await spinnerTask;
+        //     }
+    
+        //     // Correct duration (intervals = 10 sec each)
+        //     _duration = _duration * 10;
+    
+        //     // End activity and display summary
+        //     DisplayEpilogue();
+        // }
+    
+        // M3.
+        // public async Task RunReflectionAsync()
+        // {
+        //     SetDuration(DisplayPrologue()); // Question duration: 10 sec
+        //     Console.Clear();
+    
+        //     // Random integers (prompts and questions)
+        //     int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
+        //     int[] randNumsQuestions = new int[_duration]; // Random questions index
+    
+        //     for (int j = 0; j < _duration; j++) // Build array of random question indices
+        //     {
+        //         int randNum;
+        //         bool valid = false;
+        //         do
+        //         {
+        //             randNum = new Random().Next(0, _questions.Count); // Random question
+    
+        //             // Ensure randNum isn't already in randNumsQuestions and isn't equal to randNumPrompt
+        //             if (!randNumsQuestions.Contains(randNum) && randNum != randNumPrompt)
+        //             {
+        //                 valid = true;
+        //             }
+        //         } while (!valid);
+    
+        //         randNumsQuestions[j] = randNum;
+        //     }
+    
+        //     // Show instructions
+        //     Console.WriteLine(
+        //         "Instructions:\n   > Read the prompt then press enter to answer the first question.\n"
+        //     );
+        //     PressEnterToContinue();
+        //     Console.Clear();
+        //     Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
+        //     PressEnterToContinue();
+    
+        //     for (int i = 0; i < _duration; i++)
+        //     {
+        //         DateTime start = DateTime.Now;
+        //         DateTime end = start.AddSeconds(10);
+    
+        //         // Create a cancellation token for controlling the spinner task
+        //         var cts = new CancellationTokenSource();
+        //         var token = cts.Token;
+    
+        //         // Run spinner in the background while waiting for user input
+        //         Task spinnerTask = Task.Run(() =>
+        //         {
+        //             while (DateTime.Now < end && !token.IsCancellationRequested)
+        //             {
+        //                 Console.Write($"\r{spinner.GetNextFrame()}");
+        //                 Thread.Sleep(200); // Sleep to allow time for other actions
+        //             }
+        //         });
+    
+        //         // Print the question and wait for the user to respond
+        //         Console.WriteLine($"\nQuestion {i + 1}.\n   > {_questions[randNumsQuestions[i]]}");
+        //         Console.Write("   > Response: ");
+    
+        //         // Wait for the user input asynchronously
+        //         var inputTask = Task.Run(() => Console.ReadLine());
+    
+        //         // Wait for either the spinner to finish or the user to provide input
+        //         await Task.WhenAny(spinnerTask, inputTask);
+    
+        //         // Cancel the spinner task once the user has finished input
+        //         cts.Cancel();
+    
+        //         // Ensure the spinner task is completed
+        //         await spinnerTask;
+    
+        //         // You can use the input from inputTask if needed
+        //         string userInput = await inputTask;
+    
+        //         // Process userInput if necessary
+        //     }
+    
+        //     // Correct duration (intervals = 10 sec each)
+        //     _duration = _duration * 10;
+    
+        //     // End activity and display summary
+        //     DisplayEpilogue();
+        // }
+    */
 }
 
 // REQUIREMENTS
