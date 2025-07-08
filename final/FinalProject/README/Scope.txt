@@ -1,0 +1,101 @@
+******************************************************************************************
+AUTHOR: Andrew Seaman
+DATE: 2025-07-08
+
+DESCRIPTION: CSE 210 Final Project Scope Guide
+  This document outlines the scope of my CSE 210 Final Project, which is to build a
+machine learning model to predict fuel efficiency or other metrics based on real-time data
+passed to the app from my vehicle via an OBD-II adapter. The project is broken down
+into manageable phases, starting with a simulated vehicle telemetry processor.
+This scope guide was created with the help of Chat GPT, based on my discussions with
+my professor Brother Gary Godderidge and the requirements for the final project.
+******************************************************************************************
+
+——————————————————————————————
+Background -
+——————————————————————————————
+	
+	1. 2025-07-02 (Wed)
+	   - As I drove down to Utah (SLC airport) for a family vacation I began thinking of ideas for my CSE 210 Final Project. 
+	   - It came to me how interesting it would be to build a machine learning model to predict fuel efficiency or other metrics based on real time data passed to the app from my vehicle via an OBD-22 adapter.
+	   - I spoke with Chat GPT about my idea and got help crafting a project proposal I then sent to my professor Brother Gary Godderidge (BYU—Idaho) requesting feedback.
+	
+	2. 2025-07-02 (Wed) – 2025-07-08 (Tue)
+	   - I spoke with my professor over Microsoft Teams and in-person and his advice was to break apart the project and tackle a limited scope.
+	
+	3. 2025-07-08 (Tue)
+	   - I passed my correspondence with my professor to Chat GPT as well as the Final Project requirements and asked for a guide on how to properly scope the project and hit the requirements.
+
+
+
+
+
+——————————————————————————————
+Scope Guide (Chat GPT) -
+——————————————————————————————
+
+	Thanks for the detailed context, Andrew. Based on your conversation with Brother Godderidge and the assignment specs, here’s how I’d define a solid, scoped-down “Phase 1” project that hits all the requirements without overreaching.
+
+	⸻
+
+	✅ Recommended Project Scope: “Simulated Vehicle Telemetry Processor”
+
+	You simulate vehicle telemetry data (from an OBD-II device) and focus on:
+		•	Creating structured, extensible class models
+		•	Simulating the “T” and “L” parts of an ETL pipeline
+		•	Organizing the system to allow real future OBD data drops
+
+	⸻
+
+	🧩 Core Features (All Achievable in C# without I/O Complexity)
+		1.	Vehicle Class Hierarchy (Abstraction + Inheritance + Polymorphism)
+		•	Vehicle (base class)
+		•	GasVehicle / HybridVehicle / DieselVehicle (derived)
+		•	Override behavior like CalculateFuelEfficiency()
+		2.	Entry / Record Class
+		•	Holds one row of data (e.g. RPM, Speed, FuelLevel, Timestamp)
+		•	Tied to a specific Vehicle
+		3.	Simulated Data Loader
+		•	Reads JSON/CSV with fake OBD data
+		•	Populates vehicle/entry objects
+		4.	Data Manager / Transformer
+		•	Aggregates & computes efficiency metrics (e.g. average MPG)
+		•	Filters data, groups by vehicle
+		•	Performs transformation logic (e.g. converting speed units, inferring trip length)
+		5.	Report Generator
+		•	Outputs basic analytics: avg speed, fuel usage, etc.
+		•	Bonus: text-based UI for selecting vehicles & viewing metrics
+
+	⸻
+
+	🧠 Concepts Covered
+
+	Requirement	Fulfilled By
+	8 Classes	Vehicle (base), 2+ subclasses, Entry, DataLoader, DataManager, Reporter, AppController
+	Abstraction	Base vehicle defines interface for behavior
+	Encapsulation	Fields in Entry/Vehicle are private with public getters
+	Inheritance	GasVehicle : Vehicle, HybridVehicle : Vehicle
+	Polymorphism	Override CalculateFuelEfficiency() for each subclass
+	Interesting task	Simulates vehicle telemetry & transforms data
+	Written by you	No libraries or Unity—just you, JSON/CSV files, and C# logic
+
+
+	⸻
+
+	🛑 What You Don’t Need for This Scope
+		•	Real Bluetooth OBD-II connection
+		•	ML modeling
+		•	GUI or frontend
+
+	⸻
+
+	🪄 Bonus: Future-Proof Design
+
+	If you later want to go full ETL:
+		•	Swap the simulated DataLoader with an actual Bluetooth or socket-based OBD input.
+		•	Persist the entries in a database.
+		•	Pipe into a Python ML model from saved CSVs.
+
+	⸻
+
+	Want me to sketch a class diagram or starting code scaffold?

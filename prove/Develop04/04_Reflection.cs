@@ -84,7 +84,7 @@ public class Reflection : Activity
         // This ensures that each question is unique and avoids duplicates
         HashSet<int> usedIndices = new HashSet<int>();
 
-         // Random integers (prompts and questions)
+        // Random integers (prompts and questions)
         int randNumPrompt = new Random().Next(0, _promptsReflecting.Count); // Random prompt index
         int[] randNumsQuestions = new int[_duration]; // Random questions index
 
