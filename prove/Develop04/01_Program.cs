@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
         // Loop main menu until user quits (option "4")
         bool quit = false;
