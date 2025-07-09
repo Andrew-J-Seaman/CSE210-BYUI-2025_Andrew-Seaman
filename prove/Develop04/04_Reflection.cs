@@ -33,7 +33,7 @@ public class Reflection : Activity
         : base(name, description, durationRequestMsg) // Pass Name and Description to base class for initialization
     {
         // Initialize prompts
-        _promptsReflecting = new List<string>
+        _promptsReflecting = new List<string> // 10 prompts
         {
             "Think of a time when you overcame a fear.",
             "Think of a time when you made someone feel truly appreciated.",
@@ -79,8 +79,7 @@ public class Reflection : Activity
         //
         // If I've got it correct, I could allow the user 5-10 seconds for reflection per question and leave '_duration' equal to the number of questions the user will answer in one way or another. I'll have to give that some thought as to how exactly that works.
 
-        // Ensure unique random numbers for questions
-        // Using a HashSet to track used indices
+        // Ensure unique random numbers for questions using a HashSet to track used indices
         // This ensures that each question is unique and avoids duplicates
         HashSet<int> usedIndices = new HashSet<int>();
 
@@ -102,17 +101,21 @@ public class Reflection : Activity
 
         // Output intro:
         Console.WriteLine(
-            "Instructions:\n   > Read the prompt then press enter to answer the first questions.\n"
+            "Instructions:\n   > Read the prompt then press enter to begin reflecting.\n"
         );
+        PressEnterToContinue();
+        Console.Clear();
         spinner.SetSpinDuration(1);
         spinner.Spin(); // 1 second
         Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}\n");
         PressEnterToContinue();
+        Console.Clear();
         spinner.SetSpinDuration(3);
         spinner.Spin(); // 3 second
-        Console.Clear();
-
         Console.WriteLine($"Prompt:\n   > {_promptsReflecting[randNumPrompt]}");
+        spinner.SetSpinDuration(1);
+        spinner.Spin();
+        Console.WriteLine($"\n\n  Questions:\n");
 
         int i = 0;
         foreach (int q in randNumsQuestions)
@@ -122,7 +125,7 @@ public class Reflection : Activity
             DateTime start = DateTime.Now;
             DateTime end = start.AddSeconds(10);
 
-            Console.WriteLine($"\nQuestion {i}.\n   > {_questions[randNumsQuestions[q]]}");
+            Console.WriteLine($"    {i}. {_questions[q]}");
             // Removed:
             //
             // Here I was having the user write a response which is unneccessary. Instead the user is intended to simply reflect hence the activity name "Reflection". This misunderstanding further complicated the code because I thought I had to both take in user input in response to the prompt as well as display a spinner. The conflict that arose was in how the spinner is designed. It clears the line as part of its functionality which was interfering with the user providing input.
@@ -137,6 +140,10 @@ public class Reflection : Activity
                 spinner.Spin();
             }
         }
+
+        // Adjust duration to reflect the number of questions reflected upon
+        _duration = _duration * 10; // Each question is 10 seconds
+
         // End activity and display summary
         DisplayEpilogue();
     }

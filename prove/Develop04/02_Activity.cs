@@ -92,7 +92,7 @@ public class Activity
             }
         } while (!isInt);
 
-        return durationValue;
+        return durationValue; // This output serves as the input for the 'SetDuration' method
     }
 
     // M2.
@@ -100,11 +100,14 @@ public class Activity
     {
         // PURPOSE: Each activity should end with a common ending message that tells the user they have done a good job, and pause and then tell them the activity they have completed and the length of time and then pause for several seconds before finishing.
 
+        // Clear the console
+        Console.Clear();
+
         // Tell user good job
-        Console.WriteLine($"\nGood job!");
+        Console.WriteLine($"Good job!");
         spinner.SetSpinDuration(3);
         spinner.Spin(); // 3 seconds
-        Console.WriteLine($"You've completed a {_name} activity which lasted {_duration} seconds.");
+        Console.WriteLine($"\nYou've completed a {_name} activity which lasted {_duration} seconds.");
         spinner.Spin(); // 3 seconds
     }
 
