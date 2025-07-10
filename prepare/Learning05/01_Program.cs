@@ -13,13 +13,13 @@ namespace Learning05
             // - - - [PREP: start] - - -
 
             // Instantiate the shapes and set their properties
-            Square sShape_1 = new Square("1", "Red", 5);                    // Shape: Square 1
-            Rectangle rShape_1 = new Rectangle("1", "DarkMagenta", 10, 5);      // Shape: Rectangle 1
-            Circle cShape_1 = new Circle("1", "Blue", 5);                   // Shape: Circle 1
+            Square sShape_1 = new Square("1", "Red", 5);                    
+            Rectangle rShape_1 = new Rectangle("1", "DarkMagenta", 10, 5);
+            Circle cShape_1 = new Circle("1", "Blue", 5);
 
-            Square sShape_2 = new Square("2", "Red", 8);                    // Shape: Square 1
-            Rectangle rShape_2 = new Rectangle("2", "DarkMagenta", 8, 7);      // Shape: Rectangle 1
-            Circle cShape_2 = new Circle("2", "Blue", 15);                   // Shape: Circle 1
+            Square sShape_2 = new Square("2", "Red", 8);
+            Rectangle rShape_2 = new Rectangle("2", "DarkMagenta", 8, 7);
+            Circle cShape_2 = new Circle("2", "Blue", 15);
 
             // Append the shapes to a list
             List<Shape> shapes = new List<Shape>();
