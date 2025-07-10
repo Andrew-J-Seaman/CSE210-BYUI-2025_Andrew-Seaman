@@ -3,10 +3,15 @@
     "version": "0.2.0",
     "configurations": [
 
+    // ====================================
+    // LAST UPDATED: 2025-Jul-10
+    // ====================================
+
+    
     //*************************************
     // BLOCK ORDER:
     //*************************************
-        // Section: sandbox
+        // Section: 00_sandbox
             // 1. Async
             // 2. Circle
             // 3. Cursor
@@ -17,26 +22,26 @@
             // 8. Till
             // 9. WordCounter
 
-        // Section: csharp-prep
+        // Section: 01_csharp-prep
             // 1. C# Prep 1
             // 2. C# Prep 2
             // 3. C# Prep 3
             // 4. C# Prep 4
             // 5. C# Prep 5
 
-        // Section: prepare
+        // Section: 02_prepare_(learning)
             // 1. Learning 02
             // 2. Learning 03
             // 3. Learning 04
             // 4. Learning 05
 
-        // Section: prove
+        // Section: 03_prove_(develop)
             // 1. Develop 02
             // 2. Develop 03
             // 3. Develop 04
             // 4. Develop 05
         
-        // Section: final
+        // Section: 04_final
             // 1. Final Project
             // 2. Foundation 1
             // 3. Foundation 2
@@ -65,17 +70,17 @@
     // JSON BLOCKS (launch):
     //*************************************
     
-    // SECTION: Sandbox
+    // SECTION: 00_sandbox
 
         // 1. Async
         {
             "name": "Async (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Async",
-            "program": "${workspaceFolder}/sandbox/Async/bin/Debug/net9.0/Async.dll",
+            "preLaunchTask": "build-00_sandbox-Async",
+            "program": "${workspaceFolder}/00_sandbox/Async/bin/Debug/net9.0/Async.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Async",
+            "cwd": "${workspaceFolder}/00_sandbox/Async",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -86,9 +91,9 @@
             "name": "Circle (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Circle",
-            "program": "${workspaceFolder}/sandbox/Circle/bin/Debug/net9.0/Circle.dll",
-            "cwd": "${workspaceFolder}/sandbox/Circle",
+            "preLaunchTask": "build-00_sandbox-Circle",
+            "program": "${workspaceFolder}/00_sandbox/Circle/bin/Debug/net9.0/Circle.dll",
+            "cwd": "${workspaceFolder}/00_sandbox/Circle",
             "stopAtEntry": false,
             "console": "integratedTerminal"
         },
@@ -98,10 +103,10 @@
             "name": "Cursor (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Cursor",
-            "program": "${workspaceFolder}/sandbox/Cursor/bin/Debug/net9.0/Cursor.dll",
+            "preLaunchTask": "build-00_sandbox-Cursor",
+            "program": "${workspaceFolder}/00_sandbox/Cursor/bin/Debug/net9.0/Cursor.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Cursor",
+            "cwd": "${workspaceFolder}/00_sandbox/Cursor",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -112,10 +117,10 @@
             "name": "Journal_Practice (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Journal_Practice",
-            "program": "${workspaceFolder}/sandbox/Journal_Practice/bin/Debug/net9.0/Journal_Practice.dll", 
+            "preLaunchTask": "build-00_sandbox-Journal_Practice",
+            "program": "${workspaceFolder}/00_sandbox/Journal_Practice/bin/Debug/net9.0/Journal_Practice.dll", 
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Journal_Practice",
+            "cwd": "${workspaceFolder}/00_sandbox/Journal_Practice",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -126,10 +131,10 @@
             "name": "One_to_Ten (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-One_to_Ten",
-            "program": "${workspaceFolder}/sandbox/One_to_Ten/bin/Debug/net9.0/One_to_Ten.dll",
+            "preLaunchTask": "build-00_sandbox-One_to_Ten",
+            "program": "${workspaceFolder}/00_sandbox/One_to_Ten/bin/Debug/net9.0/One_to_Ten.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/One_to_Ten",
+            "cwd": "${workspaceFolder}/00_sandbox/One_to_Ten",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -140,10 +145,10 @@
             "name": "PrettyText (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-PrettyText",
-            "program": "${workspaceFolder}/sandbox/PrettyText/bin/Debug/net9.0/PrettyText.dll",
+            "preLaunchTask": "build-00_sandbox-PrettyText",
+            "program": "${workspaceFolder}/00_sandbox/PrettyText/bin/Debug/net9.0/PrettyText.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/PrettyText",
+            "cwd": "${workspaceFolder}/00_sandbox/PrettyText",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -154,10 +159,10 @@
             "name": "Spinner (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Spinner",
-            "program": "${workspaceFolder}/sandbox/Spinner/bin/Debug/net9.0/Spinner.dll",
+            "preLaunchTask": "build-00_sandbox-Spinner",
+            "program": "${workspaceFolder}/00_sandbox/Spinner/bin/Debug/net9.0/Spinner.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Spinner",
+            "cwd": "${workspaceFolder}/00_sandbox/Spinner",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -168,10 +173,10 @@
             "name": "Till (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-Till",
-            "program": "${workspaceFolder}/sandbox/Till/bin/Debug/net9.0/Till.dll",
+            "preLaunchTask": "build-00_sandbox-Till",
+            "program": "${workspaceFolder}/00_sandbox/Till/bin/Debug/net9.0/Till.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/Till",
+            "cwd": "${workspaceFolder}/00_sandbox/Till",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -182,27 +187,27 @@
             "name": "WordCounter (Sandbox)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-sandbox-WordCounter",
-            "program": "${workspaceFolder}/sandbox/WordCounter/bin/Debug/net9.0/WordCounter.dll",
+            "preLaunchTask": "build-00_sandbox-WordCounter",
+            "program": "${workspaceFolder}/00_sandbox/WordCounter/bin/Debug/net9.0/WordCounter.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sandbox/WordCounter",
+            "cwd": "${workspaceFolder}/00_sandbox/WordCounter",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
         
 
-    // SECTION: csharp-prep
+    // SECTION: 01_csharp-prep
 
         // 1. C# Prep 1
         {
             "name": "C# Prep 1",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-csharp-prep-Prep1",
-            "program": "${workspaceFolder}/csharp-prep/Prep1/bin/Debug/net9.0/Prep1.dll",
+            "preLaunchTask": "build-01_csharp-prep-Prep1",
+            "program": "${workspaceFolder}/01_csharp-prep/Prep1/bin/Debug/net9.0/Prep1.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/csharp-prep/Prep1",
+            "cwd": "${workspaceFolder}/01_csharp-prep/Prep1",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -213,10 +218,10 @@
             "name": "C# Prep 2",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-csharp-prep-Prep2",
-            "program": "${workspaceFolder}/csharp-prep/Prep2/bin/Debug/net9.0/Prep2.dll",
+            "preLaunchTask": "build-01_csharp-prep-Prep2",
+            "program": "${workspaceFolder}/01_csharp-prep/Prep2/bin/Debug/net9.0/Prep2.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/csharp-prep/Prep2",
+            "cwd": "${workspaceFolder}/01_csharp-prep/Prep2",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -227,10 +232,10 @@
             "name": "C# Prep 3",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-csharp-prep-Prep3",
-            "program": "${workspaceFolder}/csharp-prep/Prep3/bin/Debug/net9.0/Prep3.dll",
+            "preLaunchTask": "build-01_csharp-prep-Prep3",
+            "program": "${workspaceFolder}/01_csharp-prep/Prep3/bin/Debug/net9.0/Prep3.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/csharp-prep/Prep3",
+            "cwd": "${workspaceFolder}/01_csharp-prep/Prep3",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -241,10 +246,10 @@
             "name": "C# Prep 4",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-csharp-prep-Prep4",
-            "program": "${workspaceFolder}/csharp-prep/Prep4/bin/Debug/net9.0/Prep4.dll",
+            "preLaunchTask": "build-01_csharp-prep-Prep4",
+            "program": "${workspaceFolder}/01_csharp-prep/Prep4/bin/Debug/net9.0/Prep4.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/csharp-prep/Prep4",
+            "cwd": "${workspaceFolder}/01_csharp-prep/Prep4",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -255,26 +260,26 @@
             "name": "C# Prep 5",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-csharp-prep-Prep5",
-            "program": "${workspaceFolder}/csharp-prep/Prep5/bin/Debug/net9.0/Prep5.dll",
+            "preLaunchTask": "build-01_csharp-prep-Prep5",
+            "program": "${workspaceFolder}/01_csharp-prep/Prep5/bin/Debug/net9.0/Prep5.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/csharp-prep/Prep5",
+            "cwd": "${workspaceFolder}/01_csharp-prep/Prep5",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
 
-    // SECTION: Learning
+    // SECTION: 02_prepare_(learning)
 
         // 1. Learning 02
         {
             "name": "Learning 02 (Resume)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prepare-Learning02",
-            "program": "${workspaceFolder}/prepare/Learning02/bin/Debug/net9.0/Learning02.dll",
+            "preLaunchTask": "build-02_prepare_(learning)-Learning02",
+            "program": "${workspaceFolder}/02_prepare_(learning)/Learning02/bin/Debug/net9.0/Learning02.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prepare/Learning02",
+            "cwd": "${workspaceFolder}/02_prepare_(learning)/Learning02",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -285,10 +290,10 @@
             "name": "Learning 03 (Fraction)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prepare-Learning03",
-            "program": "${workspaceFolder}/prepare/Learning03/bin/Debug/net9.0/Learning03.dll",
+            "preLaunchTask": "build-02_prepare_(learning)-Learning03",
+            "program": "${workspaceFolder}/02_prepare_(learning)/Learning03/bin/Debug/net9.0/Learning03.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prepare/Learning03",
+            "cwd": "${workspaceFolder}/02_prepare_(learning)/Learning03",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -299,10 +304,10 @@
             "name": "Learning 04 (Homework)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prepare-Learning04",
-            "program": "${workspaceFolder}/prepare/Learning04/bin/Debug/net9.0/Learning04.dll",
+            "preLaunchTask": "build-02_prepare_(learning)-Learning04",
+            "program": "${workspaceFolder}/02_prepare_(learning)/Learning04/bin/Debug/net9.0/Learning04.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prepare/Learning04",
+            "cwd": "${workspaceFolder}/02_prepare_(learning)/Learning04",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -313,26 +318,26 @@
             "name": "Learning 05 (Shapes)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prepare-Learning05",
-            "program": "${workspaceFolder}/prepare/Learning05/bin/Debug/net9.0/Learning05.dll",
+            "preLaunchTask": "build-02_prepare_(learning)-Learning05",
+            "program": "${workspaceFolder}/02_prepare_(learning)/Learning05/bin/Debug/net9.0/Learning05.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prepare/Learning05",
+            "cwd": "${workspaceFolder}/02_prepare_(learning)/Learning05",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
 
-    // SECTION: prove
+    // SECTION: 03_prove_(develop)
     
         // 1. Develop 02
         {
             "name": "Develop 02 (Journal)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prove-Develop02",
-            "program": "${workspaceFolder}/prove/Develop02/bin/Debug/net9.0/Develop02.dll",
+            "preLaunchTask": "build-03_prove_(develop)-Develop02",
+            "program": "${workspaceFolder}/03_prove_(develop)/Develop02/bin/Debug/net9.0/Develop02.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prove/Develop02",
+            "cwd": "${workspaceFolder}/03_prove_(develop)/Develop02",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -343,10 +348,10 @@
             "name": "Develop 03 (Scripture Memorizer)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prove-Develop03",
-            "program": "${workspaceFolder}/prove/Develop03/bin/Debug/net9.0/Develop03.dll",
+            "preLaunchTask": "build-03_prove_(develop)-Develop03",
+            "program": "${workspaceFolder}/03_prove_(develop)/Develop03/bin/Debug/net9.0/Develop03.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prove/Develop03",
+            "cwd": "${workspaceFolder}/03_prove_(develop)/Develop03",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -357,10 +362,10 @@
             "name": "Develop 04 (Mindfulness)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prove-Develop04",
-            "program": "${workspaceFolder}/prove/Develop04/bin/Debug/net9.0/Develop04.dll",
+            "preLaunchTask": "build-03_prove_(develop)-Develop04",
+            "program": "${workspaceFolder}/03_prove_(develop)/Develop04/bin/Debug/net9.0/Develop04.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prove/Develop04",
+            "cwd": "${workspaceFolder}/03_prove_(develop)/Develop04",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -371,26 +376,26 @@
             "name": "Develop 05 (Goal Tracker)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-prove-Develop05",
-            "program": "${workspaceFolder}/prove/Develop05/bin/Debug/net9.0/Develop05.dll",
+            "preLaunchTask": "build-03_prove_(develop)-Develop05",
+            "program": "${workspaceFolder}/03_prove_(develop)/Develop05/bin/Debug/net9.0/Develop05.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/prove/Develop05",
+            "cwd": "${workspaceFolder}/03_prove_(develop)/Develop05",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
 
-    // SECTION: final
+    // SECTION: 04_final
     
         // 1. Final Project
         {
             "name": "Final Project (Open ended)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-final-FinalProject",
-            "program": "${workspaceFolder}/final/FinalProject/bin/Debug/net9.0/FinalProject.dll",
+            "preLaunchTask": "build-04_final-FinalProject",
+            "program": "${workspaceFolder}/04_final/FinalProject/bin/Debug/net9.0/FinalProject.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/final/FinalProject",
+            "cwd": "${workspaceFolder}/04_final/FinalProject",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -401,10 +406,10 @@
             "name": "Foundation 1 (YouTube)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-final-Foundation1",
-            "program": "${workspaceFolder}/final/Foundation1/bin/Debug/net9.0/Foundation1.dll",
+            "preLaunchTask": "build-04_final-Foundation1",
+            "program": "${workspaceFolder}/04_final/Foundation1/bin/Debug/net9.0/Foundation1.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/final/Foundation1",
+            "cwd": "${workspaceFolder}/04_final/Foundation1",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -415,10 +420,10 @@
             "name": "Foundation 2 (Products)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-final-Foundation2",
-            "program": "${workspaceFolder}/final/Foundation2/bin/Debug/net9.0/Foundation2.dll",
+            "preLaunchTask": "build-04_final-Foundation2",
+            "program": "${workspaceFolder}/04_final/Foundation2/bin/Debug/net9.0/Foundation2.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/final/Foundation2",
+            "cwd": "${workspaceFolder}/04_final/Foundation2",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -429,10 +434,10 @@
             "name": "Foundation 3 (Events)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-final-Foundation3",
-            "program": "${workspaceFolder}/final/Foundation3/bin/Debug/net9.0/Foundation3.dll",
+            "preLaunchTask": "build-04_final-Foundation3",
+            "program": "${workspaceFolder}/04_final/Foundation3/bin/Debug/net9.0/Foundation3.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/final/Foundation3",
+            "cwd": "${workspaceFolder}/04_final/Foundation3",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
@@ -443,10 +448,10 @@
             "name": "Foundation 4 (Exercise)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-final-Foundation4",
-            "program": "${workspaceFolder}/final/Foundation4/bin/Debug/net9.0/Foundation4.dll",
+            "preLaunchTask": "build-04_final-Foundation4",
+            "program": "${workspaceFolder}/04_final/Foundation4/bin/Debug/net9.0/Foundation4.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/final/Foundation4",
+            "cwd": "${workspaceFolder}/04_final/Foundation4",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false

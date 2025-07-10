@@ -3,10 +3,15 @@
     "version": "2.0.0",
     "tasks": [
 
+    // ====================================
+    // LAST UPDATED: 2025-Jul-10
+    // ====================================
+
+    
     //*************************************
     // BLOCK ORDER:
     //*************************************
-        // Section: sandbox
+        // Section: 00_sandbox
             // 1. Async
             // 2. Circle
             // 3. Cursor
@@ -17,26 +22,26 @@
             // 8. Till
             // 9. WordCounter
 
-        // Section: csharp-prep
+        // Section: 01_csharp-prep
             // 1. C# Prep 1
             // 2. C# Prep 2
             // 3. C# Prep 3
             // 4. C# Prep 4
             // 5. C# Prep 5
 
-        // Section: prepare
+        // Section: 02_prepare_(learning)
             // 1. Learning 02
             // 2. Learning 03
             // 3. Learning 04
             // 4. Learning 05
 
-        // Section: prove
+        // Section: 03_prove_(develop)
             // 1. Develop 02
             // 2. Develop 03
             // 3. Develop 04
             // 4. Develop 05
         
-        // Section: final
+        // Section: 04_final
             // 1. Final Project
             // 2. Foundation 1
             // 3. Foundation 2
@@ -66,16 +71,16 @@
     // JSON BLOCKS (tasks):
     //*************************************
 
-    // Section: sandbox
+    // Section: 00_sandbox
 
         // 1. Async
         {
-            "label": "build-sandbox-Async",
+            "label": "build-00_sandbox-Async",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Async/Async.csproj",
+                "${workspaceFolder}/00_sandbox/Async/Async.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -84,24 +89,24 @@
 
         // 2. Circle
         {
-            "label": "build-sandbox-Circle",
+            "label": "build-00_sandbox-Circle",
             "command": "dotnet",
             "type": "process",
             "args": [
               "build",
-              "${workspaceFolder}/sandbox/Circle"
+              "${workspaceFolder}/00_sandbox/Circle"
             ],
             "problemMatcher": "$msCompile"
         },
 
         // 3. Cursor
         {
-            "label": "build-sandbox-Cursor",
+            "label": "build-00_sandbox-Cursor",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Cursor/Cursor.csproj",
+                "${workspaceFolder}/00_sandbox/Cursor/Cursor.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -110,12 +115,12 @@
 
         // 4. Journal_Practice
         {
-            "label": "build-sandbox-Journal_Practice",
+            "label": "build-00_sandbox-Journal_Practice",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Journal_Practice/Journal_Practice.csproj",
+                "${workspaceFolder}/00_sandbox/Journal_Practice/Journal_Practice.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -124,12 +129,12 @@
 
         // 5. One_to_Ten
         {
-            "label": "build-sandbox-One_to_Ten",
+            "label": "build-00_sandbox-One_to_Ten",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/One_to_Ten/One_to_Ten.csproj",
+                "${workspaceFolder}/00_sandbox/One_to_Ten/One_to_Ten.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -138,12 +143,12 @@
 
         // 6. PrettyText
         {
-            "label": "build-sandbox-PrettyText",
+            "label": "build-00_sandbox-PrettyText",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/PrettyText/PrettyText.csproj",
+                "${workspaceFolder}/00_sandbox/PrettyText/PrettyText.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -152,12 +157,12 @@
         
         // 7. Spinner
         {
-            "label": "build-sandbox-Spinner",
+            "label": "build-00_sandbox-Spinner",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Spinner/Spinner.csproj",
+                "${workspaceFolder}/00_sandbox/Spinner/Spinner.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -166,12 +171,12 @@
 
         // 8. Till
         {
-            "label": "build-sandbox-Till",
+            "label": "build-00_sandbox-Till",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/Till/Till.csproj",
+                "${workspaceFolder}/00_sandbox/Till/Till.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -180,12 +185,12 @@
 
         // 9. WordCounter
         {
-            "label": "build-sandbox-WordCounter",
+            "label": "build-00_sandbox-WordCounter",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sandbox/WordCounter/WordCounter.csproj",
+                "${workspaceFolder}/00_sandbox/WordCounter/WordCounter.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -193,16 +198,16 @@
         },
 
 
-    // Section: csharp-prep
+    // Section: 01_csharp-prep
 
         // 1. C# Prep1
         {
-            "label": "build-csharp-prep-Prep1",
+            "label": "build-01_csharp-prep-Prep1",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/csharp-prep/Prep1/Prep1.csproj",
+                "${workspaceFolder}/01_csharp-prep/Prep1/Prep1.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -211,12 +216,12 @@
 
         // 2. C# Prep2
         {
-            "label": "build-csharp-prep-Prep2",
+            "label": "build-01_csharp-prep-Prep2",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/csharp-prep/Prep2/Prep2.csproj",
+                "${workspaceFolder}/01_csharp-prep/Prep2/Prep2.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -225,12 +230,12 @@
 
         // 3. C# Prep3
         {
-            "label": "build-csharp-prep-Prep3",
+            "label": "build-01_csharp-prep-Prep3",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/csharp-prep/Prep3/Prep3.csproj",
+                "${workspaceFolder}/01_csharp-prep/Prep3/Prep3.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -239,12 +244,12 @@
 
         // 4. C# Prep4
         {
-            "label": "build-csharp-prep-Prep4",
+            "label": "build-01_csharp-prep-Prep4",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/csharp-prep/Prep4/Prep4.csproj",
+                "${workspaceFolder}/01_csharp-prep/Prep4/Prep4.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -253,12 +258,12 @@
 
         // 5. C# Prep5
         {
-            "label": "build-csharp-prep-Prep5",
+            "label": "build-01_csharp-prep-Prep5",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/csharp-prep/Prep5/Prep5.csproj",
+                "${workspaceFolder}/01_csharp-prep/Prep5/Prep5.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -266,16 +271,16 @@
         },
 
 
-    // Section: prepare
+    // Section: 02_prepare_learning
 
         // 1. Learning 02
         {
-            "label": "build-prepare-Learning02",
+            "label": "build-02_prepare_(learning)-Learning02",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prepare/Learning02/Learning02.csproj",
+                "${workspaceFolder}/02_prepare_(learning)/Learning02/Learning02.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -284,12 +289,12 @@
 
         // 2. Learning 03
         {
-            "label": "build-prepare-Learning03",
+            "label": "build-02_prepare_(learning)-Learning03",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prepare/Learning03/Learning03.csproj",
+                "${workspaceFolder}/02_prepare_(learning)/Learning03/Learning03.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -298,12 +303,12 @@
 
         // 3. Learning 04
         {
-            "label": "build-prepare-Learning04",
+            "label": "build-02_prepare_(learning)-Learning04",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prepare/Learning04/Learning04.csproj",
+                "${workspaceFolder}/02_prepare_(learning)/Learning04/Learning04.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -312,28 +317,28 @@
 
         // 4. Learning 05
         {
-            "label": "build-prepare-Learning05",
+            "label": "build-02_prepare_(learning)-Learning05",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prepare/Learning05/Learning05.csproj",
+                "${workspaceFolder}/02_prepare_(learning)/Learning05/Learning05.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
 
-    // Section: prove
+    // Section: 03_prove_(develop)
         
         // 1. Develop 02
         {
-            "label": "build-prove-Develop02",
+            "label": "build-03_prove_(develop)-Develop02",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prove/Develop02/Develop02.csproj",
+                "${workspaceFolder}/03_prove_(develop)/Develop02/Develop02.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -342,12 +347,12 @@
 
         // 2. Develop 03
         {
-            "label": "build-prove-Develop03",
+            "label": "build-03_prove_(develop)-Develop03",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prove/Develop03/Develop03.csproj",
+                "${workspaceFolder}/03_prove_(develop)/Develop03/Develop03.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -356,12 +361,12 @@
 
         // 3. Develop 04
         {
-            "label": "build-prove-Develop04",
+            "label": "build-03_prove_(develop)-Develop04",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prove/Develop04/Develop04.csproj",
+                "${workspaceFolder}/03_prove_(develop)/Develop04/Develop04.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -370,28 +375,28 @@
 
         // 4. Develop 05
         {
-            "label": "build-prove-Develop05",
+            "label": "build-03_prove_(develop)-Develop05",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/prove/Develop05/Develop05.csproj",
+                "${workspaceFolder}/03_prove_(develop)/Develop05/Develop05.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
 
-    // Section: final
+    // Section: 04_final
 
         // 1. Final Project
         {
-            "label": "build-final-FinalProject",
+            "label": "build-04_final-FinalProject",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/final/FinalProject/FinalProject.csproj",
+                "${workspaceFolder}/04_final/FinalProject/FinalProject.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -400,12 +405,12 @@
 
         // 2. Foundation 1
         {
-            "label": "build-final-Foundation1",
+            "label": "build-04_final-Foundation1",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/final/Foundation1/Foundation1.csproj",
+                "${workspaceFolder}/04_final/Foundation1/Foundation1.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -414,12 +419,12 @@
 
         // 3. Foundation 2
         {
-            "label": "build-final-Foundation2",
+            "label": "build-04_final-Foundation2",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/final/Foundation2/Foundation2.csproj",
+                "${workspaceFolder}/04_final/Foundation2/Foundation2.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -428,12 +433,12 @@
 
         // 4. Foundation 3
         {
-            "label": "build-final-Foundation3",
+            "label": "build-04_final-Foundation3",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/final/Foundation3/Foundation3.csproj",
+                "${workspaceFolder}/04_final/Foundation3/Foundation3.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -442,12 +447,12 @@
         
         // 5. Foundation 4
         {
-            "label": "build-final-Foundation4",
+            "label": "build-04_final-Foundation4",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/final/Foundation4/Foundation4.csproj",
+                "${workspaceFolder}/04_final/Foundation4/Foundation4.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
