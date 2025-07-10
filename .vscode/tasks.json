@@ -29,13 +29,13 @@
             // 4. C# Prep 4
             // 5. C# Prep 5
 
-        // Section: 02_prepare_(learning)
+        // Section: 02_prepare-learning
             // 1. Learning 02
             // 2. Learning 03
             // 3. Learning 04
             // 4. Learning 05
 
-        // Section: 03_prove_(develop)
+        // Section: 03_prove-develop
             // 1. Develop 02
             // 2. Develop 03
             // 3. Develop 04
@@ -275,12 +275,12 @@
 
         // 1. Learning 02
         {
-            "label": "build-02_prepare_(learning)-Learning02",
+            "label": "build-02_prepare-learning-Learning02",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/02_prepare_(learning)/Learning02/Learning02.csproj",
+                "${workspaceFolder}/02_prepare-learning/Learning02/Learning02.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -289,12 +289,12 @@
 
         // 2. Learning 03
         {
-            "label": "build-02_prepare_(learning)-Learning03",
+            "label": "build-02_prepare-learning-Learning03",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/02_prepare_(learning)/Learning03/Learning03.csproj",
+                "${workspaceFolder}/02_prepare-learning/Learning03/Learning03.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -303,12 +303,12 @@
 
         // 3. Learning 04
         {
-            "label": "build-02_prepare_(learning)-Learning04",
+            "label": "build-02_prepare-learning-Learning04",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/02_prepare_(learning)/Learning04/Learning04.csproj",
+                "${workspaceFolder}/02_prepare-learning/Learning04/Learning04.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -317,28 +317,28 @@
 
         // 4. Learning 05
         {
-            "label": "build-02_prepare_(learning)-Learning05",
+            "label": "build-02_prepare-learning-Learning05",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/02_prepare_(learning)/Learning05/Learning05.csproj",
+                "${workspaceFolder}/02_prepare-learning/Learning05/Learning05.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
 
-    // Section: 03_prove_(develop)
+    // Section: 03_prove-develop
         
         // 1. Develop 02
         {
-            "label": "build-03_prove_(develop)-Develop02",
+            "label": "build-03_prove-develop-Develop02",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/03_prove_(develop)/Develop02/Develop02.csproj",
+                "${workspaceFolder}/03_prove-develop/Develop02/Develop02.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -347,12 +347,12 @@
 
         // 2. Develop 03
         {
-            "label": "build-03_prove_(develop)-Develop03",
+            "label": "build-03_prove-develop-Develop03",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/03_prove_(develop)/Develop03/Develop03.csproj",
+                "${workspaceFolder}/03_prove-develop/Develop03/Develop03.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -361,12 +361,12 @@
 
         // 3. Develop 04
         {
-            "label": "build-03_prove_(develop)-Develop04",
+            "label": "build-03_prove-develop-Develop04",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/03_prove_(develop)/Develop04/Develop04.csproj",
+                "${workspaceFolder}/03_prove-develop/Develop04/Develop04.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -375,12 +375,12 @@
 
         // 4. Develop 05
         {
-            "label": "build-03_prove_(develop)-Develop05",
+            "label": "build-03_prove-develop-Develop05",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/03_prove_(develop)/Develop05/Develop05.csproj",
+                "${workspaceFolder}/03_prove-develop/Develop05/Develop05.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
