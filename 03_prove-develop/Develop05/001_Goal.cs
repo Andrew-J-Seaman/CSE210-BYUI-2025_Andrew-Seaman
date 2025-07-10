@@ -1,6 +1,6 @@
-//***********************
-// PROJECT: Eternal Quest
-//***********************
+//***********************************
+// PROJECT: Eternal Quest (Develop05)
+//***********************************
 
 using System;
 
@@ -18,6 +18,6 @@ namespace Develop05
 
 
         // Methods
-        
+
     }
 }
