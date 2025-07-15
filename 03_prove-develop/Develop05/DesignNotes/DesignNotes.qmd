@@ -1,0 +1,104 @@
+---
+title: "Design Notes"
+author: "Andrew Seaman"
+date: "2025-Jul-14"
+format:
+  html:
+    theme: quartz # default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr
+    toc: true
+    toc-float: true
+    toc-depth: 3
+---
+
+</BR> </BR>
+
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+## ROADMAP
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+
+For each project file, Plan and progress.
+
+#### All .cs files
+- [x] Refactor structuring comments.
+- [x] Add attributes, constructors, and methods from UML.
+<!-- - [ ]  -->
+
+#### 000_Program.cs
+- [ ] Build out menu functionality (layered loops within switchcase structure).
+    1. [ ] TopMenu: Level 1 (Actions)
+        1. [ ] Create New Goal
+        2. [ ] List Goals
+        3. [ ] Save Goals
+        4. [ ] Load Goals
+        5. [ ] Record Event
+    2. [ ] TopMenu: Level 2 (Customization)
+        1. [ ] Update username
+        2. [ ] Delete account (perhaps name the goals.(txt/csv/json) file after the user and delete that file.)
+    3. [ ] TopMenu: Level 3 (Quit)
+        1. [ ] Add Logic: SaveGoals()
+
+#### 001_Goal.cs
+- [ ] Build out abstract method functionality.
+- [ ] Build out non-abstract method functionality.
+
+#### 002_Simple.cs
+- [ ] Build out abstract method functionality.
+- [ ] Build out non-abstract method functionality.
+
+#### 003_Eternal.cs
+- [ ] Build out abstract method functionality.
+- [ ] Build out non-abstract method functionality.
+
+#### 004_Checklist.cs
+- [ ] Build out abstract method functionality.
+- [ ] Build out non-abstract method functionality.
+
+</BR> </BR>
+
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+## FUNCTIONALITY
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+
+#### All .cs files
+
+1. (coming...)
+
+#### 000_Program.cs
+
+1. (coming...)
+
+#### 001_Goal.cs
+
+1. Display the user's score
+2. Allow the user to create new goals of any type.
+3. Allow the user to record an event (meaning they have accomplished a goal and should receive points).
+4. Show a list of the goals. This list should show indicate whether the goal has been completed or not (for example [ ] compared to [X]), and for checklist goals it should show how many times the goal has been completed (for example Completed 2/5 times).
+    - Simple: [ ] --> [x]
+    - Eternal: [ ] --> [streak / target]
+    - Checklist: [ ]
+5. Allow the user's goals and their current score to be saved and loaded.
+
+#### 002_Simple.cs
+
+1. Provide for simple goals that can be marked complete and the user gains some value.
+    - For example, if you run a marathon you get 1000 points.
+
+#### 003_Eternal.cs
+
+1. Provide for eternal goals that are never complete, but each time the user records them, they gain some value.
+    - For example, every time you read your scriptures you get 100 points.
+
+#### 004_Checklist.cs
+
+1. Provide for a checklist goal that must be accomplished a certain number of times to be complete. Each time the user records this goal they gain some value, but when they achieve the desired amount, they get an extra bonus.
+    - For example, if you set a goal to attend the temple 10 times, you might get 50 points each time you go, and then a bonus of 500 points on the 10th time.
+
+</BR> </BR>
+
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+## IDEAS
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+
+#### Gamification
+
+1. **Bonus points -** Play "what are the odds" with the user. They set range and make a guess and if a random number generator produces the same number they get a point bonus proportional to the "chance" of winning. This could run when they complete a Simple goal, meet the Checklist target, or complete a set interval of occurences of a specific Eternal goal.

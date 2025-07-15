@@ -1,61 +1,208 @@
 <mxfile host="65bd71144e">
     <diagram id="O0FQfpCUJgqFBY9hPG8a" name="Page-1">
-        <mxGraphModel dx="1935" dy="1574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1436" dy="1327" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="19" value="Goal&amp;nbsp;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;(abstract/Interface?)&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="180" y="-40" width="190" height="220" as="geometry"/>
+                <mxCell id="96" value="" style="endArrow=none;html=1;exitX=0.979;exitY=0.066;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" parent="1" source="90" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="29.17" y="571.26" as="sourcePoint"/>
+                        <mxPoint x="55" y="548.7370784770785" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="20" value="# _goals : list&amp;lt;Goal&amp;gt;&lt;div&gt;# _title : string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="19">
-                    <mxGeometry y="26" width="190" height="54" as="geometry"/>
+                <mxCell id="98" value="" style="endArrow=none;html=1;entryX=0.105;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="80" target="74" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="453" y="-62" as="sourcePoint"/>
+                        <mxPoint x="430" y="-40" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="19">
-                    <mxGeometry y="80" width="190" height="10" as="geometry"/>
+                <mxCell id="97" value="" style="endArrow=none;html=1;entryX=0.131;entryY=0.037;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" parent="1" source="68" target="91" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="39.17" y="630" as="sourcePoint"/>
+                        <mxPoint x="65" y="607" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="22" value="&lt;div&gt;&lt;u&gt;Constructor:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ Goal()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Method:&lt;/u&gt;&lt;/div&gt;# GetStatus(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="19">
-                    <mxGeometry y="90" width="190" height="130" as="geometry"/>
+                <mxCell id="19" value="&lt;div&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;/div&gt;Goal" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFB366;" parent="1" vertex="1">
+                    <mxGeometry x="7.5" y="-260" width="280" height="460" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="Program" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="-160" y="-40" width="160" height="86" as="geometry"/>
+                <mxCell id="20" value="&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _title : string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _creationDate : DateTime&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _checksFrequency : string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _checksActual : int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _checksTarget : int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _targetDeadline : DateTime&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _onTrack : bool&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _rewardCheck : int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _rewardTarget : int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;# _rewardBonus : int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="19" vertex="1">
+                    <mxGeometry y="40" width="280" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="23">
-                    <mxGeometry y="26" width="160" height="26" as="geometry"/>
+                <mxCell id="21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="19" vertex="1">
+                    <mxGeometry y="200" width="280" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="23">
-                    <mxGeometry y="52" width="160" height="8" as="geometry"/>
+                <mxCell id="22" value="&lt;div&gt;&lt;u&gt;Constructors:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ Goal(&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;title: string, creationDate: DateTime,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;checksFrequency: string, checksActual: int,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;checksTarget: int, targetDeadline: DateTime,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;rewardCheck: int, rewardTarget: int)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;# abstract CreateGoal() : void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;# abstract GetStatus() : string&lt;/div&gt;&lt;div&gt;# abstract CheckProgress() : void&lt;/div&gt;&lt;div&gt;# virtual RecordEvent() : void&lt;/div&gt;&lt;div&gt;# virtual GetPoints() : int&lt;/div&gt;&lt;div&gt;# virtual SetRewardBonus(int) : void&lt;/div&gt;&lt;div&gt;# virtual SetRewardCheck(int) : void&amp;nbsp; &amp;lt;-- ??&lt;/div&gt;&lt;div&gt;# ListGoals() : void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 204, 0);&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="19" vertex="1">
+                    <mxGeometry y="210" width="280" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="+ Main(string[]): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="23">
-                    <mxGeometry y="60" width="160" height="26" as="geometry"/>
+                <mxCell id="23" value="Program" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-226" y="-263" width="160" height="163" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="Simple" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="-170" y="323.90999999999997" width="250" height="210" as="geometry"/>
+                <mxCell id="24" value="+ _goals : list&amp;lt;Goal&amp;gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="23" vertex="1">
+                    <mxGeometry y="26" width="160" height="103" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- _instances : int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- _progress : float&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;_complete : bool&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- _reward : int&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="27">
-                    <mxGeometry y="26" width="250" height="74" as="geometry"/>
+                <mxCell id="25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="23" vertex="1">
+                    <mxGeometry y="129" width="160" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="27">
-                    <mxGeometry y="100" width="250" height="8" as="geometry"/>
+                <mxCell id="26" value="+ Main(args : string[]) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="23" vertex="1">
+                    <mxGeometry y="137" width="160" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="+ Simple() : base()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="27">
-                    <mxGeometry y="108" width="250" height="102" as="geometry"/>
+                <object label="Simple" id="27">
+                    <mxCell style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;" parent="1" vertex="1">
+                        <mxGeometry x="-240" y="310" width="270" height="230" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="28" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- _status : bool&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="27" vertex="1">
+                    <mxGeometry y="26" width="270" height="24" as="geometry"/>
                 </mxCell>
-                <mxCell id="39" value="name" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;" edge="1" parent="1">
+                <mxCell id="29" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="27" vertex="1">
+                    <mxGeometry y="50" width="270" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Constructors:&lt;/u&gt;&lt;div&gt;+ Simple(checksTarget: int, rewardCheck: int, rewardTarget: int)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+ {override} GetStatus() : bool&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 0);&quot;&gt;&lt;div style=&quot;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;override&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;GetPoints() : int&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;override&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;RecordEvent() : void&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ SetStatus() : void&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ SetTargetDeadline(deadline: DateTime) : void&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ CheckProgress() : void&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="27" vertex="1">
+                    <mxGeometry y="58" width="270" height="172" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;entryX=-0.005;entryY=0.058;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.006;exitY=0.017;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="24" target="20" edge="1">
                     <mxGeometry x="-1" relative="1" as="geometry">
-                        <mxPoint y="-20" as="sourcePoint"/>
-                        <mxPoint x="160" y="-20" as="targetPoint"/>
+                        <mxPoint x="-195" y="-40" as="sourcePoint"/>
+                        <mxPoint x="-130" y="-40" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-40" y="-234"/>
+                            <mxPoint x="-40" y="-211"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="55" value="" style="endArrow=block;html=1;rounded=0;align=center;verticalAlign=bottom;endFill=0;labelBackgroundColor=none;endSize=8;entryX=0.458;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="22">
+                <mxCell id="61" value="Eternal" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;" parent="1" vertex="1">
+                    <mxGeometry x="55" y="310" width="185" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="&lt;div&gt;&lt;font&gt;- _streakStatus : bool&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;- _streakCurrent : int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;- _streakRecord : int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="61" vertex="1">
+                    <mxGeometry y="26" width="185" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="61" vertex="1">
+                    <mxGeometry y="90" width="185" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Constructors:&lt;/u&gt;&lt;/div&gt;+ Eternal() : base()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(204, 204, 0);&quot;&gt;&lt;div style=&quot;&quot;&gt;+ {&lt;span style=&quot;background-color: transparent;&quot;&gt;override&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;GetStatus() : string&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span&gt;&lt;span&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(204, 204, 0);&quot;&gt;&lt;div style=&quot;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;override&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;GetPoints() : int&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span&gt;&lt;span&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(204, 204, 0);&quot;&gt;&lt;div style=&quot;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;override&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;RecordEvent() : void&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span&gt;&lt;span&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(204, 204, 0);&quot;&gt;&lt;div style=&quot;&quot;&gt;+ GetTarget() : int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ SetTarget(target: int) : void&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ CheckStreakStatus() : bool&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ GetStreakStatus() : bool&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ GetStreakCurrent() : int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ GetStreakRecord() : int&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ CheckProgress() : void&lt;/div&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="61" vertex="1">
+                    <mxGeometry y="98" width="185" height="222" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="Checklist" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="310" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;_status&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;: string&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="65" vertex="1">
+                    <mxGeometry y="26" width="290" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="65" vertex="1">
+                    <mxGeometry y="50" width="290" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Constructors:&lt;/u&gt;&lt;/div&gt;+ Checklist(checksTarget: int, rewardCheck: int)&lt;br&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;{override}&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;GetStatus() : string&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ {override} GetPoints() : int&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ {override} RecordEvent() : void&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;+ CheckProgress() : void&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="65" vertex="1">
+                    <mxGeometry y="58" width="290" height="142" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="" style="endArrow=block;html=1;rounded=0;align=center;verticalAlign=bottom;endFill=0;labelBackgroundColor=none;endSize=17;entryX=0.5;entryY=1.018;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="61" target="22" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-60" y="320" as="sourcePoint"/>
-                        <mxPoint x="100" y="210" as="targetPoint"/>
+                        <mxPoint x="220" y="270" as="sourcePoint"/>
+                        <mxPoint x="290" y="170" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="56" value="" style="resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;" connectable="0" vertex="1" parent="55">
+                <mxCell id="70" value="" style="resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;" parent="69" connectable="0" vertex="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint y="114" as="offset"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="74" value="Event" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="-40" width="240" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="- _goal : Goal&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;- _goalType : string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;- _eventType : string // check or completion&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;div&gt;- _date : DateTime&lt;/div&gt;&lt;/div&gt;&lt;div&gt;- _note : string // charLimit = 50?&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="74" vertex="1">
+                    <mxGeometry y="26" width="240" height="114" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="74" vertex="1">
+                    <mxGeometry y="140" width="240" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="&lt;u&gt;Constructors:&lt;/u&gt;&lt;div&gt;+ Event(goal : Goal)&lt;/div&gt;&lt;div&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ DisplayEventDetails() : string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="74" vertex="1">
+                    <mxGeometry y="148" width="240" height="92" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;entryX=0.995;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.005;exitY=0.032;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="75" target="20" edge="1">
+                    <mxGeometry x="-1" relative="1" as="geometry">
+                        <mxPoint x="520" y="-30" as="sourcePoint"/>
+                        <mxPoint x="450" y="-30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="80" value="&lt;p&gt;&lt;b&gt;Attributes:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_eventType:&amp;nbsp;&lt;/b&gt;check or completion&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_note:&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;character limit = 50?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;The constructor will prompt for:&amp;nbsp;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;1. event date and time&lt;br&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;2. goal subtype (inffered form class name)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;3. goal title (list of unique titles of the subtype)&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFCCC;strokeColor=default;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="-240" width="250" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="&lt;p&gt;&lt;b&gt;Menu sequence:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1. Actions&lt;br&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;a.&amp;nbsp;Create New Goal&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;b.&amp;nbsp;List Goals&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;c. Save Goals&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;d. Load Goals&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;e. Record Event&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2.&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;Customization&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;a. Edit Username&lt;br&gt;&lt;/span&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;b. Delete Account&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;3&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;Quit&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFCCC;strokeColor=default;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-438" y="223" width="180" height="222" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="" style="resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="295" y="664" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="&lt;p&gt;&lt;b&gt;Attributes:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_title: &lt;/b&gt;character limit = 20?&lt;br&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_checksFrequency:&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt; daily/weekly/etc&lt;br&gt;&lt;/span&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_rewardCheck:&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt; single completion&lt;br&gt;&lt;/span&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_rewardTarget:&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt; goal completion or target met / long streak, etc.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;Methods:&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;RecordEvent():&lt;/b&gt; Base gets most of the info needed. Derived gets the rest.&lt;br&gt;&lt;i style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;CheckProgress():&lt;/b&gt;&lt;/i&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;Simple: eval likelihood; Eternal: forecasted completionDate&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;b&gt;SetRewardBonus():&lt;/b&gt;&amp;nbsp;Play &quot;What Are the Odds&quot; with the user.&lt;br&gt;&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFCCC;strokeColor=default;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="-485" width="460" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="&lt;p&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;Methods:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;{override} GetStatus():&lt;/b&gt; &quot;2/10 = 20%&quot;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFCCC;strokeColor=default;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-210" y="570" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="&lt;p&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;Methods:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;{override} GetStatus():&lt;/b&gt; &quot;actual/target&quot; or&amp;nbsp; 20%&quot;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;b&gt;CheckProgress(): &lt;/b&gt;redundant?&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFCCC;strokeColor=default;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="530" width="290" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="27" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-150" y="290" as="sourcePoint"/>
+                        <mxPoint x="-105" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="94" value="" style="endArrow=none;html=1;exitX=0.483;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="65" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="290" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="95" value="" style="endArrow=none;html=1;sourcePerimeterSpacing=10;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-105" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="99" value="" style="endArrow=none;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;dashed=1;" parent="1" edge="1" target="81">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-261" y="204" as="sourcePoint"/>
+                        <mxPoint x="-284" y="226" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="100" value="" style="endArrow=none;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.3;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" parent="1" source="89" edge="1" target="19">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="53" y="-282" as="sourcePoint"/>
+                        <mxPoint x="30" y="-260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="101" value="&lt;p&gt;&lt;b&gt;&lt;font style=&quot;font-size: 56px;&quot;&gt;Eternal Quest (Developer05)&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-240" y="-590" width="810" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="Goal Builder" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-681" y="-522" width="426" height="287" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="+ static _goalTypes : List&amp;lt;string&amp;gt;&amp;nbsp;&lt;div&gt;+ static _replacementWord : string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="102">
+                    <mxGeometry y="26" width="426" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="102">
+                    <mxGeometry y="66" width="426" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="&lt;u&gt;Constructors:&lt;/u&gt;&lt;div&gt;na&lt;/div&gt;&lt;div&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ static CreateSimpleGoalFromuser() : Simple&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;static&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;CreateEternalGoalFromuser() : Eternal&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;static&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;CreateChecklistGoalFromuser() : Checklist&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- static AskForTitle() : string&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- static AskForFrequency&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;() : string&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- static&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;AskFor&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;ChecksTarget&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;(goalType : string) : string&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- static&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;AskForTargetDeadline&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;(goalType : string, checksTarget : int, frequencyMultiplier : int) : DateTime&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- static&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;AskForRewardPerCheck&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;() : string&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- static&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;AskForRewardForTarget&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;() : string&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="102">
+                    <mxGeometry y="74" width="426" height="213" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="106" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="Menu" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-438" y="7" width="428" height="193" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="- _title : string&lt;div&gt;- _options : List&amp;lt;string&amp;gt;&lt;/div&gt;&lt;div&gt;- _inputPrompt : string&lt;/div&gt;&lt;div&gt;- _suffix : string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="106">
+                    <mxGeometry y="26" width="428" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="106">
+                    <mxGeometry y="88" width="428" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="&lt;u&gt;Constructors:&lt;/u&gt;&lt;div&gt;+ Menu (title : string, options : List&amp;lt;string&amp;gt;, inputPrompt : string, suffix : string)&lt;/div&gt;&lt;div&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u style=&quot;color: rgb(63, 63, 63);&quot;&gt;Methods:&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ GetValidatedMenuSelection() : int&lt;/div&gt;&lt;div&gt;+ public GetSelectedMenuOption() : string&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="106">
+                    <mxGeometry y="96" width="428" height="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="103" target="24">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
