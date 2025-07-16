@@ -12,8 +12,6 @@ namespace Develop05
         private List<string> _options;
         // A3....................................
         private string _inputPrompt;
-        // A4....................................
-        private string _suffix;
 
         //
         //
@@ -26,13 +24,12 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Menu(string title, List<string> options, string inputPrompt = "> Select an option (number): ", string suffix = "")
+        public Menu(string title, List<string> options, string inputPrompt = "> Select an option (number): ")
         // Parameters: (1) title, (2) options, (3) inputPrompt, (4) suffix
         {
             _title = title;
             _options = options;
             _inputPrompt = inputPrompt;
-            _suffix = suffix;
         }
 
         //
@@ -56,7 +53,7 @@ namespace Develop05
                 Console.WriteLine($"{_title}");
                 for (int i = 0; i < _options.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {_options[i]} {_suffix}");
+                    Console.WriteLine($"{i + 1}. {_options[i]}");
                 }
 
                 Console.Write(_inputPrompt);

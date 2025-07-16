@@ -7,13 +7,14 @@
 ————————————————————————————————————
         ATTRIBUTES .....  1
         CONSTRUCTORS ...  1
-        METHODS ........  6
+        METHODS ........  3
 ——————————————————————————————————*/
 
 using System;
 
 namespace Develop05
 {
+    // [Serializable]
     public class Simple : Goal // derived class
     {
         // ————————————————————————————————————————————————————————————————————————————————————————
@@ -31,9 +32,17 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Simple(string title, DateTime targetDeadline, int rewardTarget)
-        : base(title: title, targetDeadline: targetDeadline, rewardTarget: rewardTarget)
-        {}
+        public Simple(
+            string title,
+            // DateTime targetDeadline,
+            int rewardTarget
+            )
+            : base(
+                title: title,
+                // targetDeadline: targetDeadline,
+                rewardTarget: rewardTarget
+                )
+        { }
 
         //
         //
@@ -46,39 +55,27 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // M1....................................
-        protected override void CheckProgress()
+        // Used in public base class method 'DisplayGoal' which is called in 'Program.cs' to 'List Goals'.
+        public override void DisplayGoal(int i)
         {
-            // Logic: conditionally format progress
-            string marker = (_status) ? "x" : " ";
-            string progress = $"[{marker}]"; // placeholder
-            _progress = progress;
+            string progress = _status ? "[x]" : "[ ]";
+            Console.WriteLine($"{i}. {progress} {_title}");
         }
 
         // M2....................................
+        public override void RecordEvent()
+        {
+
+        }
+
+        // M3....................................
         public override int GetPoints()
         {
             // Logic: calculate points
 
             return 0; // placeholder
         }
-        
-        // M3....................................
-        public override void RecordEvent()
-        {
 
-        }
-        
-        // M4....................................
-        public void SetStatus()
-        {
-
-        }
-        
-        // M5....................................
-        public void SetTargetDeadline(DateTime deadline)
-        {
-
-        }
 
     }
 }

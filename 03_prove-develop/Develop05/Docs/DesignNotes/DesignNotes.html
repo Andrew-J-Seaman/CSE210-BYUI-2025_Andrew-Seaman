@@ -47,7 +47,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#roadmap" id="toc-roadmap" class="nav-link active" data-scroll-target="#roadmap">ROADMAP</a></li>
+  <li><a href="#functional-requirements" id="toc-functional-requirements" class="nav-link active" data-scroll-target="#functional-requirements">FUNCTIONAL REQUIREMENTS</a></li>
+  <li><a href="#simplification" id="toc-simplification" class="nav-link" data-scroll-target="#simplification">SIMPLIFICATION</a></li>
+  <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">ROADMAP</a></li>
   <li><a href="#functionality" id="toc-functionality" class="nav-link" data-scroll-target="#functionality">FUNCTIONALITY</a></li>
   <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">IDEAS</a></li>
   </ul>
@@ -88,50 +90,101 @@ ul.task-list li input[type="checkbox"] {
 
 <p><br> <br></p>
 <!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+<section id="functional-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="functional-requirements">FUNCTIONAL REQUIREMENTS</h2>
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+<p><strong>Your program must do the following:</strong></p>
+<ol type="1">
+<li><label><input type="checkbox">Provide for simple goals that can be marked complete and the user gains some value.</label>
+<ul>
+<li>For example, if you run a marathon you get 1000 points.</li>
+</ul></li>
+<li><label><input type="checkbox">Provide for eternal goals that are never complete, but each time the user records them, they gain some value.</label>
+<ul>
+<li>For example, every time you read your scriptures you get 100 points.</li>
+</ul></li>
+<li><label><input type="checkbox">Provide for a checklist goal that must be accomplished a certain number of times to be complete. Each time the user records this goal they gain some value, but when they achieve the desired amount, they get an extra bonus.</label>
+<ul>
+<li>For example, if you set a goal to attend the temple 10 times, you might get 50 points each time you go, and then a bonus of 500 points on the 10th time.</li>
+</ul></li>
+<li><label><input type="checkbox">Display the user’s score.</label></li>
+<li><label><input type="checkbox" checked="">Allow the user to create new goals of any type.</label></li>
+<li><label><input type="checkbox" checked="">Allow the user to record an event (meaning they have accomplished a goal and should receive points).</label></li>
+<li><label><input type="checkbox">Show a list of the goals. This list should show indicate whether the goal has been completed or not (for example [ ] compared to [X]), and for checklist goals it should show how many times the goal has been completed (for example Completed 2/5 times).</label></li>
+<li><label><input type="checkbox">Allow the user’s goals and their current score to be saved and loaded.</label></li>
+</ol>
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+</section>
+<section id="simplification" class="level2">
+<h2 class="anchored" data-anchor-id="simplification">SIMPLIFICATION</h2>
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+<ol type="1">
+<li><label><input type="checkbox" checked="">Flatten menu to 1 or 2 tiers.</label></li>
+<li><label><input type="checkbox">Simplify load logic to ignore creation date order when combining loaded goals with newly created goals.</label></li>
+<li><label><input type="checkbox" checked="">Get rid of ’_stagedGoals’</label></li>
+<li>Gamification
+<ul>
+<li><label><input type="checkbox">Award points to point bucket. Don’t calculate goal-by-goal. Don’t track points goal-by-goal.</label></li>
+<li><label><input type="checkbox">Don’t create/use Events class. Don’t track specific events tethered to parent Goal object.</label></li>
+<li>[ ]</li>
+</ul></li>
+</ol>
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+</section>
 <section id="roadmap" class="level2">
 <h2 class="anchored" data-anchor-id="roadmap">ROADMAP</h2>
 <!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
 <p>For each project file, Plan and progress.</p>
 <section id="all-.cs-files" class="level4">
 <h4 class="anchored" data-anchor-id="all-.cs-files">All .cs files</h4>
-<ol type="1">
+<ul class="task-list">
 <li><label><input type="checkbox" checked="">Refactor structuring comments.</label></li>
 <li><label><input type="checkbox" checked="">Add attributes, constructors, and methods from UML. <!-- - [ ]  --></label></li>
-</ol>
+</ul>
 </section>
 <section id="program.cs" class="level4">
 <h4 class="anchored" data-anchor-id="program.cs">000_Program.cs</h4>
+<ul class="task-list">
+<li><label><input type="checkbox">Build out menu functionality (layered loops within switchcase structure).</label>
 <ol type="1">
-<li><label><input type="checkbox">Build out menu functionality (layered loops within switchcase structure).</label></li>
-</ol>
+<li><label><input type="checkbox" checked="">Create New Goal</label></li>
+<li><label><input type="checkbox" checked="">List Goals</label></li>
+<li><label><input type="checkbox">Save Goals</label></li>
+<li><label><input type="checkbox">Load Goals</label></li>
+<li><label><input type="checkbox">Record Event <!-- 2. [ ] TopMenu: Level 2 (Customization)
+      1. [ ] Update username
+      2. [ ] Delete account (perhaps name the goals.(txt/csv/json) file after the user and delete that file.) --></label></li>
+<li><label><input type="checkbox" checked="">Quit</label></li>
+</ol></li>
+</ul>
 </section>
 <section id="goal.cs" class="level4">
 <h4 class="anchored" data-anchor-id="goal.cs">001_Goal.cs</h4>
-<ol type="1">
+<ul class="task-list">
 <li><label><input type="checkbox">Build out abstract method functionality.</label></li>
 <li><label><input type="checkbox">Build out non-abstract method functionality.</label></li>
-</ol>
+</ul>
 </section>
 <section id="simple.cs" class="level4">
 <h4 class="anchored" data-anchor-id="simple.cs">002_Simple.cs</h4>
-<ol type="1">
+<ul class="task-list">
 <li><label><input type="checkbox">Build out abstract method functionality.</label></li>
 <li><label><input type="checkbox">Build out non-abstract method functionality.</label></li>
-</ol>
+</ul>
 </section>
 <section id="eternal.cs" class="level4">
 <h4 class="anchored" data-anchor-id="eternal.cs">003_Eternal.cs</h4>
-<ol type="1">
+<ul class="task-list">
 <li><label><input type="checkbox">Build out abstract method functionality.</label></li>
 <li><label><input type="checkbox">Build out non-abstract method functionality.</label></li>
-</ol>
+</ul>
 </section>
 <section id="checklist.cs" class="level4">
 <h4 class="anchored" data-anchor-id="checklist.cs">004_Checklist.cs</h4>
-<ol type="1">
+<ul class="task-list">
 <li><label><input type="checkbox">Build out abstract method functionality.</label></li>
 <li><label><input type="checkbox">Build out non-abstract method functionality.</label></li>
-</ol>
+</ul>
 <p><br> <br></p>
 <!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
 </section>

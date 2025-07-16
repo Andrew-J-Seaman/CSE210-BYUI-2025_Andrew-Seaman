@@ -5,15 +5,16 @@
 
 /* SECTION SUMMARY 
 ————————————————————————————————————
-        ATTRIBUTES .....  2
+        ATTRIBUTES .....  0
         CONSTRUCTORS ...  1
-        METHODS ........  9
+        METHODS ........  3
 ——————————————————————————————————*/
 
 using System;
 
 namespace Develop05
 {
+    // [Serializable]
     public class Eternal : Goal // derived class
     {
         // ————————————————————————————————————————————————————————————————————————————————————————
@@ -21,11 +22,9 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // A1....................................
-        private bool _streakStatus;
+        // private int _streakCurrent;
         // A2....................................
-        private int _streakCurrent;
-        // A3....................................
-        private int _streakRecord;
+        // private int _streakRecord;
 
         //
         //
@@ -38,13 +37,26 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Eternal(string title, string checksFrequency, int checksTarget, DateTime targetDeadline, int rewardCheck, int rewardTarget)
-        : base(title: title, checksFrequency: checksFrequency, checksTarget: checksTarget, targetDeadline: targetDeadline, rewardCheck: rewardCheck, rewardTarget: rewardTarget)
+        public Eternal(
+            string title,
+            // string checksFrequency, 
+            // int checksTarget, 
+            // DateTime targetDeadline, 
+            int rewardCheck,
+            int rewardTarget
+            )
+            : base(
+                title: title,
+                // checksFrequency: checksFrequency,
+                // checksTarget: checksTarget,
+                // targetDeadline: targetDeadline,
+                rewardCheck: rewardCheck,
+                rewardTarget: rewardTarget)
         {
             // Default values
-            _streakStatus = false;
-            _streakCurrent = 0;
-            _streakRecord = 0;
+            // _streakStatus = false;
+            // _streakCurrent = 0;
+            // _streakRecord = 0;
         }
 
         //
@@ -58,71 +70,33 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // M1....................................
-        protected override void CheckProgress()
+        // Used in public base class method 'DisplayGoal' which is called in 'Program.cs' to 'List Goals'.
+        public override void DisplayGoal(int i)
         {
-            // Logic: calculate/formatt progress
-            int streakTarget = _checksTarget;
-            string progress = $"[ {_streakCurrent} / {streakTarget} ]"; // placeholder
+            string insideText;
+            if (_checksActual == 0)
+            {
+                insideText = " ";
+            }
+            else
+            {
+                insideText = _checksActual.ToString();
+            }
 
-            _progress = progress;
-
+            string progress = $"[{insideText}]";
+            Console.WriteLine($"{i}. {progress} {_title}");
         }
 
         // M2....................................
-        public override int GetPoints()
-        {
-            return 0; // placeholder (calculation)
-        }
-        
-        // M3....................................
         public override void RecordEvent()
         {
 
         }
 
-        // M4....................................
-        public int GetTarget()
+        // M3....................................
+        public override int GetPoints()
         {
-            return 0; // placeholder
+            return 0; // placeholder (calculation)
         }
-
-        // M5....................................
-        public void SetTarget(int target) // Explanation: only in the Eternal class would the user need to change the "_checksTarget" attribute for a goal as this goal subtype is the only one where a "completion streak" is considered as opposed to mere progress and completion status.
-        {
-            _checksTarget = target;
-        }
-
-        // M6....................................
-        private void SetStreakStatus() // Determines if there is an active streak?
-        {
-            // Logic: active streak?
-            // if (logic)
-            // {
-            //     _streakStatus = true;
-            // }
-            // else
-            // {
-            //     _streakStatus = false;
-            // }
-        }
-        
-        // M7....................................
-        public override bool GetStatus() // GetStreakStatus
-        {
-            return _streakStatus;
-        }
-
-        // M8....................................
-        public int GetStreakCurrent()
-        {
-            return _streakCurrent; // placeholder
-        }
-
-        // M9....................................
-        public int GetStreakRecord()
-        {
-            return _streakRecord; // placeholder
-        }
-
     }
 }

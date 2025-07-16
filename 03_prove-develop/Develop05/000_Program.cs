@@ -8,151 +8,147 @@
 using System;
 using System.Runtime.ExceptionServices;
 
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+
 namespace Develop05
 {
     class Program // Class000
     {
-        
+
 
         static void Main(string[] args)
         {
             // ————————————————————————————————————————————————————————————————————————————————————
-            // PROGRAM : Write your code here
+            // VARIABLES
             // ————————————————————————————————————————————————————————————————————————————————————
 
-            // VARIABLES
-            // __________________________________
-            // Local variables
+            // Local...................
+            string filePath = "goals.csv";
             List<Goal> _goals = new List<Goal> { };
-            List<Goal> _stagedGoals = new List<Goal> { };
-            
-            // Menu options lists (local stack variables)
-            List<string> _menuOptions01 = new List<string> { "Actions", "Customization", "Quit" };
-            List<string> _menuOptions02 = new List<string> { "Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Return to Main Menu" };
-            List<string> _menuOptions03 = new List<string> { "Simple", "Eternal", "Checklist", "Return to Actions Menu" };
-            List<string> _menuOptions04 = new List<string> { "Proceed", "Save Changes" };
+            // List<Goal> _stagedGoals = new List<Goal> { };
+
+
+            // Menu options......................
+
+            // List<string> _menuOptions01 = new List<string> { "Actions", "Customization", "Quit" }; // Main Menu (Tall 3 Tier model)
+
+            // List<string> _menuOptions01 = new List<string> { "Actions", "Quit" }; // Main Menu (Short 3 Tier model)
+
+            List<string> _menuOptions01 = new List<string> { "Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Quit" }; // Main Menu: 2 Tier model
+
+            List<string> _menuOptions02 = new List<string> { "Simple", "Eternal", "Checklist", "Return to Main Menu" }; // Create New Goal Menu
+
+            // ————————————————————————————————————————————————————————————————————————————————————
+            // MENU
+            // ————————————————————————————————————————————————————————————————————————————————————
 
             // Main Menu
             bool running = true;
             while (running) // Outer loop
             {
                 Menu mainMenu = new Menu("Main Menu:", _menuOptions01);
-                ClearAll();
+                Clear();
                 // Tier 1__________________________________________________________________________
                 switch (mainMenu.GetValidatedMenuSelection())
                 {
-                    case 1: // 1.1/3 "Actions"............................
-                        bool inActionsMenu = true;
-
-                        while (inActionsMenu) // Inner loop
+                    case 1: // "Create New Goal"..........................
+                        bool inCreateNewGoalMenu = true;
+                        while (inCreateNewGoalMenu)
                         {
-                            Menu actionsMenu = new Menu("Actions Menu: ", _menuOptions02);
-                            ClearAll();
+                            Menu createNewGoalMenu = new Menu("Create a New Goal: ", _menuOptions02);
+                            Clear();
 
                             // Tier 2______________________________________________________________
-                            switch (actionsMenu.GetValidatedMenuSelection())
+                            switch (createNewGoalMenu.GetValidatedMenuSelection())
                             {
-                                case 1: // 2.1/6 "Create New Goal"..........................
-                                    bool inCreateNewGoalMenu = true;
-
-                                    while (inCreateNewGoalMenu)
-                                    {
-                                        Menu createNewGoalMenu = new Menu("Create a New Goal: ", _menuOptions03, suffix: " Goal");
-                                        ClearAll();
-
-                                        // Tier 3__________________________________________________
-                                        switch (createNewGoalMenu.GetValidatedMenuSelection())
-                                        {
-                                            case 1: // 3.1/4 "Simple"
-                                                Simple sGoal = GoalBuilder.CreateSimpleGoalFromUser();
-                                                _stagedGoals.Add(sGoal);
-                                                break;
-
-                                            case 2: // 3.2/4 "Eternal"
-                                                Eternal eGoal = GoalBuilder.CreateEternalGoalFromUser();
-                                                _stagedGoals.Add(eGoal);
-                                                break;
-
-                                            case 3: // 3.3/4 "Checklist":
-                                                Checklist cGoal = GoalBuilder.CreateChecklistGoalFromUser();
-                                                _stagedGoals.Add(cGoal);
-                                                break;
-
-                                            case 4: // 3.4/4 "Return to Actions Menu"
-                                                inCreateNewGoalMenu = false; // Exit Actions menu
-                                                break;
-                                        }
-                                    }
-                                    inActionsMenu = false;
+                                case 1: // 3.1/4 "Simple"
+                                    Simple sGoal = GoalBuilder.CreateSimpleGoalFromUser();
+                                    _goals.Add(sGoal);
                                     break;
 
-                                case 2: // 2.2/6 "List Goals"...............................
-                                    // Add Logic: ListGoals();
-                                    inActionsMenu = false;
+                                case 2: // 3.2/4 "Eternal"
+                                    Eternal eGoal = GoalBuilder.CreateEternalGoalFromUser();
+                                    _goals.Add(eGoal);
                                     break;
 
-                                case 3: // 2.3/6 "Save Goals"...............................
-                                        // Add Logic: SaveGoals(); Full if logic: 
-
-                                    _goals ? (_goals = _stagedGoals) : _goals.Add(_stagedGoals);
-                                    inActionsMenu = false;
+                                case 3: // 3.3/4 "Checklist":
+                                    Checklist cGoal = GoalBuilder.CreateChecklistGoalFromUser();
+                                    _goals.Add(cGoal);
                                     break;
 
-                                case 4: // 2.4/6 "Load Goals"...............................
-                                    // Add Logic: LoadGoals();
-                                    inActionsMenu = false;
-                                    break;
-
-                                case 5: // 2.5/6 "Record Event".............................
-                                    // Add Logic: menu (_goals) > RecordEvent();
-                                    inActionsMenu = false;
-                                    break;
-
-                                case 6: // 2.6/6 "Return to Main Menu"......................
-                                    Console.WriteLine("Returning to Main menu");
-                                    inActionsMenu = false;
+                                case 4: // 3.4/4 "Return to Actions Menu"
+                                    inCreateNewGoalMenu = false; // Exit Actions menu
                                     break;
                             }
                         }
                         break;
 
-                    case 2: // 1.2/3 "Customization"......................
-
-                        // Tier 2__________________________________________________________________
-
-                        // 1. Add options list above (two options)
-                        // 2. Add tier 2 switch-case 
-
-                        break;
-
-                    case 3: // 1.3/3 "Quit"...............................
-                        // Logic: warn user if there are any unsaved goals and offer to save them before quitting.
-                        // if (instance of _stagedGoals) <----------------------------------------------------------------------- RETURN TO THIS LOGIC ISSUE.
-                        int count = _stagedGoals.Count();
-                        if (count > 0)
+                    case 2: // "List Goals"...............................
+                        Clear();
+                        Console.WriteLine("——— GOALS ———\n");
+                        for (int i = 0; i < _goals.Count(); i++)
                         {
-                            Menu quitMenu = new Menu($"You have {count} staged ready to be saved: ", _menuOptions04);
-                            ClearAll();
-                            switch (quitMenu.GetValidatedMenuSelection())
+                            int oneBasedIndex = i + 1;
+                            Goal goal = _goals[i]; // Goal object
+                            goal.DisplayGoal(oneBasedIndex);
+                        }
+                        Console.Write("\nPress (ENTER) to continue.");
+                        Console.ReadLine();
+                        break;
+
+                    case 3: // "Save Goals"...............................
+                        Clear();
+                        if (_goals.Count() <= 0)
+                        {
+                            Console.WriteLine("No goals to save");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Saving goals...");
+
+                            // Format Goals for output (list of strings)
+                            List<string> lines = new List<string> { }; // List<string> lines = new List<string> { };
+                            foreach (Goal goal in _goals)
                             {
-                                case 1: // Proceed (lose unsaved work)
-                                    break;
-
-                                case 2: // Save Changes (save unsaved work)
-                                    // Add Logic: SaveGoals();
-
-                                    break;
+                                string line = goal.FormatGoalOutput();
+                                lines.Add(line);
                             }
 
+                            // Write Goals to CSV file
+                            File.WriteAllLines(filePath, lines);
+                            Console.WriteLine("Goals saved successfully!");
+                            //_goals.Clear(); // Empty out the list
+
+
                         }
-                        ClearAll();
-                        Console.WriteLine("Thanks for making goals!");
                         break;
-                } // End switch-case: Level 1
-            } // End while loop: Level 1
+
+                    case 4: // "Load Goals"...............................
+                        // Add Logic: LoadGoals();
+                        break;
+
+                    case 5: // "Record Event".............................
+                        // Add Logic: menu (_goals) > RecordEvent();
+                        break;
+
+                    case 6: // "Quit"...............................
+                        Clear();
+                        Console.WriteLine("Good job tracking your goals!");
+                        running = false;
+                        break;
+                }
+            }
         }
 
-        private static void ClearAll()
+        // ————————————————————————————————————————————————————————————————————————————————————
+        // Methods
+        // ————————————————————————————————————————————————————————————————————————————————————
+
+        // M1....................................
+        private static void Clear()
         {
             Console.Clear();
         }

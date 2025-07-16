@@ -14,6 +14,7 @@ using System;
 
 namespace Develop05
 {
+    // [Serializable]
     public class Checklist : Goal // derived
     {
         // ————————————————————————————————————————————————————————————————————————————————————————
@@ -31,9 +32,22 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Checklist(string title, string checksFrequency, int checksTarget, DateTime targetDeadline, int rewardCheck, int rewardTarget)
-        : base(title: title, checksFrequency: checksFrequency, checksTarget: checksTarget, targetDeadline: targetDeadline, rewardCheck: rewardCheck, rewardTarget: rewardTarget)
-        {}
+        public Checklist(
+            string title,
+            // string checksFrequency, 
+            int checksTarget,
+            // DateTime targetDeadline, 
+            int rewardCheck,
+            int rewardTarget
+            )
+            : base(
+                title: title,
+                // checksFrequency: checksFrequency, 
+                checksTarget: checksTarget,
+                // targetDeadline: targetDeadline, 
+                rewardCheck: rewardCheck,
+                rewardTarget: rewardTarget)
+        { }
 
         //
         //
@@ -46,26 +60,24 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // M1....................................
-        protected override void CheckProgress()
+        // Used in public base class method 'DisplayGoal' which is called in 'Program.cs' to 'List Goals'.
+        public override void DisplayGoal(int i)
         {
-            // Logic: calculate/formatt progress
-            string progress = $"[ {_checksActual} / {_checksTarget} ]"; // placeholder
-
-            _progress = progress;
-
+            string progress = _status ? "[x]" : $"[ {_checksActual} / {_checksTarget} ]";
+            Console.WriteLine($"{i}. {progress} {_title}");
         }
 
         // M2....................................
+        public override void RecordEvent()
+        {
+
+        }
+
+        // M3....................................
         public override int GetPoints()
         {
             return 0; // placeholder
         }
 
-        // M3....................................
-        public override void RecordEvent()
-        {
-
-        }
-        
     }
 }

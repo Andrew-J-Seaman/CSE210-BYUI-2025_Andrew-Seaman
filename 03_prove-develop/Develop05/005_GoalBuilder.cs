@@ -21,11 +21,14 @@ namespace Develop05
 
             // Prompt for attributes
             string title = AskForTitle();
-            DateTime targetDeadline = AskForTargetDeadline(goalType);
+            // DateTime targetDeadline = AskForTargetDeadline(goalType);
             int rewardTarget = AskForRewardForTarget(goalType);
 
             // Instantiate new goal object
-            return new Simple(title, targetDeadline, rewardTarget); // 3 parameters
+            return new Simple(
+                title,
+                // targetDeadline,
+                rewardTarget); // 3 parameters
         }
 
         // MC2...................................
@@ -36,14 +39,20 @@ namespace Develop05
 
             // Prompt for attributes
             string title = AskForTitle();
-            (string checksFrequency, int frequencyMultiplier) = AskForFrequency();
-            int checksTarget = AskForChecksTarget(goalType);
-            DateTime targetDeadline = AskForTargetDeadline(goalType, checksTarget, frequencyMultiplier);
+            // (string checksFrequency, int frequencyMultiplier) = AskForFrequency();
+            // int checksTarget = AskForChecksTarget(goalType);
+            // DateTime targetDeadline = AskForTargetDeadline(goalType, checksTarget, frequencyMultiplier);
             int rewardCheck = AskForRewardPerCheck();
             int rewardTarget = AskForRewardForTarget(goalType);
 
             // Instantiate new goal object
-            return new Eternal(title, checksFrequency, checksTarget, targetDeadline, rewardCheck, rewardTarget); // 6 parameters
+            return new Eternal(
+                title,
+                // checksFrequency,
+                // checksTarget,
+                // targetDeadline,
+                rewardCheck,
+                rewardTarget); // 6 parameters
         }
 
         // MC3...................................
@@ -54,14 +63,20 @@ namespace Develop05
 
             // Prompt for attributes
             string title = AskForTitle();
-            (string checksFrequency, int frequencyMultiplier) = AskForFrequency();
+            // (string checksFrequency, int frequencyMultiplier) = AskForFrequency();
             int checksTarget = AskForChecksTarget(goalType);
-            DateTime targetDeadline = AskForTargetDeadline(goalType, checksTarget, frequencyMultiplier);
+            // DateTime targetDeadline = AskForTargetDeadline(goalType, checksTarget, frequencyMultiplier);
             int rewardCheck = AskForRewardPerCheck();
             int rewardTarget = AskForRewardForTarget(goalType);
 
             // Instantiate new goal object
-            return new Checklist(title, checksFrequency, checksTarget, targetDeadline, rewardCheck, rewardTarget); // 6 parameters
+            return new Checklist(
+                title, 
+                // checksFrequency, 
+                checksTarget, 
+                // targetDeadline, 
+                rewardCheck, 
+                rewardTarget); // 6 parameters
         }
 
 

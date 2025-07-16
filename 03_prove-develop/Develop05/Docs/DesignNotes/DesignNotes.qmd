@@ -13,6 +13,36 @@ format:
 </BR> </BR>
 
 <!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+## FUNCTIONAL REQUIREMENTS
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+
+**Your program must do the following:**
+
+1. [ ] Provide for simple goals that can be marked complete and the user gains some value.
+    - For example, if you run a marathon you get 1000 points.
+2. [ ] Provide for eternal goals that are never complete, but each time the user records them, they gain some value.
+    - For example, every time you read your scriptures you get 100 points.
+3. [ ] Provide for a checklist goal that must be accomplished a certain number of times to be complete. Each time the user records this goal they gain some value, but when they achieve the desired amount, they get an extra bonus.
+    - For example, if you set a goal to attend the temple 10 times, you might get 50 points each time you go, and then a bonus of 500 points on the 10th time.
+4. [ ] Display the user's score.
+5. [x] Allow the user to create new goals of any type.
+6. [x] Allow the user to record an event (meaning they have accomplished a goal and should receive points).
+7. [ ] Show a list of the goals. This list should show indicate whether the goal has been completed or not (for example [ ] compared to [X]), and for checklist goals it should show how many times the goal has been completed (for example Completed 2/5 times).
+8. [ ] Allow the user's goals and their current score to be saved and loaded.
+
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+## SIMPLIFICATION
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
+
+1. [x] Flatten menu to 1 or 2 tiers.
+2. [ ] Simplify load logic to ignore creation date order when combining loaded goals with newly created goals.
+3. [x] Get rid of '_stagedGoals'
+4. Gamification
+    - [ ] Award points to point bucket. Don't calculate goal-by-goal. Don't track points goal-by-goal.
+    - [ ] Don't create/use Events class. Don't track specific events tethered to parent Goal object.
+    - [ ] 
+
+<!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
 ## ROADMAP
 <!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
 
@@ -25,17 +55,15 @@ For each project file, Plan and progress.
 
 #### 000_Program.cs
 - [ ] Build out menu functionality (layered loops within switchcase structure).
-    1. [ ] TopMenu: Level 1 (Actions)
-        1. [ ] Create New Goal
-        2. [ ] List Goals
-        3. [ ] Save Goals
-        4. [ ] Load Goals
-        5. [ ] Record Event
-    2. [ ] TopMenu: Level 2 (Customization)
+    1. [x] Create New Goal
+    2. [x] List Goals
+    3. [ ] Save Goals
+    4. [ ] Load Goals
+    5. [ ] Record Event
+    <!-- 2. [ ] TopMenu: Level 2 (Customization)
         1. [ ] Update username
-        2. [ ] Delete account (perhaps name the goals.(txt/csv/json) file after the user and delete that file.)
-    3. [ ] TopMenu: Level 3 (Quit)
-        1. [ ] Add Logic: SaveGoals()
+        2. [ ] Delete account (perhaps name the goals.(txt/csv/json) file after the user and delete that file.) -->
+    6. [x] Quit
 
 #### 001_Goal.cs
 - [ ] Build out abstract method functionality.
