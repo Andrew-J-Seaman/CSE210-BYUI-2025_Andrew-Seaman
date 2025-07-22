@@ -34,19 +34,17 @@ namespace Develop05
         // C1....................................
         public Checklist(
             string title,
-            // string checksFrequency, 
             int checksTarget,
-            // DateTime targetDeadline, 
             int rewardCheck,
             int rewardTarget
             )
             : base(
                 title: title,
-                // checksFrequency: checksFrequency, 
                 checksTarget: checksTarget,
-                // targetDeadline: targetDeadline, 
                 rewardCheck: rewardCheck,
-                rewardTarget: rewardTarget)
+                rewardTarget: rewardTarget
+                // type: base.ToString()
+                )
         { }
 
         //

@@ -24,7 +24,7 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Menu(string title, List<string> options, string inputPrompt = "> Select an option (number): ")
+        public Menu(string title, List<string> options, string inputPrompt = "\n> Select an option (number): ")
         // Parameters: (1) title, (2) options, (3) inputPrompt, (4) suffix
         {
             _title = title;
@@ -65,6 +65,7 @@ namespace Develop05
                 }
                 else
                 {
+                    Program.Clear();
                     Console.WriteLine("Invalid selection. Try again.\n");
                 }
 

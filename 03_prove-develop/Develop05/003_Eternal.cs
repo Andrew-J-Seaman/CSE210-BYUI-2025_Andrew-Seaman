@@ -39,25 +39,16 @@ namespace Develop05
         // C1....................................
         public Eternal(
             string title,
-            // string checksFrequency, 
-            // int checksTarget, 
-            // DateTime targetDeadline, 
             int rewardCheck,
             int rewardTarget
             )
             : base(
                 title: title,
-                // checksFrequency: checksFrequency,
-                // checksTarget: checksTarget,
-                // targetDeadline: targetDeadline,
                 rewardCheck: rewardCheck,
-                rewardTarget: rewardTarget)
-        {
-            // Default values
-            // _streakStatus = false;
-            // _streakCurrent = 0;
-            // _streakRecord = 0;
-        }
+                rewardTarget: rewardTarget
+                // type: base.ToString()
+                )       
+        { }
 
         //
         //

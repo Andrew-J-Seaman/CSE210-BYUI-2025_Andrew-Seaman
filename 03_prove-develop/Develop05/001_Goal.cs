@@ -44,7 +44,7 @@ namespace Develop05
         // A11...................................
         protected bool _status;
         // A12...................................
-        // protected string _progress;
+        protected string _type;
 
         //
         //
@@ -59,26 +59,22 @@ namespace Develop05
         // C1....................................
         public Goal(
             string title = "none",
-            // DateTime creationDate = default,
-            // string checksFrequency = "none",
             int checksActual = 0,
             int checksTarget = 1,
-            // DateTime targetDeadline = default,
             int rewardCheck = 0,
             int rewardTarget = 0,
             int rewardBonus = 0,
-            bool status = false)
+            bool status = false,
+            string type = "none")
         {
             _title = title;
-            // _creationDate = (creationDate == default) ? DateTime.Now : creationDate;
-            // _checksFrequency = checksFrequency;
             _checksActual = checksActual;
             _checksTarget = checksTarget;
-            // _targetDeadline = (targetDeadline == default) ? DateTime.Now.Date.AddDays(1) : targetDeadline;
             _rewardCheck = rewardCheck;
             _rewardTarget = rewardTarget;
             _rewardBonus = rewardBonus;
             _status = status;
+            _type = base.ToString().Split('.').Last();
         }
 
         //

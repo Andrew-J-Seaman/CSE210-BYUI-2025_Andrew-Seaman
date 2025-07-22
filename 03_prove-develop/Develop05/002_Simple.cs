@@ -34,13 +34,12 @@ namespace Develop05
         // C1....................................
         public Simple(
             string title,
-            // DateTime targetDeadline,
             int rewardTarget
             )
             : base(
                 title: title,
-                // targetDeadline: targetDeadline,
                 rewardTarget: rewardTarget
+                // type: base.ToString()
                 )
         { }
 
