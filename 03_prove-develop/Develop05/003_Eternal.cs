@@ -55,19 +55,10 @@ namespace Develop05
         }
 
         // M2....................................
-        public override void RecordEvent()
+        public override int RecordEvent()
         {
-            // Logic: record event
-
-        }
-
-        // M3....................................
-        public override int GetPoints()
-        {
-            // Logic: calculate points
-
-            
-            return 0; // placeholder (calculation)
+            SetChecksActual(GetChecksActual() + 1);
+            return GetRewardCheck();
         }
     }
 }

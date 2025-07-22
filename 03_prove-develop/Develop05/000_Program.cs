@@ -22,8 +22,10 @@ namespace Develop05
             // ————————————————————————————————————————————————————————————————————————————————————
 
             // Local...................
-            string _goalsFilePath = "goals.csv";
-            List<Goal> _goals;
+            string goalsFilePath = "goals.csv";
+            string pointsFilePath = "points.txt";
+            List<Goal> goals;
+            int totalPoints = 0;
 
 
             // Menu options......................
@@ -32,48 +34,54 @@ namespace Develop05
             List<string> _menuOptions02 = new List<string> { "Simple", "Eternal", "Checklist", "Back" }; // Tier 2: Create New Goal Menu
 
             // ————————————————————————————————————————————————————————————————————————————————————
-            // LOAD GOALS AUTOMATICALLY
+            // READ IN DATA FILES
             // ————————————————————————————————————————————————————————————————————————————————————
 
             // Quietly check for goals.csv file and read in data
-            _goals = LoadGoals(_goalsFilePath, true); // Disable error message
+            goals = LoadGoals(goalsFilePath, true); // Disable error message
+
+            // Quietly check for points.txt file and read in data
+            totalPoints = LoadPoints(pointsFilePath);
+
 
             // ————————————————————————————————————————————————————————————————————————————————————
             // MENU SYSTEM
             // ————————————————————————————————————————————————————————————————————————————————————
 
-            // Main Menu
+            // Menu object instances            
+            Menu mainMenu = new Menu("Main Menu:", _menuOptions01);
+            Menu createNewGoalMenu = new Menu("Create a New Goal: ", _menuOptions02);
+
+            // Main menu
             bool running = true;
             while (running) // Outer loop
             {
-                Menu mainMenu = new Menu("Main Menu:", _menuOptions01);
                 Clear(); // ! NOTICE !
                 // Tier 1__________________________________________________________________________
-                switch (mainMenu.GetValidatedMenuSelection())
+                switch (mainMenu.GetValidatedMenuSelection(totalPoints)) // Menu is called to run here 
                 {
                     case 1: // > (1) "Create New Goal" ____________________________________________
                         bool inCreateNewGoalMenu = true;
                         while (inCreateNewGoalMenu)
                         {
-                            Menu createNewGoalMenu = new Menu("Create a New Goal: ", _menuOptions02);
                             Clear(); // ! NOTICE !
 
                             // Tier 2 (Create New Goal) ___________________________________________
-                            switch (createNewGoalMenu.GetValidatedMenuSelection())
+                            switch (createNewGoalMenu.GetValidatedMenuSelection(totalPoints))
                             {
                                 case 1: // * Simple ...............................................
                                     Simple sGoal = GoalBuilder.CreateSimpleGoalFromUser();
-                                    _goals.Add(sGoal);
+                                    goals.Add(sGoal);
                                     break;
 
                                 case 2: // * Eternal ..............................................
                                     Eternal eGoal = GoalBuilder.CreateEternalGoalFromUser();
-                                    _goals.Add(eGoal);
+                                    goals.Add(eGoal);
                                     break;
 
                                 case 3: // * Checklist ............................................
                                     Checklist cGoal = GoalBuilder.CreateChecklistGoalFromUser();
-                                    _goals.Add(cGoal);
+                                    goals.Add(cGoal);
                                     break;
 
                                 case 4: // * Return  ..............................................
@@ -85,39 +93,38 @@ namespace Develop05
 
                     case 2: // > "List Goals" _____________________________________________________
                         Clear(); // ! NOTICE !
-                        Console.WriteLine("——— GOALS ———\n");
-                        for (int i = 0; i < _goals.Count(); i++)
-                        {
-                            Goal goal = _goals[i]; // Goal object
-                            int oneBasedIndex = i + 1;
-                            goal.DisplayGoal(oneBasedIndex);
-                        }
+
+                        ListGoals(goals);
                         PressEnter();
                         break;
 
                     case 3: // > "Save Goals" _____________________________________________________
                         Clear(); // ! NOTICE !
+                        // Write POINTS to 'points.txt'
+                        File.WriteAllText(pointsFilePath, totalPoints.ToString()); // ! WRITING TO A FILE !
+
+
                         // Create an empty list to store all formatted lines.
                         List<string> lines = [];
 
                         // Check if there are new entries to save.
-                        if (_goals.Count() > 0)
+                        if (goals.Count() > 0)
                         {
                             // Format each Goal object as a line of text separated by "|" for file output.
-                            foreach (Goal goal in _goals)
+                            foreach (Goal goalTemp in goals)
                             {
-                                string line = goal.FormatGoalOutput();
+                                string line = goalTemp.FormatGoalOutput();
                                 lines.Add(line);
                             }
 
-                            // (SAVE) Overwrite the file ('goals.csv')
-                            File.WriteAllLines(_goalsFilePath, lines);
+                            // Write all GOALS to 'goals.csv'
+                            File.WriteAllLines(goalsFilePath, lines); // ! WRITING TO A FILE !
 
                             // Display success message
                             Console.WriteLine("Saving goals...");
                             Thread.Sleep(2000);
                             Clear(); // ! NOTICE !
-                            Console.WriteLine($"{_goals.Count()} goals saved successfully!");
+                            Console.WriteLine($"{goals.Count()} goals saved successfully!");
                             Thread.Sleep(1000);
                         }
                         else // Goals list was empty
@@ -127,8 +134,17 @@ namespace Develop05
                         break;
 
                     case 4: // > "Record Event" ___________________________________________________
-                        // Add Logic: menu (_goals) > RecordEvent();
-                        
+                        Clear(); // ! NOTICE !
+
+                        ListGoals(goals);
+                        Console.Write("\n> Enter a number of goal for which you have completed an event: ");
+                        int input = int.Parse(Console.ReadLine()); // Selected goal
+                        Goal goal = goals[input - 1]; // Index offset by one.
+
+                        // Record an event for the selcted goal
+                        totalPoints += goal.RecordEvent();
+
+                        // PressEnter();
                         break;
 
                     case 5: // > "Quit" ___________________________________________________________
@@ -179,15 +195,15 @@ namespace Develop05
             Console.ReadLine();
         }
 
-        private static List<Goal> LoadGoals(string _goalsFilePath, bool DisableErrorMessage = false)
+        private static List<Goal> LoadGoals(string goalsFilePath, bool DisableErrorMessage = false)
         {
-            if (File.Exists(_goalsFilePath))
+            if (File.Exists(goalsFilePath))
             {
                 // Goals list
-                List<Goal> _goals = new List<Goal>();
+                List<Goal> goals = new List<Goal>();
 
                 // Read existing goals
-                string[] existingGoals = File.ReadAllLines(_goalsFilePath);
+                string[] existingGoals = File.ReadAllLines(goalsFilePath);
 
                 // Validate the file is not empty
                 if (existingGoals.Length > 0 && existingGoals[0] != "")
@@ -200,15 +216,15 @@ namespace Develop05
                         switch (goalType)
                         {
                             // Format Goal Output ...........................................
-                                //   0: _title
-                                //   1: _description
-                                //   2: _type
-                                //   3: _checksActual
-                                //   4: _checksTarget
-                                //   5: _rewardCheck
-                                //   6: _rewardTarget
-                                //   7: _rewardBonus
-                                //   8: _status
+                            //   0: _title
+                            //   1: _description
+                            //   2: _type
+                            //   3: _checksActual
+                            //   4: _checksTarget
+                            //   5: _rewardCheck
+                            //   6: _rewardTarget
+                            //   7: _rewardBonus
+                            //   8: _status
 
                             // * Simple ...............................................
                             case "Simple":
@@ -219,7 +235,7 @@ namespace Develop05
                                     goalParts[0],
                                     goalParts[1],
                                     int.Parse(goalParts[6]));
-                                _goals.Add(sGoal); // Add to list
+                                goals.Add(sGoal); // Add to list
                                 break;
 
                             // * Eternal ..............................................
@@ -231,7 +247,7 @@ namespace Develop05
                                     goalParts[0],
                                     goalParts[1],
                                     int.Parse(goalParts[5]));
-                                _goals.Add(eGoal);  // Add to list
+                                goals.Add(eGoal);  // Add to list
                                 break;
 
                             // * Checklist ............................................
@@ -241,7 +257,7 @@ namespace Develop05
                                 //   4: _checksTarget       int
                                 //   5: _rewardCheck        int
                                 //   6: _rewardTarget       int
-                            
+
                                 // public Checklist( string title, string description, int checksTarget, int rewardCheck, int rewardTarget )
                                 Checklist cGoal = new Checklist(
                                     goalParts[0],
@@ -249,14 +265,14 @@ namespace Develop05
                                     int.Parse(goalParts[4]),
                                     int.Parse(goalParts[5]),
                                     int.Parse(goalParts[6]));
-                                _goals.Add(cGoal); // Add to list
+                                goals.Add(cGoal); // Add to list
                                 break;
                         }
 
                     }
 
                 }
-                return _goals;
+                return goals;
 
             }
             else
@@ -265,7 +281,7 @@ namespace Develop05
                 {
                     Console.WriteLine("No goals file found"); //....................... UX
                     // Create file
-                    File.Create(_goalsFilePath);
+                    File.Create(goalsFilePath);
                     Console.WriteLine("Creating a new goals file..."); //.............. UX
                     Thread.Sleep(1000);//.............................................. UX
                     Console.WriteLine("Done!");
@@ -276,6 +292,37 @@ namespace Develop05
 
         }
 
+        private static void ListGoals(List<Goal> goals)
+        {
+            string starbar = new string('*', 17);
+            Console.WriteLine(starbar + "\n*     GOALS     *\n" + starbar + "\n");
+            for (int i = 0; i < goals.Count(); i++)
+            {
+                Goal goal = goals[i]; // Goal object
+                int oneBasedIndex = i + 1;
+                goal.DisplayGoal(oneBasedIndex);
+            }
+        }
+
+        private static int LoadPoints(string pointsFilePath)
+        {
+            if (File.Exists(pointsFilePath))
+            {
+                int points = 0; // Default value (prior to reading from file.)
+
+                // Read earned points
+                string[] lines = File.ReadAllLines(pointsFilePath);
+                if (lines.Length > 0 && lines[0] != "")
+                {
+                    points = int.Parse(lines[0]);
+                }
+                return points;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
     
 }

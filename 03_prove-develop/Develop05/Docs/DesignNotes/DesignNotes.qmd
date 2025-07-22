@@ -16,7 +16,7 @@ format:
 ## Finish touches
 <!-- —————————————————————————————————————————————————————————————————————————————————————————— -->
 
-1. [ ] (optional) require goal description in addition to a title.
+1. [x] (optional) require goal description in addition to a title.
 2. [x] At the start of the program check to see if 'goals.csv' exists and read in the data if it does.
 
 

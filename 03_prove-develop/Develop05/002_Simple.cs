@@ -7,7 +7,7 @@
 ————————————————————————————————————
         ATTRIBUTES .....  0
         CONSTRUCTORS ...  1
-        METHODS ........  3
+        METHODS ........  2
 ——————————————————————————————————*/
 
 using System;
@@ -45,21 +45,11 @@ namespace Develop05
         }
 
         // M2....................................
-        public override void RecordEvent()
+        public override int RecordEvent()
         {
-            // Logic: record event
-
+            SetStatus(true);
+            return GetRewardTarget();
         }
-
-        // M3....................................
-        public override int GetPoints()
-        {
-            // Logic: calculate points
-
-
-            return 0; // placeholder
-        }
-
 
     }
 }

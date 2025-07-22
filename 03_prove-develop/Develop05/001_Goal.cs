@@ -86,7 +86,7 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // NOTE: Each attribute needs to have a getter and setter so each goal object can be serialized and stored as a JSON object.
-        // CORRECTION: This is not how you are meant to "provide a getter and setter" for each attribute" in order to serialize and store as a JSON object. You need to use " ... { get; set;}" after each attribute initialization in order to create a property and this is the first step of setting your classes so they can be serialized properly as JSON objects. Ergo, most of these getters and setters are unneccessary. (Note to self: Ignore this for now).
+        // ! CORRECTION: This is not how you are meant to "provide a getter and setter" for each attribute" in order to serialize and store as a JSON object. You need to use " ... { get; set;}" after each attribute initialization in order to create a property and this is the first step of setting your classes so they can be serialized properly as JSON objects. Ergo, most of these getters and setters are unneccessary. (Note to self: Ignore this for now).
 
         public string GetTitle()
         {
@@ -128,7 +128,7 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // NOTE: Each attribute needs to have a getter and setter so each goal object can be serialized and stored as a JSON object.
-        // CORRECTION: *** see note above in the GETTERS section ***
+        // ! CORRECTION: *** see note above in the GETTERS section ***
 
         public void SetTitle(string title)
         {
@@ -175,26 +175,15 @@ namespace Develop05
         public abstract void DisplayGoal(int i);
 
         // M2....................................
-        public virtual void RecordEvent()   // ? Abstract or virtual? <<<<<<================
-        {
-            // Logic: record event
-
-        }
+        public abstract int RecordEvent();
 
         // M3....................................
-        public virtual int GetPoints()      // ? Abstract or virtual? <<<<<<================
-        {
-
-            return 0; // placeholder
-        }
+        // public virtual void SetRewardBonus(int rewardBonus)
+        // {
+        //     _rewardBonus = 0; // placeholder. For overrides: vary calculation.
+        // }
 
         // M4....................................
-        public virtual void SetRewardBonus(int rewardBonus)
-        {
-            _rewardBonus = 0; // placeholder. For overrides: vary calculation.
-        }
-
-        // M6....................................
         public string FormatGoalOutput()
         {
             string d = "|";

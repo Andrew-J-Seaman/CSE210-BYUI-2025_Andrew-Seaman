@@ -43,14 +43,19 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // M1....................................
-        public int GetValidatedMenuSelection()
+        public int GetValidatedMenuSelection(int totalPoints = 0)
         {
             int selection = -1;
             bool valid = false;
 
             do
             {
-                Console.WriteLine($"{_title}");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\nTOTAL POINTS: {totalPoints}\n"); // Display total points
+                Console.ResetColor();
+
+
+                Console.WriteLine($"{_title}"); // Menu title
                 for (int i = 0; i < _options.Count; i++)
                 {
                     string option = _options[i];
@@ -68,7 +73,7 @@ namespace Develop05
                         Console.WriteLine($"{option}");
                         Console.ResetColor();
                     }
-                    
+
                 }
 
                 Console.Write(_inputPrompt);
