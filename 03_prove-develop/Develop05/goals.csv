@@ -4,3 +4,6 @@ TT Checklist|Fake description yet again|Checklist|0|5|15|50|0|False
 TT2 Simple|Desc|Simple|0|1|0|50|0|False
 TT2 Eternal|Desc|Eternal|0|1|15|0|0|False
 TT2 Checklist|Desc|Checklist|0|10|10|1000|0|False
+(Test Title: Simple 3)|Desc. 3|Simple|0|1|0|50|0|False
+(Test Title: Eternal 3)|Desc. 3|Eternal|0|1|16|0|0|False
+(Test Title: Checklist 3)|Desc. 3|Checklist|0|8|14|800|0|False

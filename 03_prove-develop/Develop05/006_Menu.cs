@@ -53,7 +53,22 @@ namespace Develop05
                 Console.WriteLine($"{_title}");
                 for (int i = 0; i < _options.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {_options[i]}");
+                    string option = _options[i];
+                    if (option == "Back" || option == "Quit")
+                    {
+                        Console.Write($"{i + 1}. ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(option);
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.Write($"{i + 1}. ");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"{option}");
+                        Console.ResetColor();
+                    }
+                    
                 }
 
                 Console.Write(_inputPrompt);

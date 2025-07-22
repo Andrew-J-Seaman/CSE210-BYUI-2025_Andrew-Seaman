@@ -27,9 +27,9 @@ namespace Develop05
 
 
             // Menu options......................
-            List<string> _menuOptions01 = new List<string> { "Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Quit" }; // Main Menu: 2 Tier model
+            List<string> _menuOptions01 = new List<string> { "Create New Goal", "List Goals", "Save Goals", "Record Event", "Quit" }; // Tier 1: Main Menu
 
-            List<string> _menuOptions02 = new List<string> { "Simple", "Eternal", "Checklist", "Return to Main Menu" }; // Create New Goal Menu
+            List<string> _menuOptions02 = new List<string> { "Simple", "Eternal", "Checklist", "Back" }; // Tier 2: Create New Goal Menu
 
             // ————————————————————————————————————————————————————————————————————————————————————
             // LOAD GOALS AUTOMATICALLY
@@ -47,44 +47,44 @@ namespace Develop05
             while (running) // Outer loop
             {
                 Menu mainMenu = new Menu("Main Menu:", _menuOptions01);
-                Clear();
+                Clear(); // ! NOTICE !
                 // Tier 1__________________________________________________________________________
                 switch (mainMenu.GetValidatedMenuSelection())
                 {
-                    case 1: // * "Create New Goal"..........................
+                    case 1: // > (1) "Create New Goal" ____________________________________________
                         bool inCreateNewGoalMenu = true;
                         while (inCreateNewGoalMenu)
                         {
                             Menu createNewGoalMenu = new Menu("Create a New Goal: ", _menuOptions02);
-                            Clear();
+                            Clear(); // ! NOTICE !
 
-                            // Tier 2______________________________________________________________
+                            // Tier 2 (Create New Goal) ___________________________________________
                             switch (createNewGoalMenu.GetValidatedMenuSelection())
                             {
-                                case 1: // 3.1/4 "Simple"
+                                case 1: // * Simple ...............................................
                                     Simple sGoal = GoalBuilder.CreateSimpleGoalFromUser();
                                     _goals.Add(sGoal);
                                     break;
 
-                                case 2: // 3.2/4 "Eternal"
+                                case 2: // * Eternal ..............................................
                                     Eternal eGoal = GoalBuilder.CreateEternalGoalFromUser();
                                     _goals.Add(eGoal);
                                     break;
 
-                                case 3: // 3.3/4 "Checklist":
+                                case 3: // * Checklist ............................................
                                     Checklist cGoal = GoalBuilder.CreateChecklistGoalFromUser();
                                     _goals.Add(cGoal);
                                     break;
 
-                                case 4: // 3.4/4 "Return to Actions Menu"
-                                    inCreateNewGoalMenu = false; // Exit Actions menu
+                                case 4: // * Return  ..............................................
+                                    inCreateNewGoalMenu = false; // Return to Main Menu
                                     break;
                             }
                         }
                         break;
 
-                    case 2: // * "List Goals"...............................
-                        Clear();
+                    case 2: // > "List Goals" _____________________________________________________
+                        Clear(); // ! NOTICE !
                         Console.WriteLine("——— GOALS ———\n");
                         for (int i = 0; i < _goals.Count(); i++)
                         {
@@ -95,39 +95,20 @@ namespace Develop05
                         PressEnter();
                         break;
 
-                    case 3: // * "Save Goals"...............................
-                        Clear();
-
-                        // Format Goals for output (list of strings)
-
+                    case 3: // > "Save Goals" _____________________________________________________
+                        Clear(); // ! NOTICE !
                         // Create an empty list to store all formatted lines.
                         List<string> lines = [];
 
                         // Check if there are new entries to save.
                         if (_goals.Count() > 0)
                         {
-                            // Read existing goals
-                            // LoadGoals(_goalsFilePath, false); // ? Still necessary?
-
-                            // Loop through each new goal and format it as a line of text separated by "|".
+                            // Format each Goal object as a line of text separated by "|" for file output.
                             foreach (Goal goal in _goals)
                             {
                                 string line = goal.FormatGoalOutput();
                                 lines.Add(line);
                             }
-
-                            // // <!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!>
-                            // // ! TEMPORARY DEBUGGING "PRINT STATEMENT"
-                            // // Verify each line from file is read in properly and each new goal object's data is formatted correctly for writing to the file ('goals.csv').
-                            // int i = 1;
-                            // foreach (string line in lines)
-                            // {
-                            //     string indexedLine = $"{i}. {line}";
-                            //     Wr(indexedLine);
-                            //     Wr("\n");
-                            //     i++; // Increment index (1-based)
-                            // }
-                            // <!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!>
 
                             // (SAVE) Overwrite the file ('goals.csv')
                             File.WriteAllLines(_goalsFilePath, lines);
@@ -135,28 +116,25 @@ namespace Develop05
                             // Display success message
                             Console.WriteLine("Saving goals...");
                             Thread.Sleep(2000);
-                            Clear();
+                            Clear(); // ! NOTICE !
                             Console.WriteLine($"{_goals.Count()} goals saved successfully!");
-                            PressEnter();
+                            Thread.Sleep(1000);
                         }
-                        else
+                        else // Goals list was empty
                         {
                             Console.WriteLine("No goals to save");
                         }
-
                         break;
 
-                    case 4: // * "Load Goals".............................
-                        // Add Logic: LoadGoals();
-                        break;
-
-                    case 5: // * "Record Event"...........................
+                    case 4: // > "Record Event" ___________________________________________________
                         // Add Logic: menu (_goals) > RecordEvent();
+                        
                         break;
 
-                    case 6: // * "Quit"...................................
-                        Clear();
-                        Console.WriteLine("Good job tracking your goals!");
+                    case 5: // > "Quit" ___________________________________________________________
+                        Clear(); // ! NOTICE !
+                        Console.WriteLine("Good job tracking your goals!\n");
+                        Thread.Sleep(500);
                         running = false;
                         break;
                 }
@@ -221,17 +199,18 @@ namespace Develop05
                         string goalType = goalParts[2]; // Access goal type. Always index 2 or third list item.
                         switch (goalType)
                         {
-                            // string formatted_goal = 
-                            //   0: _title
-                            //   1: _description
-                            //   2: _type
-                            //   3: _checksActual
-                            //   4: _checksTarget
-                            //   5: _rewardCheck
-                            //   6: _rewardTarget
-                            //   7: _rewardBonus
-                            //   8: _status
+                            // Format Goal Output ...........................................
+                                //   0: _title
+                                //   1: _description
+                                //   2: _type
+                                //   3: _checksActual
+                                //   4: _checksTarget
+                                //   5: _rewardCheck
+                                //   6: _rewardTarget
+                                //   7: _rewardBonus
+                                //   8: _status
 
+                            // * Simple ...............................................
                             case "Simple":
                                 //   0: _title              string
                                 //   1: _description        string
@@ -240,11 +219,10 @@ namespace Develop05
                                     goalParts[0],
                                     goalParts[1],
                                     int.Parse(goalParts[6]));
-                                // ! remove: Simple sGoal = GoalBuilder.CreateSimpleGoalFromUser();
-
-                                _goals.Add(sGoal);
+                                _goals.Add(sGoal); // Add to list
                                 break;
 
+                            // * Eternal ..............................................
                             case "Eternal":
                                 //   0: _title              string
                                 //   1: _description        string
@@ -253,11 +231,10 @@ namespace Develop05
                                     goalParts[0],
                                     goalParts[1],
                                     int.Parse(goalParts[5]));
-
-                                _goals.Add(eGoal);
-                                // ! remove: Eternal eGoal = GoalBuilder.CreateEternalGoalFromUser();
+                                _goals.Add(eGoal);  // Add to list
                                 break;
 
+                            // * Checklist ............................................
                             case "Checklist":
                                 //   0: _title              string
                                 //   1: _description        string
@@ -272,9 +249,7 @@ namespace Develop05
                                     int.Parse(goalParts[4]),
                                     int.Parse(goalParts[5]),
                                     int.Parse(goalParts[6]));
-                                // ! remove: Checklist cGoal = GoalBuilder.CreateChecklistGoalFromUser();
-                                
-                                _goals.Add(cGoal);
+                                _goals.Add(cGoal); // Add to list
                                 break;
                         }
 
@@ -288,8 +263,14 @@ namespace Develop05
             {
                 if (!DisableErrorMessage)
                 {
-                    Console.WriteLine("No goals file found");
+                    Console.WriteLine("No goals file found"); //....................... UX
+                    // Create file
+                    File.Create(_goalsFilePath);
+                    Console.WriteLine("Creating a new goals file..."); //.............. UX
+                    Thread.Sleep(1000);//.............................................. UX
+                    Console.WriteLine("Done!");
                 }
+
                 return new List<Goal>();
             }
 
