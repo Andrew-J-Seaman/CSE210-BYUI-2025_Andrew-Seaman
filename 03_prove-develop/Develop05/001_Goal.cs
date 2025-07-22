@@ -5,7 +5,7 @@
 
 /* SECTION SUMMARY 
 ————————————————————————————————————
-        ATTRIBUTES ..... 12
+        ATTRIBUTES .....  9
         CONSTRUCTORS ...  1
         METHODS ........  9
 ——————————————————————————————————*/
@@ -24,27 +24,21 @@ namespace Develop05
         // A1....................................
         protected string _title;
         // A2....................................
-        // protected DateTime _creationDate;
+        protected string _description;
         // A3....................................
-        // protected string _checksFrequency;
+        protected string _type;
         // A4....................................
         protected int _checksActual;
         // A5....................................
         protected int _checksTarget;
         // A6....................................
-        // protected DateTime _targetDeadline;
-        // A7....................................
-        // protected bool _onTrack;
-        // A8....................................
         protected int _rewardCheck;
-        // A9....................................
+        // A7....................................
         protected int _rewardTarget;
-        // A10...................................
+        // A8...................................
         protected int _rewardBonus;
-        // A11...................................
+        // A9...................................
         protected bool _status;
-        // A12...................................
-        protected string _type;
 
         //
         //
@@ -58,7 +52,9 @@ namespace Develop05
 
         // C1....................................
         public Goal(
+            // Default attribute values
             string title = "none",
+            string description = "none",
             int checksActual = 0,
             int checksTarget = 1,
             int rewardCheck = 0,
@@ -67,7 +63,9 @@ namespace Develop05
             bool status = false,
             string type = "none")
         {
+            // Attribute value assignments (initialization)
             _title = title;
+            _description = description;
             _checksActual = checksActual;
             _checksTarget = checksTarget;
             _rewardCheck = rewardCheck;
@@ -88,6 +86,7 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // NOTE: Each attribute needs to have a getter and setter so each goal object can be serialized and stored as a JSON object.
+        // CORRECTION: This is not how you are meant to "provide a getter and setter" for each attribute" in order to serialize and store as a JSON object. You need to use " ... { get; set;}" after each attribute initialization in order to create a property and this is the first step of setting your classes so they can be serialized properly as JSON objects. Ergo, most of these getters and setters are unneccessary. (Note to self: Ignore this for now).
 
         public string GetTitle()
         {
@@ -129,6 +128,7 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // NOTE: Each attribute needs to have a getter and setter so each goal object can be serialized and stored as a JSON object.
+        // CORRECTION: *** see note above in the GETTERS section ***
 
         public void SetTitle(string title)
         {
@@ -155,11 +155,6 @@ namespace Develop05
             _rewardTarget = rewardTarget;
         }
 
-        // public void SetRewardBonus(int rewardBonus)
-        // {
-        //     _rewardBonus = rewardBonus;
-        // }
-
         public void SetStatus(bool status)
         {
             _status = status;
@@ -175,17 +170,19 @@ namespace Develop05
         // METHODS
         // ————————————————————————————————————————————————————————————————————————————————————————
 
-        // M1....................................
-        // public abstract string FormatProgress();
 
-        // M2.................................... Q: Virtual not abstract?
-        public virtual void RecordEvent()
+        // M1....................................
+        public abstract void DisplayGoal(int i);
+
+        // M2....................................
+        public virtual void RecordEvent()   // ? Abstract or virtual? <<<<<<================
         {
+            // Logic: record event
 
         }
 
-        // M3.................................... Q: Virtual not abstract?
-        public virtual int GetPoints()
+        // M3....................................
+        public virtual int GetPoints()      // ? Abstract or virtual? <<<<<<================
         {
 
             return 0; // placeholder
@@ -197,15 +194,14 @@ namespace Develop05
             _rewardBonus = 0; // placeholder. For overrides: vary calculation.
         }
 
-        // M5....................................
-        public abstract void DisplayGoal(int i);
-
         // M6....................................
         public string FormatGoalOutput()
         {
             string d = "|";
-            string line = $"{_title}{d}{_checksActual}{d}{_checksTarget}{d}{_rewardCheck}{d}{_rewardTarget}{d}{_rewardBonus}{d}{_status}";
-            return line;
+            string formatted_goal = $"{_title}{d}{_description}{d}{_type}{d}{_checksActual}{d}{_checksTarget}{d}{_rewardCheck}{d}{_rewardTarget}{d}{_rewardBonus}{d}{_status}";
+            return formatted_goal;
         }
+        
     }
+
 }

@@ -14,37 +14,15 @@ using System;
 
 namespace Develop05
 {
-    // [Serializable]
     public class Checklist : Goal // derived
     {
-        // ————————————————————————————————————————————————————————————————————————————————————————
-        // ATTRIBUTES
-        // ————————————————————————————————————————————————————————————————————————————————————————
-
-        //
-        //
-        //
-        //
-        //
-
         // ————————————————————————————————————————————————————————————————————————————————————————
         // CONSTRUCTORS
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Checklist(
-            string title,
-            int checksTarget,
-            int rewardCheck,
-            int rewardTarget
-            )
-            : base(
-                title: title,
-                checksTarget: checksTarget,
-                rewardCheck: rewardCheck,
-                rewardTarget: rewardTarget
-                // type: base.ToString()
-                )
+        public Checklist( string title, string description, int checksTarget, int rewardCheck, int rewardTarget )
+            : base( title: title, description: description, checksTarget: checksTarget, rewardCheck: rewardCheck, rewardTarget: rewardTarget )
         { }
 
         //
@@ -58,22 +36,26 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // M1....................................
-        // Used in public base class method 'DisplayGoal' which is called in 'Program.cs' to 'List Goals'.
+        // Called in 'Program.cs' to 'List Goals'.
         public override void DisplayGoal(int i)
         {
-            string progress = _status ? "[x]" : $"[ {_checksActual} / {_checksTarget} ]";
+            string progress = _status ? "[x]" : $"[{_checksActual}/{_checksTarget}]";
             Console.WriteLine($"{i}. {progress} {_title}");
         }
 
         // M2....................................
         public override void RecordEvent()
         {
+            // Logic: record event
 
         }
 
         // M3....................................
         public override int GetPoints()
         {
+            // Logic: calculate points
+
+
             return 0; // placeholder
         }
 

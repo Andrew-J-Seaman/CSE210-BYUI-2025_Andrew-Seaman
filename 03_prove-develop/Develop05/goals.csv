@@ -1,5 +1,6 @@
-CT1|0|10|10|100|0|False
-EGT|0|1|50|500|0|False
-SGT|0|1|0|400|0|False
-Title Simple|0|1|0|89|0|False
-ttttttt|0|1|0|60|0|False
+TT Simple|Fake description|Simple|0|1|0|50|0|False
+TT Eternal|Fake description here as well|Eternal|0|1|25|0|0|False
+TT Checklist|Fake description yet again|Checklist|0|5|15|50|0|False
+TT2 Simple|Desc|Simple|0|1|0|50|0|False
+TT2 Eternal|Desc|Eternal|0|1|15|0|0|False
+TT2 Checklist|Desc|Checklist|0|10|10|1000|0|False

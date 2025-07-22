@@ -5,7 +5,7 @@
 
 /* SECTION SUMMARY 
 ————————————————————————————————————
-        ATTRIBUTES .....  1
+        ATTRIBUTES .....  0
         CONSTRUCTORS ...  1
         METHODS ........  3
 ——————————————————————————————————*/
@@ -18,29 +18,12 @@ namespace Develop05
     public class Simple : Goal // derived class
     {
         // ————————————————————————————————————————————————————————————————————————————————————————
-        // ATTRIBUTES
-        // ————————————————————————————————————————————————————————————————————————————————————————
-
-        //
-        //
-        //
-        //
-        //
-
-        // ————————————————————————————————————————————————————————————————————————————————————————
         // CONSTRUCTORS
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Simple(
-            string title,
-            int rewardTarget
-            )
-            : base(
-                title: title,
-                rewardTarget: rewardTarget
-                // type: base.ToString()
-                )
+        public Simple(string title, string description, int rewardTarget)
+            : base(title: title, description: description, rewardTarget: rewardTarget)
         { }
 
         //
@@ -54,7 +37,7 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // M1....................................
-        // Used in public base class method 'DisplayGoal' which is called in 'Program.cs' to 'List Goals'.
+        // Called in 'Program.cs' to 'List Goals'.
         public override void DisplayGoal(int i)
         {
             string progress = _status ? "[x]" : "[ ]";
@@ -64,6 +47,7 @@ namespace Develop05
         // M2....................................
         public override void RecordEvent()
         {
+            // Logic: record event
 
         }
 
@@ -71,6 +55,7 @@ namespace Develop05
         public override int GetPoints()
         {
             // Logic: calculate points
+
 
             return 0; // placeholder
         }
