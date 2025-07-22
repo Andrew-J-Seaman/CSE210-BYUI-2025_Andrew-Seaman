@@ -53,24 +53,22 @@ namespace Develop05
         // C1....................................
         public Goal(
             // Default attribute values
-            string title = "none",
-            string description = "none",
-            int checksActual = 0,
-            int checksTarget = 1,
-            int rewardCheck = 0,
-            int rewardTarget = 0,
-            int rewardBonus = 0,
-            bool status = false,
-            string type = "none")
+            string title = "none",                  // A1
+            string description = "none",            // A2
+            int checksActual = 0,                   // A3
+            int checksTarget = 1,                   // A4
+            int rewardCheck = 0,                    // A5
+            int rewardTarget = 0,                   // A6
+            bool status = false,                    // A7
+            string type = "none")                   // A8
         {
             // Attribute value assignments (initialization)
-            _title = title;
+            _title = title;                  // A1
             _description = description;
             _checksActual = checksActual;
             _checksTarget = checksTarget;
             _rewardCheck = rewardCheck;
             _rewardTarget = rewardTarget;
-            _rewardBonus = rewardBonus;
             _status = status;
             _type = base.ToString().Split('.').Last();
         }
@@ -187,7 +185,7 @@ namespace Develop05
         public string FormatGoalOutput()
         {
             string d = "|";
-            string formatted_goal = $"{_title}{d}{_description}{d}{_type}{d}{_checksActual}{d}{_checksTarget}{d}{_rewardCheck}{d}{_rewardTarget}{d}{_rewardBonus}{d}{_status}";
+            string formatted_goal = $"{_title}{d}{_description}{d}{_type}{d}{_checksActual}{d}{_checksTarget}{d}{_rewardCheck}{d}{_rewardTarget}{d}{_status}";
             return formatted_goal;
         }
         

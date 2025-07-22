@@ -6,7 +6,7 @@
 /* SECTION SUMMARY 
 ————————————————————————————————————
         ATTRIBUTES .....  0
-        CONSTRUCTORS ...  1
+        CONSTRUCTORS ...  2
         METHODS ........  3
 ——————————————————————————————————*/
 
@@ -22,8 +22,13 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Eternal(string title, string description, int rewardCheck)
+        public Eternal(string title, string description, int rewardCheck) // Parameters: 3
             : base(title: title, description: description, rewardCheck: rewardCheck)       
+        { }
+
+        // C2....................................
+        public Eternal(string title, string description, int checksActual, int rewardCheck) // Parameters: 4
+            : base(title: title, description: description, checksActual: checksActual, rewardCheck: rewardCheck)
         { }
 
         //

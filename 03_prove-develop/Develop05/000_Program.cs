@@ -223,48 +223,38 @@ namespace Develop05
                             //   4: _checksTarget
                             //   5: _rewardCheck
                             //   6: _rewardTarget
-                            //   7: _rewardBonus
-                            //   8: _status
+                            //   7: _status
 
                             // * Simple ...............................................
                             case "Simple":
-                                //   0: _title              string
-                                //   1: _description        string
-                                //   6: _rewardTarget      int
-                                Simple sGoal = new Simple(
-                                    goalParts[0],
-                                    goalParts[1],
-                                    int.Parse(goalParts[6]));
+                                Simple sGoal = new Simple(      // Simple (C2)
+                                    goalParts[0],                   // 0: _title            string
+                                    goalParts[1],                   // 1: _description      string
+                                    int.Parse(goalParts[6]),        // 6: _rewardTarget     int
+                                    bool.Parse(goalParts[7]));                  // 7: _status           bool
                                 goals.Add(sGoal); // Add to list
                                 break;
 
                             // * Eternal ..............................................
                             case "Eternal":
-                                //   0: _title              string
-                                //   1: _description        string
-                                //   4: _rewardCheck        int
-                                Eternal eGoal = new Eternal(
-                                    goalParts[0],
-                                    goalParts[1],
-                                    int.Parse(goalParts[5]));
-                                goals.Add(eGoal);  // Add to list
+                                Eternal eGoal = new Eternal(    // Eternal (C2)
+                                    goalParts[0],                   // 0: _title            string
+                                    goalParts[1],                   // 1: _description      string
+                                    int.Parse(goalParts[3]),        // 3: _checksActual     int
+                                    int.Parse(goalParts[5]));       // 5: _rewardCheck      int
+                                goals.Add(eGoal); // Add to list
                                 break;
 
                             // * Checklist ............................................
                             case "Checklist":
-                                //   0: _title              string
-                                //   1: _description        string
-                                //   4: _checksTarget       int
-                                //   5: _rewardCheck        int
-                                //   6: _rewardTarget       int
-
-                                // public Checklist( string title, string description, int checksTarget, int rewardCheck, int rewardTarget )
-                                Checklist cGoal = new Checklist(
-                                    goalParts[0],
-                                    goalParts[1],
-                                    int.Parse(goalParts[4]),
-                                    int.Parse(goalParts[5]),
-                                    int.Parse(goalParts[6]));
+                                Checklist cGoal = new Checklist( // Checklist (C2)
+                                    goalParts[0],                   // 0: _title            string
+                                    goalParts[1],                   // 1: _description      string
+                                    int.Parse(goalParts[3]),        // 3: _checksActual     int
+                                    int.Parse(goalParts[4]),        // 4: _checksTarget     int
+                                    int.Parse(goalParts[5]),        // 5: _rewardCheck      int
+                                    int.Parse(goalParts[6]),        // 6: _rewardTarget     int
+                                    bool.Parse(goalParts[7]));       // 7: _status           bool
                                 goals.Add(cGoal); // Add to list
                                 break;
                         }

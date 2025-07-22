@@ -128,7 +128,7 @@ namespace Develop05
                 {"rewardTarget", "int"}
             };
 
-            Console.Clear();
+            Console.Clear(); // ! NOTICE !
             Console.WriteLine($"Create a new {_goalType} goal:\n");
 
             Dictionary<string, object> inputs = new Dictionary<string, object>();

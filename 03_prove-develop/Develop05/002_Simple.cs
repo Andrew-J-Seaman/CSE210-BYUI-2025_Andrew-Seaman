@@ -6,7 +6,7 @@
 /* SECTION SUMMARY 
 ————————————————————————————————————
         ATTRIBUTES .....  0
-        CONSTRUCTORS ...  1
+        CONSTRUCTORS ...  2
         METHODS ........  2
 ——————————————————————————————————*/
 
@@ -22,8 +22,13 @@ namespace Develop05
         // ————————————————————————————————————————————————————————————————————————————————————————
 
         // C1....................................
-        public Simple(string title, string description, int rewardTarget)
+        public Simple(string title, string description, int rewardTarget) // Parameters: 3
             : base(title: title, description: description, rewardTarget: rewardTarget)
+        { }
+
+        // C2....................................
+        public Simple(string title, string description, int rewardTarget, bool status) // Parameters: 4
+            : base(title: title, description: description, rewardTarget: rewardTarget, status: status)
         { }
 
         //
