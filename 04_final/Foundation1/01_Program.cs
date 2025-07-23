@@ -32,12 +32,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation1 World!");
+        Console.Clear();
+
+        // * Video 1
+        Video video = new Video("Minecraft Speedrun in 30 Seconds", "Mr. Wobbles", 1593);
+
+        video.AddCommentUsingStrings("Jeff Nippard", "Great video!");
+        video.AddCommentUsingStrings("Mr. Wobbles", "Thanks for the video!");
+        video.AddCommentUsingStrings("Thomas Blue", "Great work as usual.");
+        video.AddCommentUsingStrings("Samantha Turnkey", "Thanks for another fun video.");
+
+        video.DisplayVideo();
 
 
-        Comment comment = new Comment("Jeff Nippard", "Great video!");
+
+        // * Video 2
 
 
-        Console.WriteLine(comment.GetCommentString());
     }
 }
