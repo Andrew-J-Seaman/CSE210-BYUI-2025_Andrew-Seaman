@@ -55,6 +55,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation2 World!");
+        Console.Clear();
+
+        // ! TESTING !
+
+        // * Address class:     COMPLETE
+        Address address = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
+        // Console.WriteLine(address.GetAddress());
+
+        // * Customer class:    COMPLETE
+        Customer customer = new Customer("John Doe", address);
+        Console.WriteLine(customer.GetCustomerInfo());
     }
 }
