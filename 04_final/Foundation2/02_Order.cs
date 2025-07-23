@@ -36,14 +36,14 @@ public class Order
         Console.WriteLine(_customer.GetCustomerInfo());
     }
     
-    public float GetTotalPrice()
+    public void GetTotalPrice()
     {
         float totalCost = 0;
         foreach (Product product in _products)
         {
             totalCost += product.GetTotalCost();
         }
-        return totalCost; // This is the total price
+        Console.WriteLine($"${totalCost}\n\n\n"); // This is the total price
     }
 
 }

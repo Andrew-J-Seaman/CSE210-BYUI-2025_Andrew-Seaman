@@ -61,25 +61,72 @@ class Program
 
         // * Order 1 ..............................................................................
 
-        Address address = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
+        Console.WriteLine("Order 1:\n—————————————————————————————");
 
-        Customer customer = new Customer("John Doe", address);
+        Address address1 = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
 
-        Order order = new Order(customer);
+        Customer customer1 = new Customer("John Doe", address1);
 
-        order.AddProduct("Product 1", "P1", 10, 5);
-        order.AddProduct("Product 2", "P2", 20, 3);
-        order.AddProduct("Product 3", "P3", 15, 2);
+        Order order1 = new Order(customer1);
+
+        order1.AddProduct("Wireless Mouse", "WM101", 25, 2);
+        order1.AddProduct("Mechanical Keyboard", "MK202", 80, 1);
+        order1.AddProduct("USB-C Hub", "UH303", 40, 3);
 
         Console.WriteLine($"Packing Label:");
-        order.GetPackingLabel();
+        order1.GetPackingLabel();
 
         Console.WriteLine($"\nShipping Label:");
-        order.GetShippingLabel();
+        order1.GetShippingLabel();
 
-        Console.WriteLine($"\nTotal Price: ${order.GetTotalPrice()}");
+        Console.Write($"\nTotal Price: ");
+        order1.GetTotalPrice();
 
+        // * Order 2 ..............................................................................
 
+        Console.WriteLine("Order 2:\n—————————————————————————————");
+
+        Address address2 = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
+
+        Customer customer2 = new Customer("John Doe", address2);
+
+        Order order2 = new Order(customer2);
+
+        order2.AddProduct("Noise Cancelling Headphones", "NC404", 150, 1);
+        order2.AddProduct("Webcam 1080p", "WC505", 60, 2);
+        order2.AddProduct("Laptop Stand", "LS606", 35, 2);
+
+        Console.WriteLine($"Packing Label:");
+        order2.GetPackingLabel();
+
+        Console.WriteLine($"\nShipping Label:");
+        order2.GetShippingLabel();
+
+        Console.Write($"\nTotal Price: ");
+        order2.GetTotalPrice();
+
+        // * Order 3 ..............................................................................
+
+        Console.WriteLine("Order 3:\n—————————————————————————————");
+
+        Address address3 = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
+
+        Customer customer3 = new Customer("John Doe", address3);
+
+        Order order3 = new Order(customer3);
+
+        order3.AddProduct("Portable SSD", "PS707", 120, 1);
+        order3.AddProduct("Bluetooth Speaker", "BS808", 75, 2);
+        order3.AddProduct("Wireless Charger", "WC909", 30, 3);
+
+        Console.WriteLine($"Packing Label:");
+        order3.GetPackingLabel();
+
+        Console.WriteLine($"\nShipping Label:");
+        order3.GetShippingLabel();
+
+        Console.Write($"\nTotal Price: ");
+        order3.GetTotalPrice();
 
 
     }
