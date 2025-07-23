@@ -7,8 +7,8 @@
 ————————————————————————————————————
         ATTRIBUTES .........  3
         METHODS:
-            Create .........  3
-            Prompt ........   5
+            CREATE .........  3
+            PROMPT ........   2 <<<--------- // > CHECKOUT: `SuperPrompt()` method. Very cool!
 ——————————————————————————————————*/
 
 using System;
@@ -36,7 +36,7 @@ namespace Develop05
         // METHODS : Create
         // ————————————————————————————————————————————————————————————————————————————————————————
 
-        // <u> Section Description: Create (derived) Goal objects.
+        // Section Description: Create (derived) Goal objects.
 
         // MC1...................................
         // *************************** SIMPLE ***************************
@@ -104,7 +104,7 @@ namespace Develop05
 
         // <u> Section Description: Prompts the user for (derived) Goal object attributes.
 
-        // MP1...................................
+        // * MP1 ...................................
 
         private static Dictionary<string, object> SuperPrompt(string[] keywords)
         {
@@ -145,6 +145,7 @@ namespace Develop05
             return inputs;
         }
 
+        // * MP2 ...................................
         public static void SuccessMessage(string title = "")
         {
             Console.Clear();

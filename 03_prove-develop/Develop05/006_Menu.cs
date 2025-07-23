@@ -1,3 +1,15 @@
+//***********************************
+// PROJECT: Eternal Quest (Develop05)
+// CLASS: Menu
+//***********************************
+
+/* SECTION SUMMARY 
+————————————————————————————————————
+        ATTRIBUTES .....  3
+        CONSTRUCTORS ...  1
+        METHODS ........  2
+——————————————————————————————————*/
+
 namespace Develop05
 {
     public class Menu

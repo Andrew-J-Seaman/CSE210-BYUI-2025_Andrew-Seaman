@@ -7,14 +7,13 @@
 ————————————————————————————————————
         ATTRIBUTES .....  0
         CONSTRUCTORS ...  2
-        METHODS ........  3
+        METHODS ........  2
 ——————————————————————————————————*/
 
 using System;
 
 namespace Develop05
 {
-    // [Serializable]
     public class Eternal : Goal // derived class
     {
         // ————————————————————————————————————————————————————————————————————————————————————————

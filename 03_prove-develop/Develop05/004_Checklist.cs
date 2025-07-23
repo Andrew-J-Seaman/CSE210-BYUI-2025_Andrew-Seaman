@@ -6,8 +6,8 @@
 /* SECTION SUMMARY 
 ————————————————————————————————————
         ATTRIBUTES .....  0
-        CONSTRUCTORS ...  1
-        METHODS ........  3
+        CONSTRUCTORS ...  2
+        METHODS ........  2
 ——————————————————————————————————*/
 
 using System;

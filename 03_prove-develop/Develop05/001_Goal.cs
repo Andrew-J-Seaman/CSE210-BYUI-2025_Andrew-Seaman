@@ -5,16 +5,18 @@
 
 /* SECTION SUMMARY 
 ————————————————————————————————————
-        ATTRIBUTES .....  9
-        CONSTRUCTORS ...  1
-        METHODS ........  9
+        ATTRIBUTES .........  8
+        CONSTRUCTORS .......  1
+        METHODS:
+            GETTERS ........  6
+            SETTERS ........  6
+            OTHER ..........  3
 ——————————————————————————————————*/
 
 using System;
 
 namespace Develop05
 {
-    // [Serializable]
     public abstract class Goal // abstract base class
     {
         // ————————————————————————————————————————————————————————————————————————————————————————
@@ -36,8 +38,6 @@ namespace Develop05
         // A7....................................
         protected int _rewardTarget;
         // A8...................................
-        protected int _rewardBonus;
-        // A9...................................
         protected bool _status;
 
         //
@@ -111,11 +111,6 @@ namespace Develop05
             return _rewardTarget;
         }
 
-        public int GetRewardBonus()
-        {
-            return _rewardBonus;
-        }
-
         public bool GetStatus()
         {
             return _status;
@@ -176,12 +171,6 @@ namespace Develop05
         public abstract int RecordEvent();
 
         // M3....................................
-        // public virtual void SetRewardBonus(int rewardBonus)
-        // {
-        //     _rewardBonus = 0; // placeholder. For overrides: vary calculation.
-        // }
-
-        // M4....................................
         public string FormatGoalOutput()
         {
             string d = "|";
