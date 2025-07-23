@@ -42,6 +42,14 @@ public class Order
         foreach (Product product in _products)
         {
             totalCost += product.GetTotalCost();
+            if (_customer.LivesInUsa())
+            {
+                totalCost += 5;
+            }
+            else
+            {
+                totalCost += 35;
+            }
         }
         Console.WriteLine($"${totalCost}\n\n\n"); // This is the total price
     }
