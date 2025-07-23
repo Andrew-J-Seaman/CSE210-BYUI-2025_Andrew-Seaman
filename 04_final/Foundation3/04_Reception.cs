@@ -12,9 +12,9 @@ public class Reception : Event
 
 
     // METHODS
-    public string GetFullDetails()
+    public override string GetFullDetails()
     {
-        return $"Type: {base.ToString()}\nTitle: {_title}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetAddress()}\nRSVP Email: {_rsvpEmail}";
+        return base.GetFullDetails() + $"\nRSVP Email: {_rsvpEmail}";
     }
 
 }

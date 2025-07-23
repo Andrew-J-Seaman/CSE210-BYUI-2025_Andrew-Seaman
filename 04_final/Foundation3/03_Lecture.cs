@@ -16,7 +16,7 @@ public class Lecture : Event
     // METHODS
     public override string GetFullDetails()
     {
-        return $"Type: {base.ToString()}\nTitle: {_title}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetAddress()}\nSpeaker: {_speaker}\nCapacity: {_capacity}";
+        return base.GetFullDetails() + $"\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
-    
+
 }

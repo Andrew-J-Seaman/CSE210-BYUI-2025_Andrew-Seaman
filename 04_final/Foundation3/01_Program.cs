@@ -48,6 +48,82 @@ class Program
     {
         Console.Clear();
 
-        
+        // > 1. Create a list of events (one of each derived type)
+
+        // ! I opted for 24hr time to keep (global) timing consistent.
+
+        List<Event> events = new List<Event>();
+
+        // * Lecture (event) ......................................................................
+        Lecture lecture = new Lecture(
+            "Mastering AI Tools",
+            "An in-depth lecture on leveraging generative AI in business workflows.",
+            "2025-09-12",
+            "14:00",
+            new Address("456 Innovation Way", "San Francisco", "CA", "USA", "94110"),
+            "Dr. Elaine Ramos",
+            250);
+        events.Add(lecture);
+
+        // * Reception (event) ....................................................................
+        Reception reception = new Reception(
+            "Startup Networking Mixer",
+            "Join local entrepreneurs and investors for an evening of connections.",
+            "2025-09-15",
+            "18:30",
+            new Address("99 Market St", "Austin", "TX", "USA", "78701"),
+            "rsvp@startupmixer.com");
+        events.Add(reception);
+
+        // * OutdoorGathering (event) .............................................................
+        OutdoorGathering outdoorGathering = new OutdoorGathering(
+            "Autumn Food Festival",
+            "Celebrate local cuisine with food trucks, live music, and family fun.",
+            "2025-10-01",
+            "12:00",
+            new Address("500 Park Ave", "Boulder", "CO", "USA", "80301"),
+            "Sunny with light breeze");
+        events.Add(outdoorGathering);
+
+        // > 2. Display each event's standard details
+
+        DisplayHeader("Standard Details");
+        foreach (Event e in events)
+        {
+            Console.WriteLine(e.GetStandardDetails());
+            Console.WriteLine();
+        }
+
+        // > 3. Display each event's full details
+
+        DisplayHeader("Full Details");
+        foreach (Event e in events)
+        {
+            Console.WriteLine(e.GetFullDetails());
+            Console.WriteLine();
+        }
+
+        // > 4. Display each event's short description  
+
+        DisplayHeader("Short Description");
+        foreach (Event e in events)
+        {
+            Console.WriteLine(e.GetShortDescription());
+            Console.WriteLine();
+        }
+    }
+
+    public static void DisplayHeader(string header)
+    {
+        Console.BackgroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.Black;
+
+        string line = $"{header.ToUpper()}:";
+        line = line.PadRight(83); // Pads the rest with spaces to reach 80 chars
+        Console.Write(line);
+
+        Console.ResetColor();
+
+        Console.WriteLine();
     }
 }

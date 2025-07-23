@@ -31,11 +31,26 @@ public class Event // Base class
 
     public virtual string GetFullDetails()
     {
-        return $"Type: {base.ToString()}\nTitle: {_title}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetAddress()}";
+        return $"Type: {GetType()}\nTitle: {_title}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetAddress()}";
     }
 
     public string GetShortDescription()
     {
-        return $"Type: {base.ToString()}\nTitle: {_title}\nDate: {_date}";
+        
+        return $"Type: {GetType()}\nTitle: {_title}\nDate: {_date}";
+    }
+
+    public string GetType()
+    {
+        string type;
+        if (base.ToString() == "OutdoorGathering")
+        {
+            type = "Outdoor Gathering";
+        }
+        else
+        {
+            type = base.ToString();
+        }
+        return type;
     }
 }
