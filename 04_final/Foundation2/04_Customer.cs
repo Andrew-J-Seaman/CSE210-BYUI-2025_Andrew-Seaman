@@ -16,7 +16,7 @@ public class Customer
     // METHODS
     public string GetCustomerInfo()
     {
-        return $"{_name} \n{_address.GetAddress()}";
+        return $"   > {_name} \n{_address.GetAddress()}";
     }
 
 }

@@ -59,12 +59,28 @@ class Program
 
         // ! TESTING !
 
-        // * Address class:     COMPLETE
-        Address address = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
-        // Console.WriteLine(address.GetAddress());
+        // * Order 1 ..............................................................................
 
-        // * Customer class:    COMPLETE
+        Address address = new Address("123 Main St", "Anytown", "CA", "USA", "83440");
+
         Customer customer = new Customer("John Doe", address);
-        Console.WriteLine(customer.GetCustomerInfo());
+
+        Order order = new Order(customer);
+
+        order.AddProduct("Product 1", "P1", 10, 5);
+        order.AddProduct("Product 2", "P2", 20, 3);
+        order.AddProduct("Product 3", "P3", 15, 2);
+
+        Console.WriteLine($"Packing Label:");
+        order.GetPackingLabel();
+
+        Console.WriteLine($"\nShipping Label:");
+        order.GetShippingLabel();
+
+        Console.WriteLine($"\nTotal Price: ${order.GetTotalPrice()}");
+
+
+
+
     }
 }
