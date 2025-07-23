@@ -34,20 +34,53 @@ class Program
     {
         Console.Clear();
 
-        // * Video 1
-        Video video = new Video("Minecraft Speedrun in 30 Seconds", "Mr. Wobbles", 1593);
+        // * Video 1 ..............................................................................
 
-        video.AddCommentUsingStrings("Jeff Nippard", "Great video!");
-        video.AddCommentUsingStrings("Mr. Wobbles", "Thanks for the video!");
-        video.AddCommentUsingStrings("Thomas Blue", "Great work as usual.");
-        video.AddCommentUsingStrings("Samantha Turnkey", "Thanks for another fun video.");
+        // New video
+        Video video1 = new Video("Minecraft Speedrun in 30 Seconds", "Mr. Wobbles", 180);
 
-        video.DisplayVideo();
+        // Add comments
+        video1.AddCommentUsingStrings("Jeff Nippard", "Great video!");
+        video1.AddCommentUsingStrings("Mr. Wobbles", "Thanks for the video!");
+        video1.AddCommentUsingStrings("Thomas Blue", "Great work as usual.");
+        video1.AddCommentUsingStrings("Samantha Turnkey", "Thanks for another fun video.");
 
+        // Display video
+        Console.WriteLine("Video 1: \n");
+        video1.DisplayVideo();
+        Console.WriteLine("\n\n");
 
+        // * Video 2 ..............................................................................
 
-        // * Video 2
+        // New video
+        Video video2 = new Video("How to Build an Endermen Farm in Survival Minecraft", "Mr. Wobbles", 900);
 
+        // Add comments
+        video2.AddCommentUsingStrings("Jeff Nippard", "Great video!");
+        video2.AddCommentUsingStrings("Mr. Wobbles", "Thanks for the video!");
+        video2.AddCommentUsingStrings("Thomas Blue", "Great work as usual.");
+        video2.AddCommentUsingStrings("Samantha Turnkey", "Thanks for another fun video.");
+
+        // Display video
+        Console.WriteLine("Video 2: \n");
+        video2.DisplayVideo();
+        Console.WriteLine("\n\n");
+
+        // * Video 3 ..............................................................................
+
+        // New video
+        Video video3 = new Video("2 Hours of Raiding End Cities", "Mr. Wobbles", 7200);
+
+        // Add comments
+        video3.AddCommentUsingStrings("Jeff Nippard", "Great video!");
+        video3.AddCommentUsingStrings("Mr. Wobbles", "Thanks for the video!");
+        video3.AddCommentUsingStrings("Thomas Blue", "Great work as usual.");
+        video3.AddCommentUsingStrings("Samantha Turnkey", "Thanks for another fun video.");
+
+        // Display video
+        Console.WriteLine("Video 3: \n");
+        video3.DisplayVideo();
+        Console.WriteLine("\n\n");
 
     }
 }
