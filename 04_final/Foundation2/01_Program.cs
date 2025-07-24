@@ -80,7 +80,7 @@ class Program
         order1.GetShippingLabel();
 
         Console.Write($"\nTotal Price: ");
-        order1.GetTotalPrice();
+        order1.GetTotalPrice(address1);
 
         // * Order 2 ..............................................................................
 
@@ -103,7 +103,7 @@ class Program
         order2.GetShippingLabel();
 
         Console.Write($"\nTotal Price: ");
-        order2.GetTotalPrice();
+        order2.GetTotalPrice(address2);
 
         // * Order 3 ..............................................................................
 
@@ -126,7 +126,7 @@ class Program
         order3.GetShippingLabel();
 
         Console.Write($"\nTotal Price: ");
-        order3.GetTotalPrice();
+        order3.GetTotalPrice(address3);
 
 
     }

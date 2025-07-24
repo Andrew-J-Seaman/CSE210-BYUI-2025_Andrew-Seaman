@@ -36,13 +36,13 @@ public class Order
         Console.WriteLine(_customer.GetCustomerInfo());
     }
     
-    public void GetTotalPrice()
+    public void GetTotalPrice(Address address)
     {
         float totalCost = 0;
         foreach (Product product in _products)
         {
             totalCost += product.GetTotalCost();
-            if (_customer.LivesInUsa())
+            if (address.GetIsUSA())
             {
                 totalCost += 5;
             }
