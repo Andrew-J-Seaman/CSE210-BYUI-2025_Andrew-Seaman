@@ -1,10 +1,10 @@
 /* ************************************************************************************************
-> |*  AUTHOR: Andrew Seaman
-> |*  DATE: 2025-07-22
-> |*  TITLE: Program 4: Polymorphism with Exercise Tracking
-> |*  CLASS: Program
+> AUTHOR: Andrew Seaman
+> DATE: 2025-07-22
+> TITLE: Program 4: Polymorphism with Exercise Tracking
+> CLASS: Program
 
-> |*  DISCLOSURE: Development was aided by Chat GPT
+> DISCLOSURE: Development was aided by Chat GPT
 ************************************************************************************************ */
 
 // > Description:
@@ -65,6 +65,40 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        // New activies
+        Running running1 = new Running("03 Nov 2022", 30, 3.0f);
+        Cycling cycling1 = new Cycling("03 Nov 2022", 30, 6.0f);
+        Swimming swimming1 = new Swimming("03 Nov 2022", 30, 5);
+
+        // Add activies to list
+        List<Activity> activities = new List<Activity>();
+        activities.Add(running1);
+        activities.Add(cycling1);
+        activities.Add(swimming1);
+
+        // Clear console
+        Console.Clear();
+
+        // Display header
+        Console.BackgroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.Black;
+
+        string header = "Activity Summary:".ToUpper();
+        string paddedHeader = header.PadRight(95); // Pads the rest with spaces to reach 80 chars
+        Console.Write(paddedHeader);
+
+        Console.ResetColor();
+        
+        Console.WriteLine(); // New line without alternate background color
+
+        // Display summary for each activity
+        int index = 1;
+        foreach (Activity activity in activities)
+        {
+            Console.WriteLine($"{index}.   {activity.GetSummary()}");
+            index++;
+        }
+
     }
+
 }
